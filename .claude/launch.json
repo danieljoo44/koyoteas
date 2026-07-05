@@ -7,6 +7,12 @@
       "runtimeArgs": ["/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/bcc857b1-2abb-4a67-832f-bdc3611e2b38/scratchpad/preview/serve.py"],
       "port": 4173,
       "autoPort": true
+    },
+    {
+      "name": "chimney-ministry",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/5aa7b823-bcdd-4772-88b3-233bac506ef8/scratchpad/chimney-dev.sh"],
+      "port": 3210
     }
   ]
 }

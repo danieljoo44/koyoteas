@@ -99,26 +99,38 @@ if (site) {
 
   const slides = gsap.utils.toArray(".story-slides img");
   if (slides.length > 1) {
+    const box = document.querySelector(".story-slides");
     const cap = document.getElementById("story-caption");
     const idx = document.getElementById("story-slide-n");
     const total = document.getElementById("story-slide-total");
     if (total) total.textContent = String(slides.length).padStart(2, "0");
     let cur = 0;
     let inView = true;
-    new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { rootMargin: "10%" })
-      .observe(document.querySelector(".story-slides"));
-    if (!reduced) setInterval(() => {
-      if (!inView) return;
+    const label = (next) => {
+      cap.textContent = slides[next].dataset.caption;
+      if (idx) idx.textContent = String(next + 1).padStart(2, "0");
+    };
+    const go = () => {
       const next = (cur + 1) % slides.length;
-      gsap.to(slides[cur], { autoAlpha: 0, duration: 1.4, ease: "power2.inOut" });
-      gsap.to(slides[next], { autoAlpha: 1, duration: 1.4, ease: "power2.inOut" });
-      gsap.to(cap, { opacity: 0, duration: 0.45, ease: "power1.in", onComplete: () => {
-        cap.textContent = slides[next].dataset.caption;
-        if (idx) idx.textContent = String(next + 1).padStart(2, "0");
-        gsap.to(cap, { opacity: 1, duration: 0.45, ease: "power1.out" });
-      } });
+      if (reduced) {
+        gsap.set(slides[cur], { autoAlpha: 0 });
+        gsap.set(slides[next], { autoAlpha: 1 });
+        label(next);
+      } else {
+        gsap.to(slides[cur], { autoAlpha: 0, duration: 1.4, ease: "power2.inOut" });
+        gsap.to(slides[next], { autoAlpha: 1, duration: 1.4, ease: "power2.inOut" });
+        gsap.to(cap, { opacity: 0, duration: 0.45, ease: "power1.in", onComplete: () => {
+          label(next);
+          gsap.to(cap, { opacity: 1, duration: 0.45, ease: "power1.out" });
+        } });
+      }
       cur = next;
-    }, 9000);
+    };
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { rootMargin: "10%" })
+      .observe(box);
+    box.style.cursor = "pointer";
+    box.addEventListener("click", go);
+    if (!reduced) setInterval(() => { if (inView) go(); }, 9000);
   }
 
   // let the footage breathe slowly, and only play what is on screen
