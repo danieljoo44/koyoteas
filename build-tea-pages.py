@@ -362,7 +362,7 @@ TEMPLATE = """<!DOCTYPE html>
       <p class="eyebrow mono" data-reveal>PROVENANCE — 산지</p>
       <ul class="prov-grid">
         <li data-reveal><strong>%%REGION%%</strong><span class="mono">%%REGION_NOTE%%</span></li>
-        <li data-reveal><strong>Organic</strong><span class="mono">PESTICIDE-FREE, ALWAYS</span></li>
+        <li data-reveal><strong>One season</strong><span class="mono">PICKED AT PEAK, ONCE A YEAR</span></li>
         <li data-reveal><strong>By hand</strong><span class="mono">PICKED &amp; SORTED, LEAF BY LEAF</span></li>
         <li data-reveal><strong>Small batch</strong><span class="mono">QUALITY OVER QUANTITY</span></li>
       </ul>
