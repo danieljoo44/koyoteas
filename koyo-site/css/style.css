@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    KOYO — 고요 · Stillness Guides Purpose
-   Palette: warm paper, ink, hwangto clay, muted jade
+   Palette: warm paper, ink, hwangto walnut clay (deck-aligned)
    Type:    Noto Serif KR (tradition) · Jost (periphery) · Plex Mono (edge)
    ═══════════════════════════════════════════════════════════════ */
 
@@ -11,8 +11,7 @@
   --ink:        #1e1a16;
   --ink-soft:   #5c554a;
   --ink-faint:  #948b7c;
-  --clay:       #a56a45;
-  --jade:       #7a8b70;
+  --clay:       #6f4934;
   --line:       rgba(30, 26, 22, 0.14);
 
   --serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
@@ -109,8 +108,8 @@ main { position: relative; z-index: 1; }
 }
 .cursor.is-active .cursor-dot {
   transform: scale(1.6);
-  background: rgba(165, 106, 69, 0.12);
-  border-color: rgba(165, 106, 69, 0.6);
+  background: rgba(111, 73, 52, 0.12);
+  border-color: rgba(111, 73, 52, 0.6);
 }
 
 /* ── Preloader ──────────────────────────────────────────────── */
@@ -1029,6 +1028,45 @@ main { position: relative; z-index: 1; }
 }
 @media (max-width: 640px) {
   .shelf-grid { grid-template-columns: 1fr; gap: 3.4rem; max-width: 22rem; }
+}
+
+/* ── Journal ────────────────────────────────────────────────── */
+
+.journal {
+  position: relative;
+  background: transparent;
+  padding: clamp(9rem, 18vh, 12rem) var(--pad-x) var(--sec-y);
+  min-height: 70vh;
+}
+.journal .shelf-head { text-align: center; }
+.journal-list {
+  list-style: none;
+  max-width: 54rem;
+  margin: clamp(4rem, 9vh, 6rem) auto 0;
+  border-top: 1px solid var(--line);
+}
+.journal-row {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  padding: clamp(1.8rem, 4vh, 2.6rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+.journal-no { color: var(--ink-faint); }
+.journal-body { flex: 1; }
+.journal-title { font-size: 0.82rem; letter-spacing: 0.26em; color: var(--ink); }
+.journal-title a { transition: color 0.3s; }
+.journal-title a:hover { color: var(--clay); }
+.journal-body p {
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  max-width: 34rem;
+}
+.journal-tag { white-space: nowrap; color: var(--ink-faint); font-size: 0.58rem; }
+@media (max-width: 640px) {
+  .journal-row { flex-wrap: wrap; }
+  .journal-tag { margin-left: 2.4rem; }
 }
 
 /* ── Origin ─────────────────────────────────────────────────── */

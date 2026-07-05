@@ -404,7 +404,7 @@ TEMPLATE = """<!DOCTYPE html>
         <div class="footer-col">
           <p class="footer-head mono">COMPANY</p>
           <a href="../index.html#ethos" data-cursor>Our story</a>
-              <a href="#" data-cursor>Journal</a>
+              <a href="../journal.html" data-cursor>Journal</a>
           <a href="#" data-cursor>Wholesale</a>
         </div>
         <div class="footer-col">
