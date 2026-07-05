@@ -223,6 +223,7 @@ main { position: relative; z-index: 1; }
   align-items: baseline;
   justify-content: space-between;
   gap: 1.6rem;
+  white-space: nowrap;
   padding: 0.55rem 1.4rem;
   font-family: var(--serif);
   font-size: 1.08rem;
