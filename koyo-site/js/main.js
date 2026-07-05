@@ -85,10 +85,18 @@ if (site) {
     gsap.set(manifesto.querySelectorAll(".w"), { opacity: 1 });
   }
 
-  /* ── Story · Hadong footage window ──────────────────────────── */
+  /* ── Story · cinematic film window ──────────────────────────── */
+
+  if (!reduced) {
+    gsap.fromTo(".story-film video", { scale: 1.12 }, {
+      scale: 1, ease: "none",
+      scrollTrigger: { trigger: ".story-film", start: "top 90%", end: "bottom 40%", scrub: 0.6 },
+    });
+  }
+
 
   // let the footage breathe slowly, and only play what is on screen
-  document.querySelectorAll(".story-media video, .hero-film video").forEach((video) => {
+  document.querySelectorAll(".story-film video, .hero-film video").forEach((video) => {
     video.playbackRate = 0.85;
     if (reduced) { video.removeAttribute("autoplay"); video.pause(); return; }
     new IntersectionObserver(([e]) => {

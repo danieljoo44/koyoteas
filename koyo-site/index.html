@@ -115,7 +115,7 @@
         <svg viewBox="0 0 120 120">
           <defs><path id="seal-circle" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" /></defs>
           <text class="hero-seal-text">
-            <textPath href="#seal-circle">HADONG · SOUTH KOREA · 하동 · 고요 ·&#160;</textPath>
+            <textPath href="#seal-circle" textLength="286" lengthAdjust="spacing">HADONG · SOUTH KOREA · EST. 2019 ·</textPath>
           </text>
         </svg>
         <img src="assets/img/koyo-mark-ink.png" alt="" />
@@ -235,20 +235,33 @@
         reminders to pause, to breathe, and to <em>return to yourself.</em>
       </p>
 
-      <div class="story-grid">
-        <figure class="story-media" data-reveal>
-          <span class="corner c1"></span><span class="corner c2"></span>
-          <span class="corner c3"></span><span class="corner c4"></span>
+      <figure class="story-film" data-reveal>
+        <span class="corner c1"></span><span class="corner c2"></span>
+        <span class="corner c3"></span><span class="corner c4"></span>
+        <div class="story-film-frame">
           <video src="assets/video/hadong-mountains.mp4"
                  poster="assets/video/hadong-mountains-poster.jpg"
                  autoplay muted loop playsinline preload="metadata"></video>
-          <figcaption class="mono">JIRISAN AT DUSK — FILMED IN HADONG BY KOYO</figcaption>
-        </figure>
-        <div class="story-text">
-          <p class="story-lead" data-reveal>
-            Founded in 2019 by a collective of Koreans and Korean-Americans,
-            Koyo bridges a two-thousand-year tea tradition and the pace of
-            modern life.
+        </div>
+        <figcaption>
+          <span class="mono">JIRISAN AT DUSK — FILMED IN HADONG BY KOYO</span>
+          <span class="mono">OCT 2024 · 하동</span>
+        </figcaption>
+      </figure>
+
+      <div class="story-cols">
+        <p class="story-lead" data-reveal>
+          Founded in 2019 by a collective of Koreans and Korean-Americans,
+          Koyo bridges a two-thousand-year tea tradition and the pace of
+          modern life.
+        </p>
+        <div class="story-body-col">
+          <p class="story-body" data-reveal>
+            We came to tea from different paths — contemporary art, engineering,
+            design, theology, agriculture, medicine — and converged on a single
+            philosophy: stillness leads a healthier, more balanced life.
+            Korea has long been celebrated for its natural beauty and serene
+            traditions; we set out to carry that essence forward.
           </p>
           <p class="story-body" data-reveal>
             Our teas grow in Hadong, where mist settles between the ridges of
@@ -256,13 +269,17 @@
             leaf is picked by hand from pesticide-free gardens, in small
             batches — quality over quantity, as the mountain has always demanded.
           </p>
-          <ul class="story-stats" data-reveal>
-            <li><strong>9th c.</strong><span class="mono">TEA COUNTRY SINCE</span></li>
-            <li><strong>100%</strong><span class="mono">PICKED BY HAND</span></li>
-            <li><strong>0</strong><span class="mono">PESTICIDES, EVER</span></li>
-          </ul>
         </div>
       </div>
+
+      <ul class="story-ledger" data-reveal>
+        <li><strong>9th c.</strong><span class="mono">TEA COUNTRY SINCE</span></li>
+        <li><strong>2,000 yrs</strong><span class="mono">OF TEA TRADITION</span></li>
+        <li><strong>100%</strong><span class="mono">PICKED BY HAND</span></li>
+        <li><strong>0</strong><span class="mono">PESTICIDES, EVER</span></li>
+      </ul>
+
+      <p class="story-vertical mono" aria-hidden="true">우리의 이야기 — SINCE 2019</p>
     </section>
 
     <!-- ═══════════ THE SHELF ═══════════ -->
