@@ -647,6 +647,7 @@ main { position: relative; z-index: 1; }
   }
   .spec-panel:nth-child(even) .spec-stage { order: 0; }
   .spec-note { display: none; }
+  .panel-link { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
   .spec-panel:nth-child(odd) .spec-info { margin-left: 0; }
   .spec-mobile-note {
     display: block;
@@ -881,14 +882,14 @@ main { position: relative; z-index: 1; }
 .panel-link {
   display: inline-block;
   margin-top: 2.4rem;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   background: var(--ink);
   color: var(--paper);
   border-radius: 999px;
-  padding: 0.95rem 2rem;
+  padding: 0.85rem 1.8rem;
   transition: background 0.45s var(--ease-out);
 }
 .panel-link-line { display: none; }
