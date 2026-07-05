@@ -57,7 +57,7 @@ if (site) {
       opt.classList.add("is-active");
       // the pouch imagery follows the chosen format
       if (pouchThumb) {
-        const src = `../assets/img/pack-${teaId}-${format}.jpg`;
+        const src = `../assets/img/packcut-${teaId}-${format}.webp`;
         pouchThumb.dataset.src = src;
         pouchThumb.querySelector("img").src = src;
         if (pouchThumb.classList.contains("is-active")) {

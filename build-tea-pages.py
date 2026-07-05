@@ -270,20 +270,20 @@ TEMPLATE = """<!DOCTYPE html>
 
         <div class="tea-gallery" data-reveal>
           <div class="tea-stage">
-            <img id="tea-stage-img" src="../assets/img/loose-%%ID%%.jpg" alt="%%NAME%% loose leaf tea" />
+            <img id="tea-stage-img" src="../assets/img/pilecut-%%ID%%.webp" alt="%%NAME%% loose leaf tea" />
           </div>
           <div class="tea-thumbs">
-            <button class="tea-thumb is-active" data-src="../assets/img/loose-%%ID%%.jpg" data-cursor>
-              <img src="../assets/img/loose-%%ID%%.jpg" alt="" loading="lazy" /><span class="mono">THE LEAVES</span>
+            <button class="tea-thumb is-active" data-src="../assets/img/pilecut-%%ID%%.webp" data-cursor>
+              <img src="../assets/img/pilecut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">THE LEAVES</span>
             </button>
-            <button class="tea-thumb" data-src="../assets/img/leaf-%%ID%%.jpg" data-cursor>
-              <img src="../assets/img/leaf-%%ID%%.jpg" alt="" loading="lazy" /><span class="mono">STEEPED</span>
+            <button class="tea-thumb" data-src="../assets/img/leafcut-%%ID%%.webp" data-cursor>
+              <img src="../assets/img/leafcut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">STEEPED</span>
             </button>
-            <button class="tea-thumb" data-src="../assets/img/cup-%%ID%%.jpg" data-cursor>
-              <img src="../assets/img/cup-%%ID%%.jpg" alt="" loading="lazy" /><span class="mono">THE CUP</span>
+            <button class="tea-thumb" data-src="../assets/img/cupcut-%%ID%%.webp" data-cursor>
+              <img src="../assets/img/cupcut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">THE CUP</span>
             </button>
-            <button class="tea-thumb" id="pouch-thumb" data-src="../assets/img/pack-%%ID%%-loose.jpg" data-cursor>
-              <img src="../assets/img/pack-%%ID%%-loose.jpg" alt="" loading="lazy" /><span class="mono">THE POUCH</span>
+            <button class="tea-thumb" id="pouch-thumb" data-src="../assets/img/packcut-%%ID%%-loose.webp" data-cursor>
+              <img src="../assets/img/packcut-%%ID%%-loose.webp" alt="" loading="lazy" /><span class="mono">THE POUCH</span>
             </button>
           </div>
         </div>
