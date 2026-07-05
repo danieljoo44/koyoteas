@@ -1,0 +1,18 @@
+{
+  "name": "verse-notes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bible verse-anchored note taking PWA",
+  "scripts": {
+    "start": "node server/index.js",
+    "icons": "node scripts/gen-icons.js",
+    "set-passphrase": "node scripts/set-passphrase.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "express": "^4.21.2"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true
+  }
+}
