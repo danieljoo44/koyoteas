@@ -976,10 +976,10 @@ main { position: relative; z-index: 1; }
 }
 .shelf-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(4.5rem, 10vh, 7rem) clamp(3rem, 7vw, 7rem);
-  max-width: 66rem;
-  margin: clamp(4rem, 10vh, 7rem) auto 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  max-width: 84rem;
+  margin: clamp(3.5rem, 9vh, 6.5rem) auto 0;
 }
 .shelf-card { display: block; text-align: center; }
 .shelf-media {
@@ -1021,7 +1021,7 @@ main { position: relative; z-index: 1; }
   color: var(--ink-faint);
 }
 @media (max-width: 1080px) {
-  .shelf-grid { max-width: 46rem; gap: 4rem 3rem; }
+  .shelf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 46rem; gap: 4rem 3rem; }
 }
 @media (max-width: 640px) {
   .shelf-grid { grid-template-columns: 1fr; gap: 3.4rem; max-width: 22rem; }
