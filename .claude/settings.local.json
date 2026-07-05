@@ -26,7 +26,8 @@
       "Bash(mkdir -p postprod)",
       "Bash(unzip -o -q \"/Users/danieljoo/Desktop/Post Production-20260705T010218Z-3-001.zip\" -d postprod)",
       "Read(//Applications/GitHub Desktop.app/**)",
-      "Bash(security find-internet-password *)"
+      "Bash(security find-internet-password *)",
+      "Read(//Users/danieljoo/Documents/**)"
     ]
   }
 }
