@@ -9,6 +9,12 @@
       "autoPort": true
     },
     {
+      "name": "verse-notes",
+      "runtimeExecutable": "/Users/danieljoo/.local/node/bin/node",
+      "runtimeArgs": ["/Users/danieljoo/Desktop/Claude Code Koyo Project/verse-notes/server/index.js"],
+      "port": 8787
+    },
+    {
       "name": "chimney-ministry",
       "runtimeExecutable": "/bin/sh",
       "runtimeArgs": ["/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/5aa7b823-bcdd-4772-88b3-233bac506ef8/scratchpad/chimney-dev.sh"],

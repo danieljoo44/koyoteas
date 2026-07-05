@@ -133,6 +133,12 @@ if (site) {
     if (!reduced) setInterval(() => { if (inView) go(); }, 9000);
   }
 
+  // phones get the lighter hero rendition
+  const heroVid = document.querySelector(".hero-film video");
+  if (heroVid && window.matchMedia("(max-width: 640px)").matches) {
+    heroVid.src = "assets/video/hero-film-mobile.mp4";
+  }
+
   // let the footage breathe slowly, and only play what is on screen
   document.querySelectorAll(".story-film video, .hero-film video").forEach((video) => {
     video.playbackRate = 0.85;

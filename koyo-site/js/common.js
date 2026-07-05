@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    KOYO — 고요 · shared site behavior (all pages)
-   Lenis smooth scroll · nav · cursor · reveals · Three.js mist
+   Lenis smooth scroll · nav · reveals · Three.js mist
    ═══════════════════════════════════════════════════════════════ */
 
 import * as THREE from "three";
@@ -157,46 +157,11 @@ export function initSite() {
     gsap.ticker.add(renderLoop);
   }
 
-  /* ── Custom cursor ──────────────────────────────────────────── */
-
-  const cursor = document.getElementById("cursor");
-  if (cursor && finePointer && !reduced) {
-    const cx = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3" });
-    const cy = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3" });
-    window.addEventListener("pointermove", (e) => {
-      cursor.classList.add("is-awake");
-      cx(e.clientX); cy(e.clientY);
-    }, { passive: true });
-    document.querySelectorAll("[data-cursor]").forEach((el) => {
-      el.addEventListener("pointerenter", () => cursor.classList.add("is-active"));
-      el.addEventListener("pointerleave", () => cursor.classList.remove("is-active"));
-    });
-  } else {
-    cursor?.remove();
-  }
-
-  /* ── Magnetic buttons ───────────────────────────────────────── */
-
-  if (finePointer && !reduced) {
-    document.querySelectorAll("[data-magnetic]").forEach((el) => {
-      const xTo = gsap.quickTo(el, "x", { duration: 0.5, ease: "power3" });
-      const yTo = gsap.quickTo(el, "y", { duration: 0.5, ease: "power3" });
-      el.addEventListener("pointermove", (e) => {
-        const b = el.getBoundingClientRect();
-        xTo((e.clientX - b.left - b.width / 2) * 0.18);
-        yTo((e.clientY - b.top - b.height / 2) * 0.3);
-      });
-      el.addEventListener("pointerleave", () => { xTo(0); yTo(0); });
-    });
-  }
-
   /* ── Navigation ─────────────────────────────────────────────── */
 
   const nav = document.getElementById("nav");
   if (nav) {
-    const announce = document.querySelector(".announce");
     const onScrollPos = (y) => {
-      if (announce) nav.style.top = Math.max(0, announce.offsetHeight - y) + "px";
       nav.classList.toggle("is-scrolled", y > 90);
     };
     if (lenis) lenis.on("scroll", ({ scroll }) => onScrollPos(scroll));

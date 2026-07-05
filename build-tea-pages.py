@@ -207,36 +207,34 @@ TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 
-  <div class="announce mono" role="note">FREE SHIPPING ON ORDERS OVER $100</div>
 
   <!-- Atmosphere -->
   <canvas id="mist-canvas" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span></div>
 
   <!-- Navigation -->
   <header class="nav is-scrolled" id="nav">
-    <a class="nav-brand" href="../index.html" data-cursor>
+    <a class="nav-brand" href="../index.html">
       <img src="../assets/img/koyo-mark-ink.png" alt="Koyo mark" class="nav-mark" />
       <span class="nav-word">KOYO</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="../index.html" data-cursor>Home</a>
-      <a href="../index.html#specimen" data-cursor>Collection</a>
-      <a href="../index.html#ethos" data-cursor>Our Story</a>
-      <a href="../index.html#ritual" data-cursor>Ritual</a>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#specimen">Collection</a>
+      <a href="../index.html#ethos">Our Story</a>
+      <a href="../index.html#ritual">Ritual</a>
       <div class="nav-shop">
-        <a href="../shop.html" data-cursor aria-haspopup="true">Shop</a>
+        <a href="../shop.html" aria-haspopup="true">Shop</a>
         <div class="nav-dropdown" aria-label="Teas">
-          <a href="sejak.html" data-cursor>Sejak <span>세작</span></a>
-          <a href="artemisia.html" data-cursor>Artemisia <span>쑥</span></a>
-          <a href="persimmon.html" data-cursor>Persimmon Leaf <span>감잎</span></a>
-          <a href="hwangto.html" data-cursor>Hwangto <span>황토</span></a>
+          <a href="sejak.html">Sejak <span>세작</span></a>
+          <a href="artemisia.html">Artemisia <span>쑥</span></a>
+          <a href="persimmon.html">Persimmon Leaf <span>감잎</span></a>
+          <a href="hwangto.html">Hwangto <span>황토</span></a>
         </div>
       </div>
     </nav>
     <div class="nav-right">
-      <a class="nav-cart mono" href="#" data-cursor data-cart-open data-cart-count>CART — 0</a>
+      <a class="nav-cart mono" href="#" data-cart-open data-cart-count>CART — 0</a>
       <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
       </button>
@@ -268,7 +266,7 @@ TEMPLATE = """<!DOCTYPE html>
     <!-- ═══════════ PRODUCT ═══════════ -->
     <section class="tea-hero">
       <p class="tea-breadcrumb mono" data-reveal>
-        <a href="../index.html#specimen" data-cursor>THE COLLECTION</a> &nbsp;/&nbsp; %%NAME_UPPER%%
+        <a href="../index.html#specimen">THE COLLECTION</a> &nbsp;/&nbsp; %%NAME_UPPER%%
       </p>
       <div class="tea-grid">
 
@@ -277,16 +275,16 @@ TEMPLATE = """<!DOCTYPE html>
             <img id="tea-stage-img" src="../assets/img/pilecut-%%ID%%.webp" alt="%%NAME%% loose leaf tea" />
           </div>
           <div class="tea-thumbs">
-            <button class="tea-thumb is-active" data-src="../assets/img/pilecut-%%ID%%.webp" data-cursor>
+            <button class="tea-thumb is-active" data-src="../assets/img/pilecut-%%ID%%.webp">
               <img src="../assets/img/pilecut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">THE LEAVES</span>
             </button>
-            <button class="tea-thumb" data-src="../assets/img/leafcut-%%ID%%.webp" data-cursor>
+            <button class="tea-thumb" data-src="../assets/img/leafcut-%%ID%%.webp">
               <img src="../assets/img/leafcut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">STEEPED</span>
             </button>
-            <button class="tea-thumb" data-src="../assets/img/cupcut-%%ID%%.webp" data-cursor>
+            <button class="tea-thumb" data-src="../assets/img/cupcut-%%ID%%.webp">
               <img src="../assets/img/cupcut-%%ID%%.webp" alt="" loading="lazy" /><span class="mono">THE CUP</span>
             </button>
-            <button class="tea-thumb" id="pouch-thumb" data-src="../assets/img/packcut-%%ID%%-loose.webp" data-cursor>
+            <button class="tea-thumb" id="pouch-thumb" data-src="../assets/img/packcut-%%ID%%-loose.webp">
               <img src="../assets/img/packcut-%%ID%%-loose.webp" alt="" loading="lazy" /><span class="mono">THE POUCH</span>
             </button>
           </div>
@@ -304,21 +302,21 @@ TEMPLATE = """<!DOCTYPE html>
           <div class="tea-buy" data-reveal>
             <span class="format-label mono">FORMAT — 형태</span>
             <div class="format" role="radiogroup" aria-label="Format">
-              <button class="format-opt is-active" data-format="loose" data-cursor>
+              <button class="format-opt is-active" data-format="loose">
                 Loose Leaf<span class="mono">$%%PRICE_LOOSE%% · TIN-TIE POUCH</span>
               </button>
-              <button class="format-opt" data-format="sachet" data-cursor>
+              <button class="format-opt" data-format="sachet">
                 Sachets<span class="mono">$%%PRICE_SACHET%% · PLA, PLANT-BASED</span>
               </button>
             </div>
             <p class="tea-price is-visible" id="tea-price">$%%PRICE_LOOSE%%</p>
             <div class="tea-buy-row">
               <div class="qty" aria-label="Quantity">
-                <button id="qty-minus" aria-label="Decrease quantity" data-cursor>−</button>
+                <button id="qty-minus" aria-label="Decrease quantity">−</button>
                 <span id="qty-value">1</span>
-                <button id="qty-plus" aria-label="Increase quantity" data-cursor>+</button>
+                <button id="qty-plus" aria-label="Increase quantity">+</button>
               </div>
-              <button class="btn btn-solid" id="add-to-cart" data-cursor data-magnetic
+              <button class="btn btn-solid" id="add-to-cart"
                       data-tea-id="%%ID%%" data-tea-name="%%NAME%%" data-tea-kr="%%KR%%"
                       data-price-loose="%%PRICE_LOOSE%%" data-price-sachet="%%PRICE_SACHET%%">
                 Add to order
@@ -395,27 +393,28 @@ TEMPLATE = """<!DOCTYPE html>
       <div class="footer-cols">
         <div class="footer-col">
           <p class="footer-head mono">SHOP</p>
-          <a href="../shop.html" data-cursor>The Shelf — all teas</a>
-          <a href="sejak.html" data-cursor>Sejak</a>
-          <a href="artemisia.html" data-cursor>Artemisia</a>
-          <a href="persimmon.html" data-cursor>Persimmon Leaf</a>
-          <a href="hwangto.html" data-cursor>Hwangto</a>
+          <a href="../shop.html">The Shelf — all teas</a>
+          <a href="sejak.html">Sejak</a>
+          <a href="artemisia.html">Artemisia</a>
+          <a href="persimmon.html">Persimmon Leaf</a>
+          <a href="hwangto.html">Hwangto</a>
         </div>
         <div class="footer-col">
           <p class="footer-head mono">COMPANY</p>
-          <a href="../index.html#ethos" data-cursor>Our story</a>
-              <a href="../journal.html" data-cursor>Journal</a>
-          <a href="#" data-cursor>Wholesale</a>
+          <a href="../index.html#ethos">Our story</a>
+              <a href="../journal.html">Journal</a>
+          <a href="#">Wholesale</a>
         </div>
         <div class="footer-col">
           <p class="footer-head mono">CONNECT</p>
-          <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener" data-cursor>Instagram — @koyo_teas</a>
-          <a href="mailto:info@koyoteas.com" data-cursor>info@koyoteas.com</a>
+          <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener">Instagram — @koyo_teas</a>
+          <a href="mailto:info@koyoteas.com">info@koyoteas.com</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom mono">
       <span>© 2026 KOYO TEAS</span>
+      <span>FREE SHIPPING OVER $100</span>
       <span>LOS ANGELES · GRAND RAPIDS · HADONG</span>
     </div>
   </footer>
@@ -430,7 +429,8 @@ TEMPLATE = """<!DOCTYPE html>
     <div class="cart-lines"></div>
     <footer class="cart-foot">
       <div class="cart-subtotal"><span class="mono">SUBTOTAL</span><span class="cart-subtotal-amount"></span></div>
-      <button class="btn btn-solid cart-checkout" data-cursor>Checkout</button>
+      <button class="btn btn-solid cart-checkout">Checkout</button>
+      <p class="cart-ship mono">FREE SHIPPING ON ORDERS OVER $100</p>
       <p class="cart-note"></p>
     </footer>
   </aside>
@@ -456,7 +456,7 @@ def render(tea_id, tea):
     benefits = "\n".join(
         f'        <li data-reveal>{b}</li>' for b in tea["benefits"])
     related = "\n".join(
-        f'''        <a class="tea-related-card" href="{rid}.html" data-cursor data-reveal>
+        f'''        <a class="tea-related-card" href="{rid}.html" data-reveal>
           <img src="../assets/img/pilecut-{rid}.webp" alt="{TEAS[rid]["name"]} loose leaf" loading="lazy" />
           <h3>{TEAS[rid]["name"]} <span>{TEAS[rid]["kr"]}</span></h3>
           <p class="mono">N° {TEAS[rid]["number"]} — {TEAS[rid]["type_line"]}</p>
