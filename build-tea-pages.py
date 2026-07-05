@@ -414,7 +414,6 @@ TEMPLATE = """<!DOCTYPE html>
         </div>
       </div>
     </div>
-    <p class="footer-kr" aria-hidden="true">고요</p>
     <div class="footer-bottom mono">
       <span>© 2026 KOYO TEAS</span>
       <span>LOS ANGELES · GRAND RAPIDS · HADONG</span>

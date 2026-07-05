@@ -1271,7 +1271,7 @@ main { position: relative; z-index: 1; }
   background: #171310;
   color: #d9d2c4;
   overflow: hidden;
-  padding: clamp(3.5rem, 8vh, 5.5rem) var(--pad-x) 1.8rem;
+  padding: clamp(2.8rem, 6vh, 4rem) var(--pad-x) 1.6rem;
 }
 .footer a { transition: color 0.3s; }
 .footer a:hover { color: #ffffff; }
@@ -1300,19 +1300,6 @@ main { position: relative; z-index: 1; }
   margin-bottom: 0.7rem;
 }
 
-.footer-kr {
-  font-family: var(--serif-kr);
-  font-weight: 200;
-  font-size: clamp(6rem, 13vw, 10.5rem);
-  line-height: 0.85;
-  text-align: center;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(217, 210, 196, 0.10);
-  user-select: none;
-  pointer-events: none;
-  margin-top: 0.8rem;
-  margin-bottom: 1.4rem;
-}
 .footer-bottom {
   position: relative;
   z-index: 2;
@@ -1320,6 +1307,7 @@ main { position: relative; z-index: 1; }
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2.2rem;
   padding-top: 1.6rem;
   border-top: 1px solid rgba(217, 210, 196, 0.12);
   color: #877e6d;
