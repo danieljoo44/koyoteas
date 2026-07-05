@@ -663,6 +663,8 @@ main { position: relative; z-index: 1; }
   }
   .spec-stage { flex-direction: column; height: auto; }
   .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1.4rem; }
+  /* single-sejak's canvas carries desktop annotation space on the left */
+  .spec-panel[data-tea="sejak"] .spec-leaf { transform: translateX(-22%); }
   .spec-info { max-width: none; }
 }
 
