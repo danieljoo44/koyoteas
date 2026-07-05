@@ -223,7 +223,7 @@ TEMPLATE = """<!DOCTYPE html>
     <nav class="nav-links" aria-label="Primary">
       <a href="../index.html" data-cursor>Home</a>
       <a href="../index.html#specimen" data-cursor>Collection</a>
-      <a href="../index.html#ethos" data-cursor>Story</a>
+      <a href="../index.html#ethos" data-cursor>Our Story</a>
       <a href="../index.html#ritual" data-cursor>Ritual</a>
       <div class="nav-shop">
         <a href="../shop.html" data-cursor aria-haspopup="true">Shop</a>
@@ -247,7 +247,7 @@ TEMPLATE = """<!DOCTYPE html>
     <nav aria-label="Mobile">
       <a href="../index.html">Home</a>
       <a href="../index.html#specimen">Collection</a>
-      <a href="../index.html#ethos">Story</a>
+      <a href="../index.html#ethos">Our Story</a>
       <a href="../index.html#ritual">Ritual</a>
     </nav>
     <div class="mobile-menu-shop">

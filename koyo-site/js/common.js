@@ -196,7 +196,9 @@ export function initSite() {
   if (nav) {
     let lastY = 0;
     const navY = gsap.quickTo(nav, "yPercent", { duration: 0.5, ease: "power3" });
+    const announce = document.querySelector(".announce");
     const onScrollPos = (y) => {
+      if (announce) nav.style.top = Math.max(0, announce.offsetHeight - y) + "px";
       nav.classList.toggle("is-scrolled", y > 90);
       if (!reduced) {
         if (y > 500 && y > lastY + 4) navY(-130);
