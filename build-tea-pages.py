@@ -106,7 +106,7 @@ TEAS = {
             ("HARVEST", "Early spring, one week only"),
             ("NOTES", "Earthy · Bright · Dry"),
             ("SERVING", "1 g per 210 ml (7 oz)"),
-            ("WATER", "74°C — boiled, then rested"),
+            ("WATER", "74°C, boiled then rested"),
             ("STEEP", "2 minutes, steeps twice"),
         ],
         "story": [
@@ -115,7 +115,7 @@ TEAS = {
             "To capture this fleeting essence, our leaves are hand-picked in Hadong (하동) at precisely the right moment each year. That window can last no more than a week, making true persimmon leaf tea a rare and treasured gift of the season.",
         ],
         "brew_steps": [
-            ("一", "Rest", "Boil mineral water fully, then let it rest until it cools to 74°C — gentleness preserves the vitamin C."),
+            ("一", "Rest", "Boil mineral water fully, then let it rest until it cools to 74°C. Gentleness preserves the vitamin C."),
             ("二", "Steep", "One gram of leaves to 210 ml of water. Two quiet minutes."),
             ("三", "Return", "Steep once more. The second cup turns brighter, almost citrus-clean."),
         ],
