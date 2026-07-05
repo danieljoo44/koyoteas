@@ -95,6 +95,32 @@ if (site) {
   }
 
 
+  /* ── Story · field slideshow ────────────────────────────────── */
+
+  const slides = gsap.utils.toArray(".story-slides img");
+  if (slides.length > 1) {
+    const cap = document.getElementById("story-caption");
+    const idx = document.getElementById("story-slide-n");
+    const total = document.getElementById("story-slide-total");
+    if (total) total.textContent = String(slides.length).padStart(2, "0");
+    let cur = 0;
+    let inView = true;
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; }, { rootMargin: "10%" })
+      .observe(document.querySelector(".story-slides"));
+    if (!reduced) setInterval(() => {
+      if (!inView) return;
+      const next = (cur + 1) % slides.length;
+      gsap.to(slides[cur], { autoAlpha: 0, duration: 1.4, ease: "power2.inOut" });
+      gsap.to(slides[next], { autoAlpha: 1, duration: 1.4, ease: "power2.inOut" });
+      gsap.to(cap, { opacity: 0, duration: 0.45, ease: "power1.in", onComplete: () => {
+        cap.textContent = slides[next].dataset.caption;
+        if (idx) idx.textContent = String(next + 1).padStart(2, "0");
+        gsap.to(cap, { opacity: 1, duration: 0.45, ease: "power1.out" });
+      } });
+      cur = next;
+    }, 6000);
+  }
+
   // let the footage breathe slowly, and only play what is on screen
   document.querySelectorAll(".story-film video, .hero-film video").forEach((video) => {
     video.playbackRate = 0.85;

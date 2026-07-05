@@ -671,6 +671,13 @@ main { position: relative; z-index: 1; }
 .story-film .c3 { bottom: -1px; left: -1px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
 .story-film .c4 { bottom: -1px; right: -1px; border-bottom: 1px solid var(--ink); border-right: 1px solid var(--ink); }
 .story-film-frame { overflow: hidden; }
+.story-slides { position: relative; }
+.story-slides img + img {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
 .story-film video,
 .story-film img {
   display: block;
