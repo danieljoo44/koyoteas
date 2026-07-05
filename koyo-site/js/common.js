@@ -248,8 +248,8 @@ export function initSite() {
   /* ── Footer watermark drift ─────────────────────────────────── */
 
   if (!reduced && document.querySelector(".footer-kr")) {
-    gsap.fromTo(".footer-kr", { yPercent: 46 }, {
-      yPercent: 12,
+    gsap.fromTo(".footer-kr", { yPercent: 34 }, {
+      yPercent: 0,
       ease: "none",
       scrollTrigger: { trigger: ".footer", start: "top bottom", end: "bottom bottom", scrub: 0.5 },
     });

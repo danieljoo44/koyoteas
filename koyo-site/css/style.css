@@ -376,12 +376,29 @@ main { position: relative; z-index: 1; }
   margin-bottom: clamp(1.4rem, 3.2vh, 2.4rem);
   opacity: 0.92;
 }
-.hero-romaja {
-  font-size: 0.62rem;
-  letter-spacing: 0.66em;
-  margin: -0.7rem 0 clamp(1.3rem, 3vh, 2.2rem) 0.66em;
-  color: var(--ink-faint);
+.hero-def {
+  font-size: 0.66rem;
+  margin: -0.4rem 0 clamp(1.7rem, 4vh, 2.8rem);
+  color: var(--ink-soft);
 }
+.hero-def em { font-style: italic; letter-spacing: 0.1em; }
+
+.hero-horizon {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: min(34vh, 300px);
+  z-index: 0;
+  background: url("../assets/img/hero-field.jpg") center 30% / cover no-repeat;
+  opacity: 0.45;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 60%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 60%, #000 100%);
+  pointer-events: none;
+}
+.hero-mark, .hero-eyebrow, .hero-kr, .hero-def, .hero-title, .hero-cta {
+  position: relative;
+  z-index: 1;
+}
+.hero-side, .hero-scroll, .hero-seal { z-index: 1; }
 .hero-title {
   font-weight: 300;
   font-size: clamp(0.95rem, 1.8vw, 1.5rem);
@@ -394,26 +411,11 @@ main { position: relative; z-index: 1; }
   .hero-title { font-size: 0.78rem; letter-spacing: 0.28em; margin-left: 0.28em; }
 }
 
-.hero-frame {
-  position: absolute;
-  inset: clamp(5rem, 7vh, 5.8rem);
-  border: 1px solid rgba(30, 26, 22, 0.1);
-  pointer-events: none;
-}
-.hero-frame span {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-}
-.hero-frame span:nth-child(1) { top: -1px; left: -1px; border-top: 1px solid var(--ink); border-left: 1px solid var(--ink); }
-.hero-frame span:nth-child(2) { top: -1px; right: -1px; border-top: 1px solid var(--ink); border-right: 1px solid var(--ink); }
-.hero-frame span:nth-child(3) { bottom: -1px; left: -1px; border-bottom: 1px solid var(--ink); border-left: 1px solid var(--ink); }
-.hero-frame span:nth-child(4) { bottom: -1px; right: -1px; border-bottom: 1px solid var(--ink); border-right: 1px solid var(--ink); }
 
 .hero-seal {
   position: absolute;
-  right: calc(clamp(5rem, 7vh, 5.8rem) + 1.6rem);
-  bottom: calc(clamp(5rem, 7vh, 5.8rem) + 1.4rem);
+  right: clamp(3rem, 6vw, 5.2rem);
+  bottom: clamp(2.8rem, 6vh, 4.6rem);
   width: 108px;
   height: 108px;
   display: grid;
@@ -637,7 +639,7 @@ main { position: relative; z-index: 1; }
 }
 .hero-sub em { font-style: italic; color: var(--ink); }
 .hero-cta {
-  margin-top: clamp(2.2rem, 5vh, 3.6rem);
+  margin-top: clamp(2rem, 4.5vh, 3.2rem);
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -646,7 +648,7 @@ main { position: relative; z-index: 1; }
 
 .hero-side {
   position: absolute;
-  right: calc(clamp(5rem, 7vh, 5.8rem) + 1.3rem);
+  right: calc(var(--pad-x) / 2);
   top: 50%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
@@ -656,7 +658,7 @@ main { position: relative; z-index: 1; }
 
 .hero-scroll {
   position: absolute;
-  bottom: calc(clamp(5rem, 7vh, 5.8rem) + 1.2rem);
+  bottom: 2.4rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1143,7 +1145,7 @@ main { position: relative; z-index: 1; }
 
 /* ── Newsletter ─────────────────────────────────────────────── */
 
-.letter { padding: 0 var(--pad-x) var(--sec-y); }
+.letter { padding: 0 var(--pad-x) clamp(3.5rem, 8vh, 5.5rem); }
 .letter-inner {
   max-width: 56rem;
   margin: 0 auto;
@@ -1200,7 +1202,7 @@ main { position: relative; z-index: 1; }
   background: #171310;
   color: #d9d2c4;
   overflow: hidden;
-  padding: clamp(4.5rem, 10vh, 7rem) var(--pad-x) 2rem;
+  padding: clamp(3.5rem, 8vh, 5.5rem) var(--pad-x) 1.8rem;
 }
 .footer a { transition: color 0.3s; }
 .footer a:hover { color: #ffffff; }
@@ -1232,15 +1234,15 @@ main { position: relative; z-index: 1; }
 .footer-kr {
   font-family: var(--serif-kr);
   font-weight: 200;
-  font-size: clamp(11rem, 30vw, 26rem);
-  line-height: 0.8;
+  font-size: clamp(6rem, 13vw, 10.5rem);
+  line-height: 0.85;
   text-align: center;
   color: transparent;
   -webkit-text-stroke: 1px rgba(217, 210, 196, 0.10);
   user-select: none;
   pointer-events: none;
-  margin-top: clamp(2rem, 6vh, 4rem);
-  transform: translateY(18%);
+  margin-top: 0.8rem;
+  margin-bottom: 1.4rem;
 }
 .footer-bottom {
   position: relative;
