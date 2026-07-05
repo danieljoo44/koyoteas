@@ -43,7 +43,7 @@ TEAS = {
             "Contains calcium, iron, and potassium",
             "A gentle palate that clears the mind, the heart of Korean green tea culture",
         ],
-        "price_loose": 33,
+        "price_loose": 33, "prov2": "Organic", "prov2_note": "GROWN WITHOUT PESTICIDES",
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "TEA COUNTRY SINCE THE 9TH C.",
@@ -85,7 +85,7 @@ TEAS = {
             "Warms the body's core, long used against colds and fevers",
             "May promote deeper, more restful sleep",
         ],
-        "price_loose": 34,
+        "price_loose": 34, "prov2": "Organic", "prov2_note": "GROWN WITHOUT PESTICIDES",
         "price_sachet": 14,
         "region": "Jirisan",
         "region_note": "WILD — GATHERED, NOT FARMED",
@@ -126,7 +126,7 @@ TEAS = {
             "Anti-inflammatory properties that support joint health",
             "Traditionally used to help with hypertension and blood circulation",
         ],
-        "price_loose": 39,
+        "price_loose": 39, "prov2": "One season", "prov2_note": "PICKED AT PEAK, ONCE A YEAR",
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "ONE HARVEST WEEK A YEAR",
@@ -167,7 +167,7 @@ TEAS = {
             "Traditionally used to soothe sore throats and dry coughs",
             "Moderate caffeine with L-theanine, and gentle, warm alertness",
         ],
-        "price_loose": 37,
+        "price_loose": 37, "prov2": "One season", "prov2_note": "PICKED AT PEAK, ONCE A YEAR",
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "SAME GARDENS AS OUR SEJAK",
@@ -362,7 +362,7 @@ TEMPLATE = """<!DOCTYPE html>
       <p class="eyebrow mono" data-reveal>PROVENANCE — 산지</p>
       <ul class="prov-grid">
         <li data-reveal><strong>%%REGION%%</strong><span class="mono">%%REGION_NOTE%%</span></li>
-        <li data-reveal><strong>One season</strong><span class="mono">PICKED AT PEAK, ONCE A YEAR</span></li>
+        <li data-reveal><strong>%%PROV2%%</strong><span class="mono">%%PROV2_NOTE%%</span></li>
         <li data-reveal><strong>By hand</strong><span class="mono">PICKED &amp; SORTED, LEAF BY LEAF</span></li>
         <li data-reveal><strong>Small batch</strong><span class="mono">QUALITY OVER QUANTITY</span></li>
       </ul>
@@ -481,6 +481,8 @@ def render(tea_id, tea):
         "%%PRICE_SACHET%%": str(tea["price_sachet"]),
         "%%REGION%%": tea["region"],
         "%%REGION_NOTE%%": tea["region_note"],
+        "%%PROV2%%": tea["prov2"],
+        "%%PROV2_NOTE%%": tea["prov2_note"],
         "%%KEEPING%%": tea["keeping"],
         "%%KEEPING_TIP%%": tea["keeping_tip"],
         "%%RELATED%%": related,
