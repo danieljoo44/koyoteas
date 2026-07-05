@@ -279,11 +279,12 @@ app.post('/api/import', async (req, res) => {
 app.use(
   express.static(PUB, {
     setHeaders(res, filePath) {
-      const name = path.basename(filePath);
-      if (name === 'sw.js' || name === 'index.html' || name === 'manifest.webmanifest') {
-        res.setHeader('Cache-Control', 'no-cache');
+      // Icons rarely change; everything else must revalidate so app updates
+      // are never trapped behind the HTTP cache (offline is the SW's job).
+      if (filePath.includes('/icons/')) {
+        res.setHeader('Cache-Control', 'public, max-age=86400');
       } else {
-        res.setHeader('Cache-Control', 'public, max-age=3600');
+        res.setHeader('Cache-Control', 'no-cache');
       }
     },
   })

@@ -90,7 +90,10 @@ body {
 
 /* ---------- desktop ---------- */
 @media (min-width: 840px) {
-  body { padding-bottom: 40px; }
+  body { padding-bottom: 40px; display: flex; flex-direction: column; }
+  #topbar { order: 0; }
+  #tabbar { order: 1; }
+  #view { order: 2; width: 100%; }
   #view { max-width: 860px; padding: 28px 24px; }
   #tabbar {
     position: sticky;
@@ -367,6 +370,7 @@ textarea {
 .empty-state a { color: var(--accent); font-weight: 600; }
 
 /* ---------- auth ---------- */
+#auth-overlay[hidden], #toast[hidden] { display: none; }
 #auth-overlay {
   position: fixed;
   inset: 0;

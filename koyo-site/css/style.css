@@ -1163,9 +1163,7 @@ main { position: relative; z-index: 1; }
 .ritual {
   position: relative;
   background: var(--paper-deep);
-  max-width: 72rem;
-  margin: clamp(4.5rem, 10vh, 7rem) auto 0;
-  padding: clamp(3.5rem, 8vh, 5.5rem) clamp(2rem, 5vw, 5rem);
+  padding: var(--sec-y) var(--pad-x);
   text-align: center;
 }
 .ritual-title {
