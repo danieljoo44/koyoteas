@@ -1,0 +1,38 @@
+{
+  "targetDate": "2026-07-13",
+  "partySize": 2,
+
+  "slotPriority": [
+    "5am Alpine Start Departure",
+    "6:30am-7am Departures",
+    "7am-8am Departures",
+    "8am-9am Departures"
+  ],
+  "destinationPriority": ["Lake Louise", "Moraine Lake"],
+  "fallbackToEarliest": true,
+
+  "release": {
+    "daysBefore": 2,
+    "time": "08:00",
+    "timezone": "America/Edmonton"
+  },
+  "warmupMinutes": 12,
+
+  "pollSecondsMin": 2.5,
+  "pollSecondsMax": 4.5,
+  "pollMaxMinutes": 30,
+
+  "advancePastReview": true,
+
+  "notify": {
+    "provider": "ntfy",
+    "ntfy": {
+      "server": "https://ntfy.sh",
+      "topic": "lls-daniel-7k3v9q2mrx"
+    },
+    "pushover": {
+      "token": "",
+      "user": ""
+    }
+  }
+}

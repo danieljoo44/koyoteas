@@ -19,8 +19,9 @@ let prefs = { book: 43, chapter: 3, source: 'sermon', speaker: '', sermonTitle: 
 try {
   prefs = { ...prefs, ...(JSON.parse(localStorage.getItem(PREFS_KEY)) || {}) };
 } catch { /* ignore */ }
+if (prefs.source === 'devotional') prefs.source = 'study'; // merged types
 
-const SOURCE_LABEL = { study: 'Study', devotional: 'Devotional', sermon: 'Sermon' };
+const SOURCE_LABEL = { study: 'Study', sermon: 'Sermon' };
 
 // ---------- tiny DOM helper ----------
 function el(tag, attrs = {}, ...children) {
@@ -72,7 +73,8 @@ function toast(msg, opts = {}) {
 
 // ---------- data ----------
 async function refreshFromStore() {
-  notes = await store.getAllNotes();
+  // Legacy 'devotional' notes (pre-merge mirrors) render as 'study'.
+  notes = (await store.getAllNotes()).map((n) => (n.source === 'devotional' ? { ...n, source: 'study' } : n));
   byId = new Map(notes.map((n) => [n.id, n]));
 }
 
@@ -91,8 +93,8 @@ function heatColor(count, max) {
   if (count === 0) return null;
   const effMax = Math.max(max, 6); // keep 1-note cells light even in a sparse map
   const t = 0.12 + 0.88 * (count / effMax);
-  const lo = [224, 231, 255];
-  const hi = [49, 46, 129];
+  const lo = [227, 224, 247];
+  const hi = [42, 38, 99];
   const c = lo.map((l, i) => Math.round(l + (hi[i] - l) * t));
   return { bg: `rgb(${c[0]},${c[1]},${c[2]})`, dark: t > 0.5 };
 }
@@ -121,6 +123,7 @@ onSync(async (state, detail) => {
     }
   } else if (state === 'synced') {
     lastSyncAt = detail.at;
+    pill.classList.add('ok');
     pill.textContent = detail.pending ? `${detail.pending} queued` : 'Synced';
     if (detail.conflicts) {
       toast(`Sync conflict: kept both versions of ${detail.conflicts} note${detail.conflicts > 1 ? 's' : ''}`);
@@ -169,7 +172,7 @@ function noteCard(note) {
     el('span', { class: 'note-date' }, fmtDateTime(note.createdAt))
   );
 
-  const card = el('div', { class: 'note-card' }, head);
+  const card = el('div', { class: `note-card src-${note.source}` }, head);
   if (note.source === 'sermon' && (note.speaker || note.sermonTitle)) {
     card.append(
       el('div', { class: 'note-sermon-meta' },
@@ -224,8 +227,9 @@ function noteCard(note) {
 }
 
 function emptyState(icon, lines, showAddLink) {
+  // A single typographic ornament keeps empty states quiet and bookish.
   return el('div', { class: 'empty-state' },
-    el('div', { class: 'big' }, icon),
+    el('div', { class: 'big' }, '❧'),
     lines.map((l) => el('p', {}, l)),
     showAddLink ? el('p', {}, el('a', { href: '#/add' }, 'Add your first note')) : null
   );
@@ -252,7 +256,7 @@ function renderAdd() {
   let source = init.source;
   const segButtons = {};
   const segmented = el('div', { class: 'segmented' },
-    ['study', 'devotional', 'sermon'].map((s) => {
+    ['study', 'sermon'].map((s) => {
       const b = el('button', { type: 'button', onclick: () => setSource(s) }, SOURCE_LABEL[s]);
       segButtons[s] = b;
       return b;
@@ -308,10 +312,26 @@ function renderAdd() {
   // --- note text ---
   const textArea = el('textarea', { placeholder: 'Write your note…', 'aria-label': 'Note text' });
   textArea.value = init.text;
-  const autogrow = () => {
-    textArea.style.height = 'auto';
-    textArea.style.height = Math.max(textArea.scrollHeight, window.innerWidth >= 840 ? 260 : 140) + 'px';
+  // Compact while browsing the form; expands when focused for writing room.
+  const heightFloor = () => {
+    const desktop = window.innerWidth >= 840;
+    if (document.activeElement === textArea) return desktop ? 400 : 300;
+    return desktop ? 260 : 140;
   };
+  const autogrow = () => {
+    // Measure content height with the transition off, then set the final
+    // height so CSS animates between the old and new values.
+    const prev = textArea.style.height;
+    textArea.style.transition = 'none';
+    textArea.style.height = 'auto';
+    const content = textArea.scrollHeight;
+    textArea.style.height = prev;
+    void textArea.offsetHeight;
+    textArea.style.transition = '';
+    textArea.style.height = Math.max(content, heightFloor()) + 'px';
+  };
+  textArea.addEventListener('focus', autogrow);
+  textArea.addEventListener('blur', autogrow);
   textArea.addEventListener('input', () => {
     autogrow();
     if (!editing) localStorage.setItem(DRAFT_KEY, textArea.value);
@@ -510,7 +530,7 @@ function renderBrowse() {
 function renderLog() {
   view.append(el('h2', { class: 'view-title' }, 'Log'));
 
-  const chips = ['all', 'study', 'devotional', 'sermon'].map((f) =>
+  const chips = ['all', 'study', 'sermon'].map((f) =>
     el('button', {
       class: `chip chip-${f}${logState.filter === f ? ' active' : ''}`,
       onclick: () => { logState.filter = f; route(); },
@@ -571,7 +591,7 @@ function renderLog() {
 function renderHeat() {
   const filtered = heatState.filter === 'all' ? notes : notes.filter((n) => n.source === heatState.filter);
 
-  const chips = ['all', 'study', 'devotional', 'sermon'].map((f) =>
+  const chips = ['all', 'study', 'sermon'].map((f) =>
     el('button', {
       class: `chip chip-${f}${heatState.filter === f ? ' active' : ''}`,
       onclick: () => { heatState.filter = f; heatState.selVerse = null; route(); },
@@ -581,8 +601,8 @@ function renderHeat() {
   const legend = el('div', { class: 'heat-legend' },
     'fewer',
     [0, 0.25, 0.5, 0.75, 1].map((t) => {
-      const lo = [224, 231, 255];
-      const hi = [49, 46, 129];
+      const lo = [227, 224, 247];
+      const hi = [42, 38, 99];
       const c = lo.map((l, i) => Math.round(l + (hi[i] - l) * t));
       const sw = el('span', { class: 'swatch' });
       sw.style.background = t === 0 ? 'var(--cell0)' : `rgb(${c[0]},${c[1]},${c[2]})`;
@@ -862,8 +882,15 @@ authForm.addEventListener('submit', async (e) => {
 
 // ---------- boot ----------
 async function boot() {
+  // Skip the service worker on localhost so dev changes show up on plain
+  // refresh; production (HTTPS host) gets the full offline cache.
+  const isDev = ['localhost', '127.0.0.1'].includes(location.hostname);
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    if (isDev) {
+      navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
+    } else {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
   }
   await refreshFromStore();
   if (!location.hash) location.hash = '#/add';

@@ -1,7 +1,7 @@
 # Margin
 
 A Bible verse-anchored note-taking PWA. Every note is tied to a verse (or range),
-so sermon notes and devotional thoughts resurface whenever you return to a passage.
+so sermon notes and study thoughts resurface whenever you return to a passage.
 
 - **One shared library** across iPhone + desktop via a small Node/Express + SQLite server
 - **Offline-first** on the phone: notes are cached in IndexedDB, writes queue in an
@@ -28,47 +28,39 @@ node scripts/set-passphrase.js "my new passphrase"
 Environment variables: `PORT` (default 8787), `DATA_DIR` (default `./data`),
 `PASSPHRASE` (optional — seeds the passphrase on first boot).
 
-## Deploy on your home server (Docker + Tailscale)
-
-Copy the `margin/` folder to the server (or clone it), then:
+## Deploy to Fly.io
 
 ```bash
+curl -L https://fly.io/install.sh | sh      # once; then: fly auth signup (or login)
 cd margin
-docker compose up -d --build
+fly launch --no-deploy      # reuses the included fly.toml + Dockerfile;
+                            # pick a unique app name and a region near you
+fly volumes create margin_data --size 1
+fly secrets set PASSPHRASE="choose-a-long-passphrase"   # optional; or use the first-run screen
+fly deploy
 ```
 
-The app is now on `http://localhost:8787`, and the SQLite database plus its daily
-backups live in `./data/` **on the host**, so container rebuilds never touch your
-notes.
+The app is then at `https://<app-name>.fly.dev` with HTTPS (required for PWA
+install and offline mode). The SQLite database and its daily backups live on the
+volume, so deploys never touch your notes. Keep it at **one machine** — SQLite
+wants a single writer (`fly scale count 1` if it ever creeps up).
 
-**HTTPS via Tailscale** — required: browsers only allow service workers (offline
-mode) and full PWA install on secure origins, so don't skip this. With Tailscale
-on the server (MagicDNS + HTTPS certificates enabled under DNS settings in the
-admin console):
+The machine auto-sleeps when idle and wakes on the first request (a second or
+two); the app itself opens instantly from its offline cache regardless.
 
-```bash
-tailscale serve --bg localhost:8787
-```
-
-That publishes the app inside your tailnet at `https://<machine>.<tailnet>.ts.net`
-with a valid certificate — nothing is exposed to the public internet; the
-passphrase is a second layer on top.
-
-**Updating the app:** pull/copy the new files, bump `VERSION` in `public/sw.js`,
-then `docker compose up -d --build`.
+**Grabbing a server backup:** `fly ssh sftp get /data/backups/<file>.db`
+(list them with `fly ssh console -C "ls /data/backups"`).
 
 **Resetting the passphrase:**
-`docker compose exec margin node scripts/set-passphrase.js "new passphrase"`
+`fly ssh console -C "node scripts/set-passphrase.js \"new passphrase\""`
 
-**Backups:** grab `./data/backups/*.db` off the host any way you like (they're
-plain SQLite files — restoring is just replacing `data/notes.db` while the
-container is stopped), or use the in-app JSON export.
+**Updating the app:** bump `VERSION` in `public/sw.js`, then `fly deploy`.
 
 ## Install on your devices
 
-- **iPhone:** install the Tailscale app and connect, then open the
-  `https://….ts.net` URL in Safari → Share → **Add to Home Screen**. It launches
-  full-screen with the app icon, and works offline in the pew.
+- **iPhone:** open `https://<app-name>.fly.dev` in Safari → Share →
+  **Add to Home Screen**. It launches full-screen with the app icon, and works
+  offline in the pew.
 - **Desktop:** open the same URL in Chrome/Edge → install icon in the address bar
   ("Install Margin").
 

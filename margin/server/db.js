@@ -35,6 +35,10 @@ CREATE TABLE IF NOT EXISTS settings (
 );
 `);
 
+// 2026-07: the 'devotional' type was merged into 'study'. Idempotent, and it
+// deliberately leaves updated_at untouched so no sync conflicts are triggered.
+db.exec(`UPDATE notes SET source = 'study' WHERE source = 'devotional'`);
+
 const BACKUP_DIR = path.join(DATA_DIR, 'backups');
 const KEEP_BACKUPS = 30;
 

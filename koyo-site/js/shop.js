@@ -13,6 +13,8 @@ const CART_ID_KEY = "koyo-shopify-cart-id";
 let lenisRef = null;
 let drawer, backdrop, listEl, subtotalRow, subtotalEl, checkoutBtn, noteEl, countEls;
 
+const fmtUsd = (n) => `$${Number(n) % 1 === 0 ? Number(n) : Number(n).toFixed(2)}`;
+
 /* ── Shopify Storefront API ───────────────────────────────────── */
 
 async function gql(query, variables = {}) {
@@ -298,7 +300,7 @@ function renderLocalLines(items) {
       title: item.name,
       kr: item.kr,
       qty: item.qty,
-      price: item.price ? `$${item.price}` : "",
+      price: item.price ? fmtUsd(item.price) : "",
       onQty: (q) => {
         if (q <= 0) items.splice(items.indexOf(item), 1);
         else item.qty = q;
@@ -315,7 +317,7 @@ function renderLocalLines(items) {
   const total = items.reduce((s, i) => s + (i.price || 0) * i.qty, 0);
   if (total > 0) {
     subtotalRow.style.display = "flex";
-    subtotalEl.textContent = `$${total}`;
+    subtotalEl.textContent = fmtUsd(total);
   } else {
     subtotalRow.style.display = "none";
   }

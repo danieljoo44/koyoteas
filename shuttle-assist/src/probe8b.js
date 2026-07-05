@@ -1,0 +1,72 @@
+// Cleanup continued: acknowledge dialogs that appear AFTER opening the cart,
+// record the cart panel, and release the held item.
+import { chromium } from 'playwright-core';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+const outDir = path.join(root, 'runs', `probe8b-${Date.now()}`);
+fs.mkdirSync(outDir, { recursive: true });
+const log = (m) => { const l = `[${new Date().toISOString()}] ${m}`; console.log(l); fs.appendFileSync(path.join(outDir, 'probe.log'), l + '\n'); };
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let step = 0;
+async function record(page, name) {
+  step++;
+  const tag = `${String(step).padStart(2, '0')}-${name}`;
+  await page.screenshot({ path: path.join(outDir, `${tag}.png`), fullPage: true }).catch(() => {});
+  const snap = await page.locator('body').ariaSnapshot().catch(() => '');
+  fs.writeFileSync(path.join(outDir, `${tag}.aria.txt`), snap);
+  log(`recorded ${tag} | aria=${snap.length}`);
+}
+async function ackAll(page) {
+  for (let i = 0; i < 4; i++) {
+    const ack = page.getByRole('button', { name: /acknowledge|i consent/i }).first();
+    if (await ack.count()) { await ack.click().catch(() => {}); log('dismissed a dialog'); await sleep(900); }
+    else break;
+  }
+}
+const browser = await chromium.launchPersistentContext(path.join(root, '.profile'), { channel: 'chrome', headless: false, viewport: { width: 1440, height: 900 } });
+const page = browser.pages()[0] || (await browser.newPage());
+page.setDefaultTimeout(15000);
+try {
+  await page.goto('https://reservation.pc.gc.ca/', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+  await sleep(1500);
+  await ackAll(page);
+  await page.getByRole('button', { name: /view shopping cart/i }).first().click();
+  await sleep(2000);
+  await ackAll(page);
+  await sleep(1000);
+  await record(page, 'cart');
+  log(`url: ${page.url()}`);
+  const text = (await page.evaluate(() => document.body.innerText).catch(() => '')).replace(/\s+/g, ' ');
+  log(`text: ${JSON.stringify(text.slice(0, 1200))}`);
+  const btns = page.getByRole('button');
+  const names = [];
+  for (let i = 0; i < (await btns.count()); i++) {
+    const t = ((await btns.nth(i).getAttribute('aria-label').catch(() => null)) || (await btns.nth(i).innerText().catch(() => ''))).trim().replace(/\s+/g, ' ');
+    if (t) names.push(t.slice(0, 90));
+  }
+  log(`buttons: ${JSON.stringify(names)}`);
+  const remove = page.getByRole('button', { name: /remove|delete|trash/i }).first();
+  if (await remove.count()) {
+    await remove.click();
+    await sleep(1500);
+    const confirm = page.getByRole('button', { name: /^(yes|ok|confirm|remove)/i }).first();
+    if (await confirm.count()) await confirm.click().catch(() => {});
+    await sleep(1500);
+    await record(page, 'cleared');
+    const cartTxt = (await page.getByRole('button', { name: /view shopping cart/i }).first().innerText().catch(() => '')).replace(/\s+/g, ' ');
+    log(`cart control after removal: "${cartTxt}"`);
+  } else {
+    log('still no remove control — see buttons dump');
+  }
+} catch (e) {
+  log(`error: ${e.stack || e.message}`);
+  await record(page, 'error');
+} finally {
+  await record(page, 'final');
+  await browser.close();
+  log('done');
+}

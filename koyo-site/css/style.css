@@ -980,6 +980,44 @@ main { position: relative; z-index: 1; }
   .shelf-grid { grid-template-columns: 1fr; gap: 3.4rem; max-width: 22rem; }
 }
 
+/* ── Teaware ────────────────────────────────────────────────── */
+
+.teaware {
+  position: relative;
+  padding: var(--sec-y) var(--pad-x);
+  border-top: 1px solid var(--line);
+}
+.gear-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(3rem, 6vh, 4.5rem) clamp(2rem, 4vw, 4rem);
+  max-width: 72rem;
+  margin: clamp(3.5rem, 9vh, 6rem) auto 0;
+}
+.gear-card { display: block; text-align: center; }
+.gear-media {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+}
+.gear-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s var(--ease-out);
+}
+.gear-card:hover .gear-media img { transform: scale(1.04); }
+.gear-card:hover .shelf-name { color: var(--clay); }
+@media (max-width: 900px) {
+  .gear-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .gear-grid { grid-template-columns: 1fr; max-width: 20rem; }
+}
+
 /* ── Journal ────────────────────────────────────────────────── */
 
 .journal {

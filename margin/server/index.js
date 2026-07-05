@@ -90,7 +90,7 @@ function rateLimited(ip) {
 }
 
 // ---------- notes ----------
-const SOURCES = ['study', 'devotional', 'sermon'];
+const SOURCES = ['study', 'sermon'];
 
 function rowToNote(r) {
   return {
@@ -131,7 +131,9 @@ function cleanNote(n) {
   if (!Number.isInteger(chapter) || chapter < 1 || chapter > 150) return null;
   if (!Number.isInteger(verseStart) || verseStart < 1 || verseStart > 200) return null;
   if (verseEnd !== null && (!Number.isInteger(verseEnd) || verseEnd <= verseStart || verseEnd > 200)) verseEnd = null;
-  if (!SOURCES.includes(n.source)) return null;
+  // 'devotional' merged into 'study' (2026-07); accept it from old exports.
+  const source = n.source === 'devotional' ? 'study' : n.source;
+  if (!SOURCES.includes(source)) return null;
   const text = String(n.text || '').trim().slice(0, 100000);
   if (!text) return null;
   const id = String(n.id || '').slice(0, 64);
@@ -144,7 +146,7 @@ function cleanNote(n) {
     chapter,
     verseStart,
     verseEnd,
-    source: n.source,
+    source,
     speaker: n.speaker ? String(n.speaker).trim().slice(0, 200) : null,
     sermonTitle: n.sermonTitle ? String(n.sermonTitle).trim().slice(0, 300) : null,
     text,

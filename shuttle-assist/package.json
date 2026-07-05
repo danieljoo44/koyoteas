@@ -1,0 +1,16 @@
+{
+  "name": "shuttle-assist",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal reservation assist for the Parks Canada Lake Louise / Moraine Lake shuttle. One booking, human-paced, stops at checkout.",
+  "scripts": {
+    "run": "node src/index.js run",
+    "dry-run": "node src/index.js dry-run",
+    "probe": "node src/probe.js"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2",
+    "playwright-core": "^1.61.1"
+  }
+}

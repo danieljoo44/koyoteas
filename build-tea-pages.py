@@ -398,6 +398,7 @@ TEMPLATE = """<!DOCTYPE html>
           <a href="artemisia.html">Artemisia</a>
           <a href="persimmon.html">Persimmon Leaf</a>
           <a href="hwangto.html">Hwangto</a>
+          <a href="../shop.html#teaware">Teaware</a>
         </div>
         <div class="footer-col">
           <p class="footer-head mono">COMPANY</p>
