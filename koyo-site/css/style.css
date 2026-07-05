@@ -543,12 +543,50 @@ main { position: relative; z-index: 1; }
 }
 .spec-panel:nth-child(even) .spec-stage { order: 2; }
 /* mirrored annotations on flipped panels */
-.spec-panel:nth-child(even) .n1 { left: auto; right: 50%; margin: 0 10rem 0 0; }
+.spec-panel:nth-child(even) .n1 { left: auto; right: 50%; margin: 0 12rem 0 0; }
 .spec-panel:nth-child(even) .n1::before { left: auto; right: -5.2rem; }
-.spec-panel:nth-child(even) .n2 { right: auto; left: 50%; margin: 0 0 0 9.5rem; }
+.spec-panel:nth-child(even) .n2 { right: auto; left: 50%; margin: 0 0 0 12rem; }
 .spec-panel:nth-child(even) .n2::before { right: auto; left: -5.2rem; }
-.spec-panel:nth-child(even) .n3 { left: auto; right: 50%; margin: 0 9.5rem 0 0; }
+.spec-panel:nth-child(even) .n3 { left: auto; right: 50%; margin: 0 12rem 0 0; }
 .spec-panel:nth-child(even) .n3::before { left: auto; right: -5.2rem; }
+
+/* hwangto — vertical lines to its three pieces (one top, two bottom) */
+.spec-panel[data-tea="hwangto"] .spec-note { transform: translateX(-50%); text-align: center; }
+.spec-panel[data-tea="hwangto"] .spec-note::before {
+  width: 1px;
+  height: 2.6rem;
+  left: 50%;
+  right: auto;
+}
+.spec-panel[data-tea="hwangto"] .n1 {
+  top: 3%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  margin: 0;
+}
+.spec-panel[data-tea="hwangto"] .n1::before { top: calc(100% + 0.6rem); bottom: auto; }
+.spec-panel[data-tea="hwangto"] .n2 {
+  top: auto;
+  bottom: 1%;
+  left: 50%;
+  right: auto;
+  margin: 0;
+  transform: translateX(calc(-50% - 10.5rem));
+}
+.spec-panel[data-tea="hwangto"] .n2::before { top: auto; bottom: calc(100% + 0.6rem); }
+.spec-panel[data-tea="hwangto"] .n3 {
+  top: auto;
+  bottom: 1%;
+  left: 50%;
+  right: auto;
+  margin: 0;
+  transform: translateX(calc(-50% + 10.5rem));
+}
+.spec-panel[data-tea="hwangto"] .n3::before { top: auto; bottom: calc(100% + 0.6rem); left: 50%; right: auto; }
+@media (max-width: 980px) {
+  .spec-panel[data-tea="hwangto"] .spec-note { transform: none; text-align: left; }
+}
 .spec-stage {
   position: relative;
   height: clamp(22rem, 56vh, 32rem);
@@ -582,14 +620,14 @@ main { position: relative; z-index: 1; }
   background: rgba(30, 26, 22, 0.28);
 }
 /* right-side labels, line reaching left toward the leaf */
-.n1 { top: 10%; left: 50%; margin-left: 10rem; }
+.n1 { top: 10%; left: 50%; margin-left: 12rem; }
 .n1::before { left: -5.2rem; }
-.n3 { bottom: 8%; left: 50%; margin-left: 9.5rem; }
+.n3 { bottom: 8%; left: 50%; margin-left: 12rem; }
 .n3::before { left: -5.2rem; }
 /* left-side labels, line reaching right */
-.n2 { top: 48%; right: 50%; margin-right: 9.5rem; }
+.n2 { top: 48%; right: 50%; margin-right: 12rem; }
 .n2::before { right: -5.2rem; }
-.n3-left { left: auto; right: 50%; margin: 0 9.5rem 0 0; }
+.n3-left { left: auto; right: 50%; margin: 0 12rem 0 0; }
 .n3-left::before { left: auto; right: -5.2rem; }
 
 
@@ -881,6 +919,17 @@ main { position: relative; z-index: 1; }
   background: var(--paper);
   padding: var(--sec-y) var(--pad-x);
 }
+.shop-page .shelf {
+  background: transparent;
+  padding-top: clamp(9rem, 18vh, 12rem);
+  min-height: 78vh;
+}
+.shelf-sub {
+  max-width: 34rem;
+  margin: 1.4rem auto 0;
+  color: var(--ink-soft);
+}
+.mobile-menu-shop-all { color: var(--ink); }
 .shelf-head { text-align: center; }
 .shelf-title {
   font-family: var(--serif);

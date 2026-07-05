@@ -222,7 +222,7 @@ TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html#ethos" data-cursor>Story</a>
       <a href="../index.html#specimen" data-cursor>Collection</a>
       <div class="nav-shop">
-        <a href="../index.html#shelf" data-cursor aria-haspopup="true">Shop</a>
+        <a href="../shop.html" data-cursor aria-haspopup="true">Shop</a>
         <div class="nav-dropdown" aria-label="Teas">
           <a href="sejak.html" data-cursor>Sejak <span>세작</span></a>
           <a href="artemisia.html" data-cursor>Artemisia <span>쑥차</span></a>
@@ -247,7 +247,7 @@ TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html#ritual">Ritual</a>
     </nav>
     <div class="mobile-menu-shop">
-      <p class="mono">SHOP — 상점</p>
+      <a class="mono mobile-menu-shop-all" href="../shop.html">SHOP — 상점 →</a>
       <a href="sejak.html">Sejak 세작</a>
       <a href="artemisia.html">Artemisia 쑥차</a>
       <a href="persimmon.html">Persimmon Leaf 감잎차</a>
@@ -393,6 +393,7 @@ TEMPLATE = """<!DOCTYPE html>
       <div class="footer-cols">
         <div class="footer-col">
           <p class="footer-head mono">SHOP</p>
+          <a href="../shop.html" data-cursor>The Shelf — all teas</a>
           <a href="sejak.html" data-cursor>Sejak</a>
           <a href="artemisia.html" data-cursor>Artemisia</a>
           <a href="persimmon.html" data-cursor>Persimmon Leaf</a>
