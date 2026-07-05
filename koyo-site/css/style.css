@@ -583,19 +583,19 @@ main { position: relative; z-index: 1; }
 }
 .spec-panel[data-tea="hwangto"] .n3::before { top: auto; bottom: calc(100% + 0.6rem); left: 50%; right: auto; }
 
-/* per-note line lengths — every tip ends the same 20px from the leaf */
-.spec-panel[data-tea="sejak"] .n1::before { left: -7.96rem; width: 6.96rem; }
-.spec-panel[data-tea="sejak"] .n2::before { right: -12.8rem; width: 11.8rem; }
-.spec-panel[data-tea="sejak"] .n3::before { left: -4.59rem; width: 3.59rem; }
-.spec-panel[data-tea="artemisia"] .n1::before { left: auto; right: -10.93rem; width: 9.93rem; }
-.spec-panel[data-tea="artemisia"] .n2::before { right: auto; left: -5.78rem; width: 4.78rem; }
-.spec-panel[data-tea="artemisia"] .n3::before { left: auto; right: -14.02rem; width: 13.02rem; }
-.spec-panel[data-tea="persimmon"] .n1::before { left: -9.03rem; width: 8.03rem; }
-.spec-panel[data-tea="persimmon"] .n2::before { right: -4.6rem; width: 3.6rem; }
-.spec-panel[data-tea="persimmon"] .n3::before { left: -8.14rem; width: 7.14rem; }
-.spec-panel[data-tea="hwangto"] .n1::before { height: 9.31rem; }
-.spec-panel[data-tea="hwangto"] .n2::before { height: 10.31rem; }
-.spec-panel[data-tea="hwangto"] .n3::before { height: 7.81rem; }
+/* uniform 4.2rem lines — notes positioned so every tip sits 60px from the leaf */
+.spec-panel[data-tea="sejak"] .n1 { margin-left: 11.75rem; }
+.spec-panel[data-tea="sejak"] .n2 { margin-right: 6.88rem; }
+.spec-panel[data-tea="sejak"] .n3 { margin-left: 15.13rem; }
+.spec-panel[data-tea="artemisia"] .n1 { margin: 0 8.75rem 0 0; }
+.spec-panel[data-tea="artemisia"] .n2 { margin: 0 0 0 13.94rem; white-space: normal; max-width: 9rem; line-height: 1.7; }
+.spec-panel[data-tea="artemisia"] .n3 { margin: 0 5.69rem 0 0; }
+.spec-panel[data-tea="persimmon"] .n1 { margin-left: 10.69rem; }
+.spec-panel[data-tea="persimmon"] .n2 { margin-right: 15.13rem; white-space: normal; max-width: 8rem; line-height: 1.7; }
+.spec-panel[data-tea="persimmon"] .n3 { margin-left: 11.56rem; }
+.spec-panel[data-tea="hwangto"] .n1 { top: calc(3% + 3.95rem); }
+.spec-panel[data-tea="hwangto"] .n2 { bottom: calc(1% + 4.95rem); }
+.spec-panel[data-tea="hwangto"] .n3 { bottom: calc(1% + 2.45rem); }
 @media (max-width: 980px) {
   .spec-panel[data-tea="hwangto"] .spec-note { transform: none; text-align: left; }
 }
@@ -949,8 +949,8 @@ main { position: relative; z-index: 1; }
   min-height: 78vh;
 }
 .shelf-sub {
-  max-width: 34rem;
-  margin: 1.4rem auto 0;
+  max-width: 42rem;
+  margin: 1.8rem auto 0;
   color: var(--ink-soft);
 }
 .mobile-menu-shop-all { color: var(--ink); }
@@ -962,10 +962,10 @@ main { position: relative; z-index: 1; }
 }
 .shelf-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(2.5rem, 4.5vw, 4.5rem);
-  max-width: 84rem;
-  margin: clamp(3.5rem, 9vh, 6.5rem) auto 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(4.5rem, 10vh, 7rem) clamp(3rem, 7vw, 7rem);
+  max-width: 66rem;
+  margin: clamp(4rem, 10vh, 7rem) auto 0;
 }
 .shelf-card { display: block; text-align: center; }
 .shelf-media {
@@ -979,6 +979,7 @@ main { position: relative; z-index: 1; }
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 2.5%;
   transition: opacity 0.7s var(--ease-out), transform 1.1s var(--ease-out);
 }
 .shelf-loose { opacity: 0; transform: scale(1.05); }
@@ -1006,7 +1007,7 @@ main { position: relative; z-index: 1; }
   color: var(--ink-faint);
 }
 @media (max-width: 1080px) {
-  .shelf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 46rem; }
+  .shelf-grid { max-width: 46rem; gap: 4rem 3rem; }
 }
 @media (max-width: 640px) {
   .shelf-grid { grid-template-columns: 1fr; gap: 3.4rem; max-width: 22rem; }
