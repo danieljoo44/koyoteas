@@ -229,8 +229,8 @@ TEMPLATE = """<!DOCTYPE html>
         <a href="../shop.html" data-cursor aria-haspopup="true">Shop</a>
         <div class="nav-dropdown" aria-label="Teas">
           <a href="sejak.html" data-cursor>Sejak <span>세작</span></a>
-          <a href="artemisia.html" data-cursor>Artemisia <span>쑥차</span></a>
-          <a href="persimmon.html" data-cursor>Persimmon Leaf <span>감잎차</span></a>
+          <a href="artemisia.html" data-cursor>Artemisia <span>쑥</span></a>
+          <a href="persimmon.html" data-cursor>Persimmon Leaf <span>감잎</span></a>
           <a href="hwangto.html" data-cursor>Hwangto <span>황토</span></a>
         </div>
       </div>
@@ -253,8 +253,8 @@ TEMPLATE = """<!DOCTYPE html>
     <div class="mobile-menu-shop">
       <a class="mono mobile-menu-shop-all" href="../shop.html">SHOP — 상점 →</a>
       <a href="sejak.html">Sejak 세작</a>
-      <a href="artemisia.html">Artemisia 쑥차</a>
-      <a href="persimmon.html">Persimmon Leaf 감잎차</a>
+      <a href="artemisia.html">Artemisia 쑥</a>
+      <a href="persimmon.html">Persimmon Leaf 감잎</a>
       <a href="hwangto.html">Hwangto 황토</a>
     </div>
     <div class="mobile-menu-foot mono">
