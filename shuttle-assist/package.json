@@ -7,7 +7,7 @@
   "scripts": {
     "run": "node src/index.js run",
     "dry-run": "node src/index.js dry-run",
-    "probe": "node src/probe.js"
+    "probe": "node probes/probe.js"
   },
   "dependencies": {
     "luxon": "^3.7.2",

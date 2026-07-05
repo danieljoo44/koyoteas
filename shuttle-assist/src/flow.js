@@ -176,14 +176,12 @@ export async function scanSlotTable(page, targetISO, log) {
 
 // Order candidate rows: destination priority first, and within a destination
 // the "(Last Minute)" row first — that is the bucket the 2-day release fills.
+// Rows that match none of the configured destinations are never booked.
 export function pickRows(rows, destinationPriority) {
-  const available = rows.filter((r) => /^Available$/i.test(r.status));
-  const rank = (r) => {
-    let d = destinationPriority.findIndex((dest) => r.rowName.toLowerCase().includes(dest.toLowerCase()));
-    if (d === -1) d = destinationPriority.length;
-    return d * 2 + (r.lastMinute ? 0 : 1);
-  };
-  return available.sort((a, b) => rank(a) - rank(b));
+  const rank = (r) => destinationPriority.findIndex((dest) => r.rowName.toLowerCase().includes(dest.toLowerCase()));
+  return rows
+    .filter((r) => /^Available$/i.test(r.status) && rank(r) !== -1)
+    .sort((a, b) => (rank(a) * 2 + (a.lastMinute ? 0 : 1)) - (rank(b) * 2 + (b.lastMinute ? 0 : 1)));
 }
 
 export async function tooEarlyAlert(page) {
@@ -202,23 +200,52 @@ export async function clearAlerts(page) {
   if (await close.count()) await close.click().catch(() => {});
 }
 
+// How many items the header cart shows (0 when it just says "Cart").
+export async function cartItemCount(page) {
+  const cart = page.getByRole('button', { name: /view shopping cart/i }).first();
+  if (!(await cart.count())) return 0;
+  const text = (await cart.innerText().catch(() => '')).replace(/\s+/g, ' ');
+  const m = text.match(/(\d+)\s*item/i);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
 // Click an Available cell and wait for one of the known outcomes.
-// Returns: 'reserve-visible' | 'too-early' | 'nothing'
-export async function selectCell(page, row, log) {
+// The release-gate alert can render AFTER the Reserve button does, so an
+// unarmed dry run passes graceMs to wait it out before declaring success;
+// the real morning uses graceMs=0 because clickReserve resolves the truth
+// without losing time.
+// Returns: 'reserve-visible' | 'too-early' | 'nothing' | 'stale'
+export async function selectCell(page, row, log, graceMs = 0) {
   await humanPause(250, 600);
-  await row.cell.click();
+  try {
+    await row.cell.click({ timeout: 8000 });
+  } catch (e) {
+    log(`cell click failed (${e.message.split('\n')[0]}) — table needs a refresh`);
+    return 'stale';
+  }
   const reserveBtn = page.getByRole('button', { name: /^reserve$/i }).first();
   const deadline = Date.now() + 5000;
   while (Date.now() < deadline) {
-    if (await reserveBtn.count()) {
-      try {
-        if (await reserveBtn.isVisible()) return 'reserve-visible';
-      } catch {}
-    }
     const early = await tooEarlyAlert(page);
     if (early) {
       log(`site says: ${early}`);
       return 'too-early';
+    }
+    if (await reserveBtn.count()) {
+      try {
+        if (await reserveBtn.isVisible()) {
+          const graceEnd = Date.now() + graceMs;
+          while (Date.now() < graceEnd) {
+            const lateAlert = await tooEarlyAlert(page);
+            if (lateAlert) {
+              log(`site says (late): ${lateAlert}`);
+              return 'too-early';
+            }
+            await sleep(200);
+          }
+          return 'reserve-visible';
+        }
+      } catch {}
     }
     await sleep(250);
   }
@@ -230,7 +257,12 @@ export async function selectCell(page, row, log) {
 export async function clickReserve(page, log) {
   const reserveBtn = page.getByRole('button', { name: /^reserve$/i }).first();
   await humanPause(200, 500);
-  await reserveBtn.click();
+  try {
+    await reserveBtn.click({ timeout: 8000 });
+  } catch (e) {
+    log(`Reserve click failed (${e.message.split('\n')[0]})`);
+    return 'gone';
+  }
   const deadline = Date.now() + 25000;
   while (Date.now() < deadline) {
     await dismissInterstitials(page, log);
