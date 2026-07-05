@@ -9,9 +9,9 @@
       "autoPort": true
     },
     {
-      "name": "verse-notes",
+      "name": "margin",
       "runtimeExecutable": "/Users/danieljoo/.local/node/bin/node",
-      "runtimeArgs": ["/Users/danieljoo/Desktop/Claude Code Koyo Project/verse-notes/server/index.js"],
+      "runtimeArgs": ["/Users/danieljoo/Desktop/Claude Code Koyo Project/margin/server/index.js"],
       "port": 8787
     },
     {

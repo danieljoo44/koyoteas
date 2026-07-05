@@ -60,12 +60,12 @@ function createSession(req, res) {
   const secure = req.secure ? '; Secure' : '';
   res.setHeader(
     'Set-Cookie',
-    `vn_session=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_DAYS * 86400}${secure}`
+    `margin_session=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_DAYS * 86400}${secure}`
   );
 }
 
 function checkSession(req) {
-  const token = getCookie(req, 'vn_session');
+  const token = getCookie(req, 'margin_session');
   if (!token) return false;
   const row = db.prepare('SELECT created_at FROM sessions WHERE token_hash = ?').get(sha256(token));
   if (!row) return false;
@@ -207,9 +207,9 @@ app.post('/api/auth/login', (req, res) => {
 });
 
 app.post('/api/auth/logout', (req, res) => {
-  const token = getCookie(req, 'vn_session');
+  const token = getCookie(req, 'margin_session');
   if (token) db.prepare('DELETE FROM sessions WHERE token_hash = ?').run(sha256(token));
-  res.setHeader('Set-Cookie', 'vn_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0');
+  res.setHeader('Set-Cookie', 'margin_session=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0');
   res.json({ ok: true });
 });
 
@@ -248,8 +248,8 @@ app.post('/api/sync', (req, res) => {
 });
 
 app.get('/api/export', (req, res) => {
-  res.setHeader('Content-Disposition', `attachment; filename="verse-notes-${nowIso().slice(0, 10)}.json"`);
-  res.json({ app: 'verse-notes', version: 1, exportedAt: nowIso(), notes: allNotes() });
+  res.setHeader('Content-Disposition', `attachment; filename="margin-${nowIso().slice(0, 10)}.json"`);
+  res.json({ app: 'margin', version: 1, exportedAt: nowIso(), notes: allNotes() });
 });
 
 app.post('/api/import', async (req, res) => {
@@ -291,6 +291,6 @@ app.use(
 );
 
 app.listen(PORT, () => {
-  console.log(`Verse Notes running on http://localhost:${PORT} (data: ${DATA_DIR})`);
+  console.log(`Margin running on http://localhost:${PORT} (data: ${DATA_DIR})`);
   startBackupSchedule();
 });

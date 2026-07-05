@@ -13,8 +13,8 @@ const browseState = { book: null, chapter: null };
 const logState = { filter: 'all', query: '' };
 const heatState = { level: 'books', book: null, chapter: null, filter: 'all', selVerse: null };
 
-const PREFS_KEY = 'vn-add-prefs';
-const DRAFT_KEY = 'vn-draft-text';
+const PREFS_KEY = 'margin-add-prefs';
+const DRAFT_KEY = 'margin-draft-text';
 let prefs = { book: 43, chapter: 3, source: 'sermon', speaker: '', sermonTitle: '' };
 try {
   prefs = { ...prefs, ...(JSON.parse(localStorage.getItem(PREFS_KEY)) || {}) };
@@ -747,9 +747,9 @@ function renderMore() {
     el('button', {
       class: 'btn-secondary',
       onclick: () => {
-        const payload = { app: 'verse-notes', version: 1, exportedAt: new Date().toISOString(), notes };
+        const payload = { app: 'margin', version: 1, exportedAt: new Date().toISOString(), notes };
         const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-        const a = el('a', { href: URL.createObjectURL(blob), download: `verse-notes-${new Date().toISOString().slice(0, 10)}.json` });
+        const a = el('a', { href: URL.createObjectURL(blob), download: `margin-${new Date().toISOString().slice(0, 10)}.json` });
         a.click();
         URL.revokeObjectURL(a.href);
         toast(`Exported ${notes.length} notes`);

@@ -1,7 +1,7 @@
 {
-  "name": "Verse Notes",
-  "short_name": "Verse Notes",
-  "description": "Bible verse-anchored sermon and devotional notes",
+  "name": "Margin",
+  "short_name": "Margin",
+  "description": "Notes in the margins of Scripture — sermon, study, and devotional notes anchored to verses",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

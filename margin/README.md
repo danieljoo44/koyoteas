@@ -1,4 +1,4 @@
-# Verse Notes
+# Margin
 
 A Bible verse-anchored note-taking PWA. Every note is tied to a verse (or range),
 so sermon notes and devotional thoughts resurface whenever you return to a passage.
@@ -32,9 +32,9 @@ Environment variables: `PORT` (default 8787), `DATA_DIR` (default `./data`),
 
 ```bash
 brew install flyctl && fly auth signup      # once
-cd verse-notes
+cd margin
 fly launch --no-deploy                      # accept the detected Dockerfile; pick an app name
-fly volumes create verse_notes_data --size 1
+fly volumes create margin_data --size 1
 fly secrets set PASSPHRASE="choose-a-long-passphrase"
 fly deploy
 ```
@@ -54,13 +54,13 @@ HTTPS in front of it.
 - **iPhone:** open the site in Safari → Share → **Add to Home Screen**. It launches
   full-screen with the app icon, and works offline in the pew.
 - **Desktop:** open the site in Chrome/Edge → install icon in the address bar
-  ("Install Verse Notes").
+  ("Install Margin").
 
 ## Releasing app updates
 
 Static assets are served with `no-cache`, and the offline copy is controlled by the
 service worker. After changing frontend files, bump `VERSION` in `public/sw.js`
-(e.g. `vn-v1` → `vn-v2`) so installed clients pick up the new files.
+(e.g. `margin-v1` → `margin-v2`) so installed clients pick up the new files.
 
 ## How sync stays safe
 

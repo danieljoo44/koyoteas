@@ -1,5 +1,5 @@
 // App-shell cache. Bump VERSION on every release to invalidate old caches.
-const VERSION = 'vn-v1';
+const VERSION = 'margin-v1';
 const SHELL = [
   '/',
   '/css/app.css',

@@ -1,5 +1,5 @@
 // IndexedDB: local mirror of all notes plus an outbox of pending writes.
-const DB_NAME = 'verse-notes';
+const DB_NAME = 'margin';
 const DB_VERSION = 1;
 
 let dbPromise = null;
