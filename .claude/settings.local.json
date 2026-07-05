@@ -30,7 +30,10 @@
       "Read(//Users/danieljoo/Documents/**)",
       "Bash(git add *)",
       "Bash(git commit -m 'Horizon photo from full-res DSC03504 \\(pavilion\\), GitHub Pages workflow *)",
-      "Bash(git commit -m 'Unify all serif type to Noto Serif KR \\(match landing page\\) *)"
+      "Bash(git commit -m 'Unify all serif type to Noto Serif KR \\(match landing page\\) *)",
+      "Bash(mdfind -name koyoteas)",
+      "Bash(plutil -p '/Users/danieljoo/Library/Application Support/GitHub Desktop/Preferences')",
+      "Bash(git push *)"
     ]
   }
 }
