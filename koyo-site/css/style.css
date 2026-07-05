@@ -337,6 +337,7 @@ main { position: relative; z-index: 1; }
 
 .btn {
   display: inline-block;
+  white-space: nowrap;
   font-family: var(--sans);
   font-size: 0.8rem;
   font-weight: 400;
@@ -435,6 +436,9 @@ main { position: relative; z-index: 1; }
   justify-content: center;
   align-items: center;
   gap: 1.3rem;
+}
+@media (max-width: 640px) {
+  .hero-cta { flex-direction: column; gap: 0.9rem; }
 }
 .hero-side, .hero-scroll { z-index: 1; }
 
@@ -641,11 +645,17 @@ main { position: relative; z-index: 1; }
     padding: 0 var(--pad-x);
   }
   .spec-panel:nth-child(even) .spec-stage { order: 0; }
-  .spec-note { position: static; margin: 0.45rem 0 0 !important; }
+  .spec-note {
+    position: static;
+    margin: 0.45rem 0 0 !important;
+    align-self: flex-start;
+    max-width: none;
+    white-space: normal;
+  }
   .spec-panel:nth-child(odd) .spec-info { margin-left: 0; }
   .spec-note::before { display: none; }
   .spec-stage { flex-direction: column; height: auto; }
-  .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1rem; }
+  .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1.8rem; }
   .spec-info { max-width: none; }
 }
 
@@ -690,8 +700,14 @@ main { position: relative; z-index: 1; }
 .story-film figcaption {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: 1rem;
   margin-top: 1rem;
+}
+.story-film figcaption .mono:last-child { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 760px) {
+  .story-film video,
+  .story-film img { height: clamp(14rem, 62vw, 22rem); }
 }
 .story-film figcaption .mono { font-size: 0.58rem; }
 
@@ -1464,7 +1480,10 @@ main { position: relative; z-index: 1; }
   transition: opacity 0.35s;
 }
 .tea-thumb.is-active img, .tea-thumb:hover img { opacity: 1; }
-.tea-thumb .mono { display: block; margin-top: 0.5rem; font-size: 0.56rem; }
+.tea-thumb .mono { display: block; margin-top: 0.5rem; font-size: 0.56rem; white-space: nowrap; }
+@media (max-width: 640px) {
+  .tea-thumb .mono { font-size: 0.48rem; letter-spacing: 0.16em; }
+}
 
 .tea-name {
   font-family: var(--serif);
