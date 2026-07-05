@@ -886,14 +886,15 @@ main { position: relative; z-index: 1; }
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  background: var(--ink);
-  color: var(--paper);
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
   border-radius: 999px;
   padding: 0.85rem 1.8rem;
-  transition: background 0.45s var(--ease-out);
+  transition: background 0.45s var(--ease-out), color 0.45s var(--ease-out);
 }
 .panel-link-line { display: none; }
-.panel-link:hover { background: var(--clay); }
+.panel-link:hover { background: var(--ink); color: var(--paper); }
 
 /* pinned (desktop) mode: panels overlay + crossfade */
 .pin-mode .panels { display: grid; }
