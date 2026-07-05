@@ -549,6 +549,7 @@ main { position: relative; z-index: 1; }
   padding: 0 max(var(--pad-x), calc((100vw - 78rem) / 2));
 }
 .spec-panel:nth-child(even) .spec-stage { order: 2; }
+.spec-panel:nth-child(odd) .spec-info { margin-left: auto; }
 /* mirrored annotations on flipped panels */
 .spec-panel:nth-child(even) .n1 { left: auto; right: 50%; margin: 0 12rem 0 0; }
 .spec-panel:nth-child(even) .n1::before { left: auto; right: -5.2rem; }
@@ -618,6 +619,9 @@ main { position: relative; z-index: 1; }
   color: var(--ink-soft);
   white-space: nowrap;
 }
+@media (max-width: 1240px) {
+  .spec-note { white-space: normal; max-width: 9.5rem; line-height: 1.7; }
+}
 .spec-note::before {
   content: "";
   position: absolute;
@@ -646,6 +650,7 @@ main { position: relative; z-index: 1; }
   }
   .spec-panel:nth-child(even) .spec-stage { order: 0; }
   .spec-note { position: static; margin: 0.45rem 0 0 !important; }
+  .spec-panel:nth-child(odd) .spec-info { margin-left: 0; }
   .spec-note::before { display: none; }
   .spec-stage { flex-direction: column; height: auto; }
   .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1rem; }
