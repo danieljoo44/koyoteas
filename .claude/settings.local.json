@@ -38,7 +38,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://danieljoo44.github.io/koyoteas/)",
       "Bash(curl -s https://api.github.com/repos/danieljoo44/koyoteas/actions/runs)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r['name'], '—', r['status'], '/', r.get\\('conclusion'\\)\\) for r in d.get\\('workflow_runs', []\\)[:3]]\")",
-      "Bash(git commit -m 'Collection: vertical scrolling panels, alternating sides *)"
+      "Bash(git commit -m 'Collection: vertical scrolling panels, alternating sides *)",
+      "Bash(curl -s -o /dev/null -w \"server: %{http_code}\\\\n\" http://127.0.0.1:4173/)"
     ]
   }
 }
