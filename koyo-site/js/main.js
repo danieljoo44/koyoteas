@@ -88,7 +88,7 @@ if (site) {
   /* ── Story · cinematic film window ──────────────────────────── */
 
   if (!reduced) {
-    gsap.fromTo(".story-film video", { scale: 1.12 }, {
+    gsap.fromTo(".story-film video, .story-film img", { scale: 1.12 }, {
       scale: 1, ease: "none",
       scrollTrigger: { trigger: ".story-film", start: "top 90%", end: "bottom 40%", scrub: 0.6 },
     });
