@@ -24,7 +24,9 @@
       "Bash(rsync -a --delete \"koyo-site/\" \"/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/bcc857b1-2abb-4a67-832f-bdc3611e2b38/scratchpad/preview/koyo-site/\")",
       "Bash(find ~/Desktop ~/Downloads ~/Pictures -maxdepth 2 -type f \\\\\\( -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.png\" -o -iname \"*.heic\" -o -iname \"*.webp\" \\\\\\) -mmin -120 2>/dev/null | head -20; echo \"---\"; ls -lat ~/Desktop | head -12)",
       "Bash(mkdir -p postprod)",
-      "Bash(unzip -o -q \"/Users/danieljoo/Desktop/Post Production-20260705T010218Z-3-001.zip\" -d postprod)"
+      "Bash(unzip -o -q \"/Users/danieljoo/Desktop/Post Production-20260705T010218Z-3-001.zip\" -d postprod)",
+      "Read(//Applications/GitHub Desktop.app/**)",
+      "Bash(security find-internet-password *)"
     ]
   }
 }
