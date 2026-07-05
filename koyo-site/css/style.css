@@ -1652,3 +1652,128 @@ main { position: relative; z-index: 1; }
   .grain, .hero-scroll-line::after { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   MONO TYPE SYSTEM — all display type matches the hero headline
+   (IBM Plex Mono, tracked caps; Korean glyphs stay in Noto Serif KR)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* section titles — the headline voice */
+.specimen-title, .shelf-title, .ritual-title, .letter-title {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(1.02rem, 2vw, 1.6rem);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  line-height: 1.9;
+}
+
+/* editorial paragraphs — quiet mono, sentence case */
+.manifesto {
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2.3vw, 1.8rem);
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+.manifesto em { font-style: italic; }
+.story-lead {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.32rem);
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+.tea-story-text {
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: clamp(0.98rem, 1.8vw, 1.28rem);
+  line-height: 2;
+  letter-spacing: 0.03em;
+}
+.tea-keeping-note {
+  font-family: var(--mono);
+  font-weight: 300;
+  font-size: clamp(0.98rem, 1.7vw, 1.25rem);
+  line-height: 1.95;
+  letter-spacing: 0.03em;
+}
+.tea-story-text em, .tea-keeping-note em { font-style: italic; color: var(--clay); }
+
+/* product & tea names — tracked caps, Korean stays serif */
+.panel-name {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+.panel-kr {
+  font-family: var(--serif-kr);
+  font-weight: 300;
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  transform: none;
+}
+.tea-name {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.tea-name span {
+  font-family: var(--serif-kr);
+  font-weight: 300;
+  font-size: 0.72em;
+  letter-spacing: 0.06em;
+}
+.shelf-name {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+.shelf-name span {
+  font-family: var(--serif-kr);
+  font-weight: 300;
+  font-size: 0.95em;
+  letter-spacing: 0.06em;
+}
+.tea-related-card h3 {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+.tea-related-card h3 span {
+  font-family: var(--serif-kr);
+  font-weight: 300;
+  font-size: 0.95em;
+  letter-spacing: 0.06em;
+}
+
+/* stats, provenance, commerce */
+.prov-grid strong, .story-stats strong {
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.tea-price { font-family: var(--mono); font-weight: 400; font-size: 1.15rem; letter-spacing: 0.18em; }
+.format-opt { font-family: var(--mono); font-weight: 400; font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.cart-line-name { font-family: var(--mono); font-weight: 400; font-size: 0.84rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.cart-line-name span { font-family: var(--serif-kr); font-weight: 300; letter-spacing: 0.04em; }
+.cart-empty { font-family: var(--mono); font-weight: 300; font-size: 0.92rem; letter-spacing: 0.14em; line-height: 2.4; }
+.cart-subtotal-amount { font-family: var(--mono); font-weight: 400; font-size: 1.05rem; letter-spacing: 0.16em; }
+.footer-tag { font-family: var(--mono); font-weight: 400; font-size: 0.74rem; letter-spacing: 0.3em; text-transform: uppercase; }
+
+/* navigation & menus */
+.nav-dropdown a { font-family: var(--mono); font-weight: 400; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; }
+.mobile-menu nav a { font-family: var(--mono); font-weight: 400; font-size: 1.1rem; letter-spacing: 0.3em; text-transform: uppercase; }
+.mobile-menu-shop a { font-family: var(--mono); font-weight: 300; font-size: 0.9rem; letter-spacing: 0.22em; text-transform: uppercase; }
