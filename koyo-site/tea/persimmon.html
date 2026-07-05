@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persimmon Leaf 감잎차 — Rare Spring Tisane | Koyo</title>
+  <meta name="description" content="Young persimmon leaf tisane, hand-picked in Hadong during a single week each spring. Earthy, bright, dry — rich in vitamin C." />
+  <meta property="og:title" content="Persimmon Leaf 감잎차 — Rare Spring Tisane | Koyo" />
+  <meta property="og:description" content="Young persimmon leaf tisane, hand-picked in Hadong during a single week each spring. Earthy, bright, dry — rich in vitamin C." />
+  <meta property="og:type" content="product" />
+  <meta property="og:image" content="../assets/img/cup-persimmon.jpg" />
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="../js/shop-config.js"></script>
+</head>
+<body>
+
+  <!-- Atmosphere -->
+  <canvas id="mist-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span></div>
+
+  <!-- Navigation -->
+  <header class="nav is-scrolled" id="nav">
+    <a class="nav-brand" href="../index.html" data-cursor>
+      <img src="../assets/img/koyo-mark-ink.png" alt="Koyo mark" class="nav-mark" />
+      <span class="nav-word">KOYO</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html#ethos" data-cursor>Story</a>
+      <a href="../index.html#specimen" data-cursor>Collection</a>
+      <div class="nav-shop">
+        <a href="../index.html#shelf" data-cursor aria-haspopup="true">Shop</a>
+        <div class="nav-dropdown" aria-label="Teas">
+          <a href="sejak.html" data-cursor>Sejak <span>세작</span></a>
+          <a href="artemisia.html" data-cursor>Artemisia <span>쑥차</span></a>
+          <a href="persimmon.html" data-cursor>Persimmon Leaf <span>감잎차</span></a>
+          <a href="hwangto.html" data-cursor>Hwangto <span>황토</span></a>
+        </div>
+      </div>
+      <a href="../index.html#ritual" data-cursor>Ritual</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cart mono" href="#" data-cursor data-cart-open data-cart-count>CART — 0</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="../index.html#ethos">Story</a>
+      <a href="../index.html#specimen">Collection</a>
+      <a href="../index.html#ritual">Ritual</a>
+    </nav>
+    <div class="mobile-menu-shop">
+      <p class="mono">SHOP — 상점</p>
+      <a href="sejak.html">Sejak 세작</a>
+      <a href="artemisia.html">Artemisia 쑥차</a>
+      <a href="persimmon.html">Persimmon Leaf 감잎차</a>
+      <a href="hwangto.html">Hwangto 황토</a>
+    </div>
+    <div class="mobile-menu-foot mono">
+      <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener">IG — @KOYO_TEAS</a>
+      <span>EST. 2019 — 고요</span>
+    </div>
+  </div>
+
+  <main class="tea-main">
+
+    <!-- ═══════════ PRODUCT ═══════════ -->
+    <section class="tea-hero">
+      <p class="tea-breadcrumb mono" data-reveal>
+        <a href="../index.html#specimen" data-cursor>THE COLLECTION</a> &nbsp;/&nbsp; PERSIMMON LEAF
+      </p>
+      <div class="tea-grid">
+
+        <div class="tea-gallery" data-reveal>
+          <div class="tea-stage">
+            <img id="tea-stage-img" src="../assets/img/loose-persimmon.jpg" alt="Persimmon Leaf loose leaf tea" />
+          </div>
+          <div class="tea-thumbs">
+            <button class="tea-thumb is-active" data-src="../assets/img/loose-persimmon.jpg" data-cursor>
+              <img src="../assets/img/loose-persimmon.jpg" alt="" loading="lazy" /><span class="mono">THE LEAVES</span>
+            </button>
+            <button class="tea-thumb" data-src="../assets/img/leaf-persimmon.jpg" data-cursor>
+              <img src="../assets/img/leaf-persimmon.jpg" alt="" loading="lazy" /><span class="mono">STEEPED</span>
+            </button>
+            <button class="tea-thumb" data-src="../assets/img/cup-persimmon.jpg" data-cursor>
+              <img src="../assets/img/cup-persimmon.jpg" alt="" loading="lazy" /><span class="mono">THE CUP</span>
+            </button>
+            <button class="tea-thumb" id="pouch-thumb" data-src="../assets/img/pack-persimmon-loose.jpg" data-cursor>
+              <img src="../assets/img/pack-persimmon-loose.jpg" alt="" loading="lazy" /><span class="mono">THE POUCH</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tea-info">
+          <p class="eyebrow mono" data-reveal>N° 03 — TISANE · CAFFEINE-FREE</p>
+          <h1 class="tea-name" data-reveal>Persimmon Leaf <span>감잎차</span></h1>
+          <p class="tea-lede" data-reveal>Tender spring leaves picked at precisely the right moment — a harvest window of a single week, making true persimmon leaf tea a rare and treasured gift of the season.</p>
+
+          <dl class="panel-data mono" data-reveal>
+            <div><dt>ORIGIN</dt><dd>Hadong, South Korea</dd></div>
+            <div><dt>HARVEST</dt><dd>Early spring — one week only</dd></div>
+            <div><dt>NOTES</dt><dd>Earthy · Bright · Dry</dd></div>
+            <div><dt>SERVING</dt><dd>1 g per 210 ml (7 oz)</dd></div>
+            <div><dt>WATER</dt><dd>74°C — boiled, then rested</dd></div>
+            <div><dt>STEEP</dt><dd>2 minutes — steeps twice</dd></div>
+          </dl>
+
+          <div class="tea-buy" data-reveal>
+            <span class="format-label mono">FORMAT — 형태</span>
+            <div class="format" role="radiogroup" aria-label="Format">
+              <button class="format-opt is-active" data-format="loose" data-cursor>
+                Loose Leaf<span class="mono">$39 · TIN-TIE POUCH</span>
+              </button>
+              <button class="format-opt" data-format="sachet" data-cursor>
+                Sachets<span class="mono">$14 · PLA, PLANT-BASED</span>
+              </button>
+            </div>
+            <p class="tea-price is-visible" id="tea-price">$39</p>
+            <div class="tea-buy-row">
+              <div class="qty" aria-label="Quantity">
+                <button id="qty-minus" aria-label="Decrease quantity" data-cursor>−</button>
+                <span id="qty-value">1</span>
+                <button id="qty-plus" aria-label="Increase quantity" data-cursor>+</button>
+              </div>
+              <button class="btn btn-solid" id="add-to-cart" data-cursor data-magnetic
+                      data-tea-id="persimmon" data-tea-name="Persimmon Leaf" data-tea-kr="감잎차"
+                      data-price-loose="39" data-price-sachet="14">
+                Add to order
+              </button>
+            </div>
+            <p class="tea-ship mono">SMALL BATCH — HAND-PACKED · SHIPS FROM GRAND RAPIDS, MI</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ STORY ═══════════ -->
+    <section class="tea-story">
+      <img class="story-leaf" id="story-leaf" src="../assets/img/leafcut-persimmon.webp"
+           alt="" loading="lazy" aria-hidden="true" />
+      <p class="eyebrow mono" data-reveal>THE STORY — 이야기</p>
+      <p class="tea-story-text" data-reveal>Persimmons have long been symbols of transformation and resilience. Their trees endure into early winter, bearing fruit through the cold, then sprout back to life with fresh leaves in early spring. We believe the finest persimmon leaf tea comes from these tender new leaves, while their flavor is vibrant — before they grow large, turn bitter, and lose their vitality.</p>
+      <p class="tea-story-text" data-reveal>There is a quiet chemistry to that timing: the young leaves hold their full store of nutrients only until the tree diverts them to bear fruit. Picked at the right moment, persimmon leaf is a quiet powerhouse — more vitamin C than a lemon, with magnesium and a broad spectrum of antioxidants.</p>
+      <p class="tea-story-text" data-reveal>To capture this fleeting essence, our leaves are hand-picked in Hadong (하동) at precisely the right moment each year. That window can last no more than a week — making true persimmon leaf tea a rare and treasured gift of the season.</p>
+    </section>
+
+    <!-- ═══════════ BREW ═══════════ -->
+    <section class="tea-brew">
+      <p class="eyebrow mono" data-reveal>HOW TO BREW — 손맛</p>
+      <h2 class="ritual-title" data-reveal>Brewed by feel.</h2>
+      <ol class="ritual-steps">
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">一</span>
+          <h3>Rest</h3>
+          <p>Boil mineral water fully, then let it rest until it cools to 74°C — gentleness preserves the vitamin C.</p>
+        </li>
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">二</span>
+          <h3>Steep</h3>
+          <p>One gram of leaves to 210 ml of water. Two quiet minutes.</p>
+        </li>
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">三</span>
+          <h3>Return</h3>
+          <p>Steep once more. The second cup turns brighter, almost citrus-clean.</p>
+        </li>
+      </ol>
+      <p class="tea-brew-note" data-reveal>
+        These are recommendations, never law — <em>sohn-mat</em> trusts your hands.
+      </p>
+    </section>
+
+    <!-- ═══════════ BENEFITS ═══════════ -->
+    <section class="tea-benefits">
+      <p class="eyebrow mono" data-reveal>WHAT'S INSIDE — 효능</p>
+      <ul>
+        <li data-reveal>More vitamin C than a lemon, with a high magnesium content</li>
+        <li data-reveal>Rich in tannins and flavonoids traditionally credited with slowing the aging process</li>
+        <li data-reveal>Broad antioxidant spectrum — carotenoids, triterpenoids, proanthocyanidins, quercetin, gallic acid</li>
+        <li data-reveal>Anti-inflammatory properties that support joint health</li>
+        <li data-reveal>Traditionally used to help with hypertension and blood circulation</li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ PROVENANCE ═══════════ -->
+    <section class="tea-prov">
+      <p class="eyebrow mono" data-reveal>PROVENANCE — 산지</p>
+      <ul class="prov-grid">
+        <li data-reveal><strong>Hadong</strong><span class="mono">ONE HARVEST WEEK A YEAR</span></li>
+        <li data-reveal><strong>Organic</strong><span class="mono">PESTICIDE-FREE, ALWAYS</span></li>
+        <li data-reveal><strong>By hand</strong><span class="mono">PICKED &amp; SORTED, LEAF BY LEAF</span></li>
+        <li data-reveal><strong>Small batch</strong><span class="mono">QUALITY OVER QUANTITY</span></li>
+      </ul>
+    </section>
+
+    <!-- ═══════════ KEEPING ═══════════ -->
+    <section class="tea-keeping">
+      <p class="eyebrow mono" data-reveal>KEEPING — 보관</p>
+      <p class="tea-keeping-note" data-reveal>Like Sejak, persimmon leaf celebrates freshness — enjoy it within a year of harvest.</p>
+      <p class="mono" data-reveal>STORE COOL &amp; DARK — THE FREEZER KEEPS IT BRIGHTEST</p>
+    </section>
+
+    <!-- ═══════════ RELATED ═══════════ -->
+    <section class="tea-related">
+      <p class="eyebrow mono" data-reveal>CONTINUE THE COLLECTION — 차</p>
+      <div class="tea-related-grid">
+        <a class="tea-related-card" href="hwangto.html" data-cursor data-reveal>
+          <img src="../assets/img/cup-hwangto.jpg" alt="Hwangto tea, steeped" loading="lazy" />
+          <h3>Hwangto <span>황토</span></h3>
+          <p class="mono">N° 04 — BLEND · RED TEA & QUINCE</p>
+        </a>
+        <a class="tea-related-card" href="sejak.html" data-cursor data-reveal>
+          <img src="../assets/img/cup-sejak.jpg" alt="Sejak tea, steeped" loading="lazy" />
+          <h3>Sejak <span>세작</span></h3>
+          <p class="mono">N° 01 — GREEN TEA · SINGLE ORIGIN</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/img/koyo-mark-paper.png" alt="Koyo mark" class="footer-mark" />
+        <p class="footer-tag">Stillness guides purpose.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-head mono">SHOP</p>
+          <a href="sejak.html" data-cursor>Sejak</a>
+          <a href="artemisia.html" data-cursor>Artemisia</a>
+          <a href="persimmon.html" data-cursor>Persimmon Leaf</a>
+          <a href="hwangto.html" data-cursor>Hwangto</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">COMPANY</p>
+          <a href="../index.html#ethos" data-cursor>Our story</a>
+              <a href="#" data-cursor>Journal</a>
+          <a href="#" data-cursor>Wholesale</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">CONNECT</p>
+          <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener" data-cursor>Instagram — @koyo_teas</a>
+          <a href="mailto:info@koyoteas.com" data-cursor>info@koyoteas.com</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-kr" aria-hidden="true">고요</p>
+    <div class="footer-bottom mono">
+      <span>© 2026 KOYO TEAS</span>
+      <span>LOS ANGELES · GRAND RAPIDS · HADONG</span>
+    </div>
+  </footer>
+
+  <!-- Cart -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Cart">
+    <header class="cart-head">
+      <p class="mono">YOUR ORDER — 주문</p>
+      <button class="cart-close" aria-label="Close cart">×</button>
+    </header>
+    <div class="cart-lines"></div>
+    <footer class="cart-foot">
+      <div class="cart-subtotal"><span class="mono">SUBTOTAL</span><span class="cart-subtotal-amount"></span></div>
+      <button class="btn btn-solid cart-checkout" data-cursor>Checkout</button>
+      <p class="cart-note"></p>
+    </footer>
+  </aside>
+
+  <script type="module" src="../js/tea.js"></script>
+  <noscript><style>[data-reveal]{opacity:1 !important}</style></noscript>
+</body>
+</html>

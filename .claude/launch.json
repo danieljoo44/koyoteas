@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "koyo",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/bcc857b1-2abb-4a67-832f-bdc3611e2b38/scratchpad/preview/serve.py"],
+      "port": 4173,
+      "autoPort": true
+    }
+  ]
+}

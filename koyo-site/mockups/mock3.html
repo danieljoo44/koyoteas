@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koyo — Mockup 3: THE LIVING LEAF · 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .mock-tag { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0.9rem; z-index: 300;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.3em; color: var(--porcelain);
+    background: var(--ink); border-radius: 999px; padding: 0.45rem 1.1rem; }
+
+.m-hero { position:relative; min-height:100svh; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; text-align:center; padding: 7rem var(--pad-x) 4rem; overflow:hidden; }
+.m-title { position:absolute; top:50%; left:50%; transform:translate(-50%,-54%); z-index:1;
+  font-family:var(--serif); font-weight:400; font-size:8.4rem; line-height:1.02; white-space:nowrap; color:var(--ink); }
+.m-title span { display:block; }
+.m-stage { position:relative; z-index:2; height:76vh; display:flex; align-items:center; }
+.m-leaf { height:100%; width:auto; filter: drop-shadow(0 60px 50px rgba(30,26,22,0.32)); }
+.m-note { position:absolute; z-index:3; font-family:var(--mono); font-size:0.62rem; letter-spacing:0.22em; color:var(--ink-soft); white-space:nowrap; }
+.m-note i { display:inline-block; width:7px; height:7px; border:1px solid var(--clay); border-radius:50%; margin-right:0.7rem; vertical-align:middle; }
+.m-n1 { top:24%; left:calc(50% + 12rem); }
+.m-n2 { top:52%; right:calc(50% + 11rem); }
+.m-n3 { top:72%; left:calc(50% + 10rem); }
+.m-eyebrow { position:absolute; top:7.4rem; left:50%; transform:translateX(-50%); z-index:3; }
+.m-foot { position:absolute; bottom:2.4rem; left:0; right:0; z-index:3; display:flex; flex-direction:column; align-items:center; gap:1.6rem; }
+.m-hint { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.3em; color:var(--ink-faint); }
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav-brand" href="#"><img src="../assets/img/koyo-mark-ink.png" alt="" class="nav-mark" /><span class="nav-word">KOYO</span></a>
+  <nav class="nav-links">
+    <a href="#">Shop</a><a href="#">Collection</a><a href="#">Origin</a><a href="#">Ritual</a><a href="#">Story</a>
+  </nav>
+  <div class="nav-right"><span class="nav-cart mono">CART — 0</span></div>
+</header>
+
+<section class="m-hero">
+  <p class="m-eyebrow eyebrow mono" style="margin:0;">고요 — SINGLE-ORIGIN KOREAN TEA</p>
+  <h1 class="m-title"><span>Stillness</span><span>guides purpose.</span></h1>
+  <div class="m-stage"><img class="m-leaf" src="../assets/img/leaf-cutout-sejak.png" alt="Steeped sejak leaf, rendered in 3D" /></div>
+  <p class="m-note m-n1"><i></i>SECOND FLUSH — LATE APRIL</p>
+  <p class="m-note m-n2"><i></i>PLUCKED BY HAND, HADONG</p>
+  <p class="m-note m-n3"><i></i>STEEPS TO GOLD &amp; JADE</p>
+  <div class="m-foot">
+    <p class="m-hint">( THE LEAF TURNS SLOWLY IN 3D — ITS STORY SURFACES AS YOU SCROLL )</p>
+    <div style="display:flex; gap:1rem;">
+      <a class="btn btn-solid" href="#">Explore the collection</a>
+      <a class="btn btn-ghost" href="#">Our story</a>
+    </div>
+  </div>
+</section>
+
+<p class="mock-tag">MOCKUP 3 — THE LIVING LEAF · 3D</p>
+</body>
+</html>

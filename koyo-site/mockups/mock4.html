@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koyo — Mockup 4: INK WASH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .mock-tag { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0.9rem; z-index: 300;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.3em; color: var(--porcelain);
+    background: var(--ink); border-radius: 999px; padding: 0.45rem 1.1rem; }
+
+.m-hero { position:relative; min-height:100svh; padding: 7rem var(--pad-x) 5.5rem; overflow:hidden; }
+.m-vkr { position:absolute; top:11%; right:10vw; writing-mode:vertical-rl; font-family:var(--serif-kr);
+  font-weight:200; font-size:min(11.5rem,42vh); line-height:1; letter-spacing:0.22em; color:var(--ink); }
+.m-horizon { position:absolute; left:0; right:0; top:63%; height:1px; background:rgba(30,26,22,0.16); }
+.m-seal { position:absolute; top:11%; left:var(--pad-x); }
+.m-block { position:absolute; left:var(--pad-x); bottom:16%; max-width:30rem; }
+.m-title { font-family:var(--serif); font-weight:400; font-size:3.6rem; line-height:1.1; }
+.m-sub { margin-top:1.3rem; color:var(--ink-soft); max-width:24rem; }
+.m-cta { margin-top:2.2rem; display:flex; align-items:center; gap:1.6rem; }
+.m-link { font-size:0.8rem; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid var(--ink); padding-bottom:0.4rem; }
+.m-strip { position:absolute; left:var(--pad-x); right:var(--pad-x); bottom:2.2rem; display:flex; justify-content:space-between; gap:1rem; }
+.m-mist { position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(50% 30% at 68% 78%, rgba(122,139,112,0.09), transparent 70%); filter:blur(2px); }
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav-brand" href="#"><img src="../assets/img/koyo-mark-ink.png" alt="" class="nav-mark" /><span class="nav-word">KOYO</span></a>
+  <nav class="nav-links">
+    <a href="#">Shop</a><a href="#">Collection</a><a href="#">Origin</a><a href="#">Ritual</a><a href="#">Story</a>
+  </nav>
+  <div class="nav-right"><span class="nav-cart mono">CART — 0</span></div>
+</header>
+
+<section class="m-hero">
+  <div class="m-mist"></div>
+  <p class="m-seal eyebrow mono" style="margin:0;">단일 원산지<br />SINGLE-ORIGIN<br />KOREAN TEA</p>
+  <p class="m-vkr">고요</p>
+  <div class="m-horizon"></div>
+  <div class="m-block">
+    <h1 class="m-title">Stillness guides purpose.</h1>
+    <p class="m-sub">Teas from the mountain mists of Hadong, picked by hand since the ninth century's example.</p>
+    <div class="m-cta">
+      <a class="btn btn-solid" href="#">Enter the shop</a>
+      <a class="m-link" href="#">The ethos</a>
+    </div>
+  </div>
+  <div class="m-strip mono">
+    <span>35.06° N — 127.75° E · HADONG</span>
+    <span>KO·YO — STILLNESS</span>
+    <span>EST. 2019</span>
+  </div>
+</section>
+
+<p class="mock-tag">MOCKUP 4 — INK WASH</p>
+</body>
+</html>

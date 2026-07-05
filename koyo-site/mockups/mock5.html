@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koyo — Mockup 5: THE POSTER</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .mock-tag { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0.9rem; z-index: 300;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.3em; color: var(--porcelain);
+    background: var(--ink); border-radius: 999px; padding: 0.45rem 1.1rem; }
+
+.m-hero { position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:center;
+  padding: 7.5rem var(--pad-x) 5rem; overflow:hidden; }
+.m-line { font-family:var(--serif); font-weight:300; font-size:min(10.6rem,19vh); line-height:0.98; color:var(--ink); }
+.m-l1 { text-align:left; }
+.m-l2 { text-align:center; font-style:italic; color:var(--clay); }
+.m-l3 { text-align:right; }
+.m-l3 span { font-family:var(--serif-kr); font-style:normal; font-weight:300; font-size:0.22em; letter-spacing:0.5em; color:var(--ink-soft); vertical-align:super; margin-left:1.6rem; }
+.m-top { position:absolute; top:7.2rem; left:var(--pad-x); right:var(--pad-x); display:flex; justify-content:space-between; }
+.m-foot { position:absolute; bottom:2.6rem; left:var(--pad-x); right:var(--pad-x); display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; }
+.m-sub { max-width:24rem; color:var(--ink-soft); font-size:0.98rem; }
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav-brand" href="#"><img src="../assets/img/koyo-mark-ink.png" alt="" class="nav-mark" /><span class="nav-word">KOYO</span></a>
+  <nav class="nav-links">
+    <a href="#">Shop</a><a href="#">Collection</a><a href="#">Origin</a><a href="#">Ritual</a><a href="#">Story</a>
+  </nav>
+  <div class="nav-right"><span class="nav-cart mono">CART — 0</span></div>
+</header>
+
+<section class="m-hero">
+  <div class="m-top mono">
+    <span>단일 원산지 — SINGLE-ORIGIN KOREAN TEA</span>
+    <span>N° 01–04 · HADONG</span>
+  </div>
+  <h1>
+    <div class="m-line m-l1">Stillness</div>
+    <div class="m-line m-l2">guides</div>
+    <div class="m-line m-l3">purpose. <span>고요</span></div>
+  </h1>
+  <div class="m-foot">
+    <p class="m-sub">Hand-picked Korean teas from the mountain mists of Hadong — ko·yo, the Korean word for stillness.</p>
+    <div style="display:flex; gap:1rem;">
+      <a class="btn btn-solid" href="#">Shop the teas</a>
+      <a class="btn btn-ghost" href="#">Our story</a>
+    </div>
+  </div>
+</section>
+
+<p class="mock-tag">MOCKUP 5 — THE POSTER</p>
+</body>
+</html>

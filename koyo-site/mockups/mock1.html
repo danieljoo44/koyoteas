@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koyo — Mockup 1: QUIET TYPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+  .mock-tag { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0.9rem; z-index: 300;
+    font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.3em; color: var(--porcelain);
+    background: var(--ink); border-radius: 999px; padding: 0.45rem 1.1rem; }
+
+.m-hero { position:relative; min-height:100svh; display:flex; flex-direction:column; align-items:center;
+  justify-content:center; text-align:center; padding:8rem var(--pad-x) 6rem; overflow:hidden; }
+.m-mist { position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(42% 30% at 24% 30%, rgba(122,139,112,0.10), transparent 70%),
+    radial-gradient(50% 36% at 78% 62%, rgba(192,160,98,0.10), transparent 72%),
+    radial-gradient(60% 42% at 50% 88%, rgba(30,26,22,0.05), transparent 70%);
+  filter: blur(2px); }
+.m-kr { font-family:var(--serif-kr); font-weight:200; font-size:min(6.2rem,12vh); letter-spacing:0.3em; margin-left:0.3em; line-height:1; margin-bottom:2rem; }
+.m-title { font-family:var(--serif); font-weight:400; font-size:5.2rem; line-height:1.05; }
+.m-title em { font-style:italic; color:var(--clay); }
+.m-sub { margin-top:1.8rem; max-width:32rem; color:var(--ink-soft); }
+.m-sub em { font-style: italic; color: var(--ink); }
+.m-cta { margin-top:3rem; display:flex; gap:1rem; }
+.m-side { position:absolute; right:2.6rem; top:50%; transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl; }
+
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="nav">
+  <a class="nav-brand" href="#"><img src="../assets/img/koyo-mark-ink.png" alt="" class="nav-mark" /><span class="nav-word">KOYO</span></a>
+  <nav class="nav-links">
+    <a href="#">Shop</a><a href="#">Collection</a><a href="#">Origin</a><a href="#">Ritual</a><a href="#">Story</a>
+  </nav>
+  <div class="nav-right"><span class="nav-cart mono">CART — 0</span></div>
+</header>
+
+<section class="m-hero">
+  <div class="m-mist"></div>
+  <p class="eyebrow mono" style="margin-bottom:3rem;">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+  <p class="m-kr">고요</p>
+  <h1 class="m-title">Stillness guides <em>purpose.</em></h1>
+  <p class="m-sub">Hand-picked teas from the mountain mists of Hadong — <em>ko·yo</em>, the Korean word for stillness.</p>
+  <div class="m-cta">
+    <a class="btn btn-solid" href="#">Explore the collection</a>
+    <a class="btn btn-ghost" href="#">Our story</a>
+  </div>
+  <p class="m-side mono">EST. 2019 — HADONG, SOUTH KOREA</p>
+</section>
+
+<p class="mock-tag">MOCKUP 1 — QUIET TYPE</p>
+</body>
+</html>

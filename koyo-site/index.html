@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koyo — Stillness Guides Purpose · Single-Origin Korean Tea</title>
+  <meta name="description" content="Koyo (고요) — artisanal single-origin Korean teas, hand-picked in Hadong, South Korea. Stillness guides purpose." />
+  <meta property="og:title" content="Koyo — Stillness Guides Purpose" />
+  <meta property="og:description" content="Artisanal single-origin Korean teas, hand-picked in Hadong, South Korea." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/video/hadong-mountains-poster.jpg" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@200;300;400&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/shop-config.js"></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img class="preloader-mark" src="assets/img/koyo-mark-ink.png" alt="" />
+      <p class="preloader-kr">고요</p>
+      <p class="preloader-def mono">ko·yo — stillness</p>
+    </div>
+  </div>
+
+  <!-- Atmosphere -->
+  <canvas id="mist-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-dot"></span></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#top" data-cursor>
+      <img src="assets/img/koyo-mark-ink.png" alt="Koyo mark" class="nav-mark" />
+      <span class="nav-word">KOYO</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#ethos" data-cursor>Story</a>
+      <a href="#specimen" data-cursor>Collection</a>
+      <div class="nav-shop">
+        <a href="#shelf" data-cursor aria-haspopup="true">Shop</a>
+        <div class="nav-dropdown" aria-label="Teas">
+          <a href="tea/sejak.html" data-cursor>Sejak <span>세작</span></a>
+          <a href="tea/artemisia.html" data-cursor>Artemisia <span>쑥차</span></a>
+          <a href="tea/persimmon.html" data-cursor>Persimmon Leaf <span>감잎차</span></a>
+          <a href="tea/hwangto.html" data-cursor>Hwangto <span>황토</span></a>
+        </div>
+      </div>
+      <a href="#ritual" data-cursor>Ritual</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cart mono" href="#" data-cursor data-cart-open data-cart-count>CART — 0</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#ethos">Story</a>
+      <a href="#specimen">Collection</a>
+      <a href="#ritual">Ritual</a>
+    </nav>
+    <div class="mobile-menu-shop">
+      <p class="mono">SHOP — 상점</p>
+      <a href="tea/sejak.html">Sejak 세작</a>
+      <a href="tea/artemisia.html">Artemisia 쑥차</a>
+      <a href="tea/persimmon.html">Persimmon Leaf 감잎차</a>
+      <a href="tea/hwangto.html">Hwangto 황토</a>
+    </div>
+    <div class="mobile-menu-foot mono">
+      <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener">IG — @KOYO_TEAS</a>
+      <span>EST. 2019 — 고요</span>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-frame" data-hero aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <img class="hero-mark" src="assets/img/koyo-mark-ink.png" alt="Koyo" data-hero />
+      <p class="hero-eyebrow mono" data-hero>단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="hero-kr" aria-hidden="true">고요</p>
+      <p class="hero-romaja mono" data-hero>KO&nbsp;·&nbsp;YO</p>
+      <h1 class="hero-title mono" data-hero>STILLNESS&nbsp;&nbsp;GUIDES&nbsp;&nbsp;PURPOSE</h1>
+      <p class="hero-sub" data-hero>
+        The Korean word for stillness — and hand-picked teas
+        from the mountain mists of Hadong, South Korea.
+      </p>
+      <div class="hero-cta" data-hero>
+        <a class="btn btn-solid" href="#specimen" data-cursor data-magnetic>Explore the collection</a>
+        <a class="btn btn-ghost" href="#ethos" data-cursor data-magnetic>Our story</a>
+      </div>
+
+      <p class="hero-side mono" data-hero>EST. 2019 — HADONG, SOUTH KOREA</p>
+
+      <div class="hero-seal" data-hero aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="seal-circle" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" /></defs>
+          <text class="hero-seal-text">
+            <textPath href="#seal-circle">HADONG · SOUTH KOREA · 하동 · 고요 ·&#160;</textPath>
+          </text>
+        </svg>
+        <img src="assets/img/koyo-mark-ink.png" alt="" />
+      </div>
+
+      <div class="hero-scroll" data-hero aria-hidden="true">
+        <span class="mono">SCROLL</span>
+        <span class="hero-scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ═══════════ THE SPECIMENS ═══════════ -->
+    <section class="specimen" id="specimen">
+      <div class="specimen-pin">
+        <header class="specimen-head">
+          <p class="eyebrow mono" data-reveal>THE COLLECTION — 차</p>
+          <h2 class="specimen-title" data-reveal>Know each tea by its leaf.</h2>
+        </header>
+
+        <div class="specimen-track" id="specimen-track">
+
+          <article class="spec-panel" data-tea="sejak">
+            <div class="spec-stage">
+              <img class="spec-leaf" src="assets/img/single-sejak.webp" alt="Sejak leaf study" loading="lazy" />
+              <p class="spec-note n1">SECOND FLUSH — LATE APRIL</p>
+              <p class="spec-note n2">PLUCKED BY HAND, HADONG</p>
+              <p class="spec-note n3 n3-left">STEEPS TO GOLD &amp; JADE</p>
+            </div>
+            <div class="spec-info">
+              <p class="panel-index mono">N° 01 — GREEN TEA</p>
+              <h3 class="panel-name">Sejak <span class="panel-kr">세작</span></h3>
+              <p class="panel-lede">Crafted to capture the fresh aroma of mid-April rain — young leaves plucked while still curled, steeping to light gold and jade.</p>
+              <dl class="panel-data mono">
+                <div><dt>ORIGIN</dt><dd>Hadong, South Korea</dd></div>
+                <div><dt>HARVEST</dt><dd>Late April — second flush</dd></div>
+                <div><dt>NOTES</dt><dd>Soft · Balanced · Fresh</dd></div>
+                <div><dt>STEEP</dt><dd>74°C — 1 minute</dd></div>
+              </dl>
+              <a class="panel-link" href="tea/sejak.html" data-cursor>Discover Sejak<span class="panel-link-line"></span></a>
+            </div>
+          </article>
+
+          <article class="spec-panel" data-tea="artemisia">
+            <div class="spec-stage">
+              <img class="spec-leaf" src="assets/img/single-artemisia.webp" alt="Artemisia leaf study" loading="lazy" />
+              <p class="spec-note n1">WILD — GATHERED, NOT FARMED</p>
+              <p class="spec-note n2">LOWER HILLS OF JIRISAN</p>
+              <p class="spec-note n3">WARMS THE BODY'S CORE</p>
+            </div>
+            <div class="spec-info">
+              <p class="panel-index mono">N° 02 — TISANE · CAFFEINE-FREE</p>
+              <h3 class="panel-name">Artemisia <span class="panel-kr">쑥차</span></h3>
+              <p class="panel-lede">Wild ssuk, hand-gathered on the lower hills of Jirisan — the sacred herb of Korean myth, treasured for warmth and rest.</p>
+              <dl class="panel-data mono">
+                <div><dt>ORIGIN</dt><dd>Jirisan, South Korea</dd></div>
+                <div><dt>HARVEST</dt><dd>Wild — gathered by hand</dd></div>
+                <div><dt>NOTES</dt><dd>Smooth · Herbal · Nutty</dd></div>
+                <div><dt>STEEP</dt><dd>100°C — 2 minutes</dd></div>
+              </dl>
+              <a class="panel-link" href="tea/artemisia.html" data-cursor>Discover Artemisia<span class="panel-link-line"></span></a>
+            </div>
+          </article>
+
+          <article class="spec-panel" data-tea="persimmon">
+            <div class="spec-stage">
+              <img class="spec-leaf" src="assets/img/single-persimmon.webp" alt="Persimmon Leaf leaf study" loading="lazy" />
+              <p class="spec-note n1">ONE HARVEST WEEK A YEAR</p>
+              <p class="spec-note n2">TENDER SPRING LEAVES</p>
+              <p class="spec-note n3">MORE VITAMIN C THAN A LEMON</p>
+            </div>
+            <div class="spec-info">
+              <p class="panel-index mono">N° 03 — TISANE · CAFFEINE-FREE</p>
+              <h3 class="panel-name">Persimmon Leaf <span class="panel-kr">감잎차</span></h3>
+              <p class="panel-lede">Tender spring leaves picked in a harvest window of a single week — a rare and treasured gift of the season.</p>
+              <dl class="panel-data mono">
+                <div><dt>ORIGIN</dt><dd>Hadong, South Korea</dd></div>
+                <div><dt>HARVEST</dt><dd>Early spring — one week</dd></div>
+                <div><dt>NOTES</dt><dd>Earthy · Bright · Dry</dd></div>
+                <div><dt>STEEP</dt><dd>74°C — 2 minutes</dd></div>
+              </dl>
+              <a class="panel-link" href="tea/persimmon.html" data-cursor>Discover Persimmon Leaf<span class="panel-link-line"></span></a>
+            </div>
+          </article>
+
+          <article class="spec-panel" data-tea="hwangto">
+            <div class="spec-stage">
+              <img class="spec-leaf spec-leaf-wide" src="assets/img/single-hwangto.webp" alt="Hwangto leaf study" loading="lazy" />
+              <p class="spec-note n1">RED TEA &amp; QUINCE</p>
+              <p class="spec-note n2">SAME GARDENS AS OUR SEJAK</p>
+              <p class="spec-note n3">DEEPENS AS IT AGES</p>
+            </div>
+            <div class="spec-info">
+              <p class="panel-index mono">N° 04 — BLEND · RED TEA & QUINCE</p>
+              <h3 class="panel-name">Hwangto <span class="panel-kr">황토</span></h3>
+              <p class="panel-lede">Named for the living soil of traditional Korean homes — red tea and yellow quince, made to warm you from within.</p>
+              <dl class="panel-data mono">
+                <div><dt>ORIGIN</dt><dd>Hadong, South Korea</dd></div>
+                <div><dt>BLEND</dt><dd>Hongcha 홍차 &amp; quince</dd></div>
+                <div><dt>NOTES</dt><dd>Earthy · Bright · Dry</dd></div>
+                <div><dt>STEEP</dt><dd>100°C — 2 minutes</dd></div>
+              </dl>
+              <a class="panel-link" href="tea/hwangto.html" data-cursor>Discover Hwangto<span class="panel-link-line"></span></a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="specimen-progress" aria-hidden="true">
+          <span class="mono" id="spec-current">01</span>
+          <span class="specimen-progress-track"><span class="specimen-progress-fill" id="spec-fill"></span></span>
+          <span class="mono">04</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ OUR STORY ═══════════ -->
+    <section class="ethos" id="ethos">
+      <p class="eyebrow mono" data-reveal>OUR STORY — 이야기</p>
+      <p class="manifesto" id="manifesto">
+        Stillness is not emptiness. It is the <em>blank canvas</em> — a clear
+        mind with room for the next stroke. We offer Korean teas as gentle
+        reminders to pause, to breathe, and to <em>return to yourself.</em>
+      </p>
+
+      <div class="story-grid">
+        <figure class="story-media" data-reveal>
+          <span class="corner c1"></span><span class="corner c2"></span>
+          <span class="corner c3"></span><span class="corner c4"></span>
+          <video src="assets/video/hadong-mountains.mp4"
+                 poster="assets/video/hadong-mountains-poster.jpg"
+                 autoplay muted loop playsinline preload="metadata"></video>
+          <figcaption class="mono">JIRISAN AT DUSK — FILMED IN HADONG BY KOYO</figcaption>
+        </figure>
+        <div class="story-text">
+          <p class="story-lead" data-reveal>
+            Founded in 2019 by a collective of Koreans and Korean-Americans,
+            Koyo bridges a two-thousand-year tea tradition and the pace of
+            modern life.
+          </p>
+          <p class="story-body" data-reveal>
+            Our teas grow in Hadong, where mist settles between the ridges of
+            Jirisan and tea has been cultivated since the ninth century. Every
+            leaf is picked by hand from pesticide-free gardens, in small
+            batches — quality over quantity, as the mountain has always demanded.
+          </p>
+          <ul class="story-stats" data-reveal>
+            <li><strong>9th c.</strong><span class="mono">TEA COUNTRY SINCE</span></li>
+            <li><strong>100%</strong><span class="mono">PICKED BY HAND</span></li>
+            <li><strong>0</strong><span class="mono">PESTICIDES, EVER</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ THE SHELF ═══════════ -->
+    <section class="shelf" id="shelf">
+      <header class="shelf-head">
+        <p class="eyebrow mono" data-reveal>THE SHELF — 상점</p>
+        <h2 class="shelf-title" data-reveal>From our shelf to yours.</h2>
+      </header>
+
+      <div class="shelf-grid">
+        <a class="shelf-card" href="tea/sejak.html" data-cursor data-reveal>
+          <div class="shelf-media">
+            <img class="shelf-pack" src="assets/img/pilecut-sejak.webp" alt="Koyo Sejak green tea pouch" loading="lazy" />
+            <img class="shelf-loose" src="assets/img/leafcut-sejak.webp" alt="Sejak loose leaves" loading="lazy" />
+          </div>
+          <h3 class="shelf-name">Sejak <span>세작</span></h3>
+          <p class="shelf-meta mono">GREEN TEA · HADONG</p>
+        </a>
+
+        <a class="shelf-card" href="tea/artemisia.html" data-cursor data-reveal>
+          <div class="shelf-media">
+            <img class="shelf-pack" src="assets/img/pilecut-artemisia.webp" alt="Koyo Artemisia tea pouch" loading="lazy" />
+            <img class="shelf-loose" src="assets/img/leafcut-artemisia.webp" alt="Artemisia loose leaves" loading="lazy" />
+          </div>
+          <h3 class="shelf-name">Artemisia <span>쑥차</span></h3>
+          <p class="shelf-meta mono">TISANE · JIRISAN</p>
+        </a>
+
+        <a class="shelf-card" href="tea/persimmon.html" data-cursor data-reveal>
+          <div class="shelf-media">
+            <img class="shelf-pack" src="assets/img/pilecut-persimmon.webp" alt="Koyo Persimmon Leaf tea pouch" loading="lazy" />
+            <img class="shelf-loose" src="assets/img/leafcut-persimmon.webp" alt="Persimmon leaf loose tea" loading="lazy" />
+          </div>
+          <h3 class="shelf-name">Persimmon Leaf <span>감잎차</span></h3>
+          <p class="shelf-meta mono">TISANE · HADONG</p>
+        </a>
+
+        <a class="shelf-card" href="tea/hwangto.html" data-cursor data-reveal>
+          <div class="shelf-media">
+            <img class="shelf-pack" src="assets/img/pilecut-hwangto.webp" alt="Koyo Hwangto tea pouch" loading="lazy" />
+            <img class="shelf-loose" src="assets/img/leafcut-hwangto.webp" alt="Hwangto loose blend" loading="lazy" />
+          </div>
+          <h3 class="shelf-name">Hwangto <span>황토</span></h3>
+          <p class="shelf-meta mono">RED TEA &amp; QUINCE · HADONG</p>
+        </a>
+      </div>
+
+      <p class="shelf-note mono" data-reveal>JOINING THE SHELF SOON — ADZUKI &amp; PUMPKIN · YUJA CITRON · GINGER</p>
+    </section>
+
+    <!-- ═══════════ RITUAL ═══════════ -->
+    <section class="ritual" id="ritual">
+      <p class="eyebrow mono" data-reveal>THE RITUAL — 손맛</p>
+      <h2 class="ritual-title" data-reveal>Brewed by feel.</h2>
+      <p class="ritual-intro" data-reveal>
+        Korean tea culture trusts the drinker. <em>Sohn-mat</em> — “the taste
+        of one’s hands” — is the belief that intuition seasons better than
+        instruction. Our recommendations are a place to begin. Never law.
+      </p>
+
+      <ol class="ritual-steps">
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">一</span>
+          <h3>Warm</h3>
+          <p>Bring mineral water just past the pearl-bubble point, then let it rest until the steam rises softly.</p>
+        </li>
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">二</span>
+          <h3>Steep</h3>
+          <p>A single gram of leaves. One quiet minute. Pour slowly, and watch the color arrive.</p>
+        </li>
+        <li data-reveal>
+          <span class="ritual-hanja" aria-hidden="true">三</span>
+          <h3>Return</h3>
+          <p>Steep again, and once more — two minutes, then four. Each cup reveals a different tea.</p>
+        </li>
+      </ol>
+    </section>
+
+
+    <!-- ═══════════ NEWSLETTER ═══════════ -->
+    <section class="letter" id="letter">
+      <div class="letter-inner">
+        <p class="eyebrow mono" data-reveal>THE QUIET LIST — 소식</p>
+        <h2 class="letter-title" data-reveal>A letter, occasionally.</h2>
+        <p class="letter-copy" data-reveal>
+          Harvest notes, brewing rituals, and stories of stillness —
+          a few times a year. No noise.
+        </p>
+        <form class="letter-form" id="letter-form" data-reveal>
+          <input type="email" required placeholder="Your email" aria-label="Email address" />
+          <button type="submit" class="btn btn-solid" data-cursor data-magnetic>Subscribe</button>
+        </form>
+        <p class="letter-thanks mono" id="letter-thanks">Received — 감사합니다.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/koyo-mark-paper.png" alt="Koyo mark" class="footer-mark" />
+        <p class="footer-tag">Stillness guides purpose.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-head mono">SHOP</p>
+          <a href="tea/sejak.html" data-cursor>Sejak</a>
+          <a href="tea/artemisia.html" data-cursor>Artemisia</a>
+          <a href="tea/persimmon.html" data-cursor>Persimmon Leaf</a>
+          <a href="tea/hwangto.html" data-cursor>Hwangto</a>
+          <a href="#" data-cursor>Teaware — soon</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">COMPANY</p>
+          <a href="#ethos" data-cursor>Our story</a>
+              <a href="#" data-cursor>Journal</a>
+          <a href="#" data-cursor>Wholesale</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">CONNECT</p>
+          <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener" data-cursor>Instagram — @koyo_teas</a>
+          <a href="mailto:info@koyoteas.com" data-cursor>info@koyoteas.com</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-kr" aria-hidden="true">고요</p>
+    <div class="footer-bottom mono">
+      <span>© 2026 KOYO TEAS</span>
+      <span>LOS ANGELES · GRAND RAPIDS · HADONG</span>
+    </div>
+  </footer>
+
+  <!-- Cart -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Cart">
+    <header class="cart-head">
+      <p class="mono">YOUR ORDER — 주문</p>
+      <button class="cart-close" aria-label="Close cart">×</button>
+    </header>
+    <div class="cart-lines"></div>
+    <footer class="cart-foot">
+      <div class="cart-subtotal"><span class="mono">SUBTOTAL</span><span class="cart-subtotal-amount"></span></div>
+      <button class="btn btn-solid cart-checkout" data-cursor>Checkout</button>
+      <p class="cart-note"></p>
+    </footer>
+  </aside>
+
+  <script type="module" src="js/main.js"></script>
+  <noscript><style>.preloader{display:none}[data-reveal],[data-hero]{opacity:1 !important}</style></noscript>
+</body>
+</html>
