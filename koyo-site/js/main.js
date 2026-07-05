@@ -118,7 +118,7 @@ if (site) {
         gsap.to(cap, { opacity: 1, duration: 0.45, ease: "power1.out" });
       } });
       cur = next;
-    }, 6000);
+    }, 9000);
   }
 
   // let the footage breathe slowly, and only play what is on screen
