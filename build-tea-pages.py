@@ -207,6 +207,8 @@ TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
 
+  <div class="announce mono" role="note">FREE SHIPPING ON ORDERS OVER $100</div>
+
   <!-- Atmosphere -->
   <canvas id="mist-canvas" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>

@@ -141,9 +141,23 @@ main { position: relative; z-index: 1; }
 
 /* ── Navigation ─────────────────────────────────────────────── */
 
-.nav {
+.announce {
   position: fixed;
   top: 0; left: 0; right: 0;
+  z-index: 101;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+}
+.nav {
+  position: fixed;
+  top: 2.1rem; left: 0; right: 0;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -265,7 +279,7 @@ main { position: relative; z-index: 1; }
 
 .mobile-menu {
   position: fixed;
-  inset: 0;
+  inset: 2.1rem 0 0 0;
   z-index: 95;
   background: var(--paper);
   display: flex;
