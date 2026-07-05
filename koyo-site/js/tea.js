@@ -11,15 +11,6 @@ const site = initSite();
 if (site) {
   initShop({ lenis: site.lenis });
 
-  /* ── Story leaf · gentle drift ──────────────────────────────── */
-
-  if (!reduced && document.getElementById("story-leaf")) {
-    gsap.fromTo("#story-leaf",
-      { y: 70, rotation: 7 },
-      { y: -70, rotation: 12, ease: "none",
-        scrollTrigger: { trigger: ".tea-story", start: "top bottom", end: "bottom top", scrub: 0.6 } });
-  }
-
   /* ── Gallery ────────────────────────────────────────────────── */
 
   const stage = document.getElementById("tea-stage-img");

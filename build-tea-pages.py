@@ -16,38 +16,38 @@ TEAS = {
         "kr": "세작",
         "type_line": "GREEN TEA · SINGLE ORIGIN",
         "title": "Sejak 세작 — Single-Origin Korean Green Tea | Koyo",
-        "description": "Premium Korean sejak green tea, hand-picked in late April in Hadong, South Korea. Soft, balanced, fresh — steeping to light gold and jade.",
-        "lede": "In Korea, they say the morning dew from spring rain is so pure it glistens like treasure. Sejak is crafted to capture the fresh aroma of those mid-April showers — young leaves plucked while still curled.",
+        "description": "Premium Korean sejak green tea, hand-picked in late April in Hadong, South Korea. Soft, balanced, fresh, steeping to light gold and jade.",
+        "lede": "In Korea, they say the morning dew from spring rain is so pure it glistens like treasure. Sejak is crafted to capture the fresh aroma of those mid-April showers: young leaves plucked while still curled.",
         "data_rows": [
             ("ORIGIN", "Hadong, South Korea"),
-            ("HARVEST", "Late April — second flush"),
+            ("HARVEST", "Late April, second flush"),
             ("NOTES", "Soft · Balanced · Fresh"),
             ("SERVING", "1 g per 148 ml (5 oz)"),
-            ("WATER", "74°C — 165°F, mineral"),
-            ("STEEP", "1 minute — then 2, then 4"),
+            ("WATER", "74°C / 165°F, mineral"),
+            ("STEEP", "1 minute, then 2, then 4"),
         ],
         "story": [
-            "In Korea, there is a saying that the morning dew from spring rain is so pure, it glistens like treasure. <em>Sejak</em> (세작), a Korean-style green tea, is crafted to capture the fresh aromas of these mid-April rain showers — the second flush, plucked while the young leaves are still slightly curled.",
-            "Our Sejak comes from Hadong (하동), South Korea, a region renowned for producing premium tea since the ninth century — favorable climate, ideal terrain, and generations of locals nurturing the land. When steeped, it reveals a subtle color between light gold and jade green: a clean taste and delicate hue that bring clarity and balance, reminiscent of the peace found in nature.",
-            "Regarded as a premium grade in Korea, every batch is hand-picked and hand-sorted so that no stray leaf makes the cut. The care shows in the cup — what Korean tea culture prizes above all is the plant's own essence, intact.",
+            "In Korea, there is a saying that the morning dew from spring rain is so pure, it glistens like treasure. <em>Sejak</em> (세작), a Korean-style green tea, is crafted to capture the fresh aromas of these mid-April rain showers: the second flush, plucked while the young leaves are still slightly curled.",
+            "Our Sejak comes from Hadong (하동), South Korea, a region renowned for producing premium tea since the ninth century: favorable climate, ideal terrain, and generations of locals nurturing the land. When steeped, it reveals a subtle color between light gold and jade green: a clean taste and delicate hue that bring clarity and balance, reminiscent of the peace found in nature.",
+            "Regarded as a premium grade in Korea, every batch is hand-picked and hand-sorted so that no stray leaf makes the cut. The care shows in the cup. What Korean tea culture prizes above all is the plant's own essence, intact.",
         ],
         "brew_steps": [
             ("一", "Warm", "Bring mineral water just past the pearl-bubble point, then let it rest until it cools to 74°C."),
-            ("二", "Steep", "One gram of leaves to 148 ml of water. One quiet minute — watch the gold and jade arrive."),
+            ("二", "Steep", "One gram of leaves to 148 ml of water. One quiet minute. Watch the gold and jade arrive."),
             ("三", "Return", "Steep again for two minutes, and a third time for four. Drink in small increments, from a small vessel."),
         ],
         "benefits": [
             "Rich in plant-based polyphenol antioxidants with anti-inflammatory values",
             "Boosts metabolism and supports brain health",
-            "Moderate caffeine with L-theanine — may support cognitive function and relaxation at once",
+            "Moderate caffeine with L-theanine, which may support cognitive function and relaxation at once",
             "Contains calcium, iron, and potassium",
-            "A gentle palate that clears the mind — the heart of Korean green tea culture",
+            "A gentle palate that clears the mind, the heart of Korean green tea culture",
         ],
         "price_loose": 33,
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "TEA COUNTRY SINCE THE 9TH C.",
-        "keeping": "Sejak celebrates freshness — enjoy it within a year, while the spring is still in the leaf.",
+        "keeping": "Sejak celebrates freshness. Enjoy within two years, while the spring is still in the leaf.",
         "keeping_tip": "STORE COOL &amp; DARK — THE FREEZER KEEPS IT BRIGHTEST",
         "related": ["artemisia", "hwangto"],
     },
@@ -57,40 +57,40 @@ TEAS = {
         "kr": "쑥차",
         "type_line": "TISANE · CAFFEINE-FREE",
         "title": "Artemisia 쑥차 — Wild Korean Mugwort Tisane | Koyo",
-        "description": "Wild Korean artemisia (ssuk) tisane, hand-gathered on the lower hills of Jirisan. Smooth, herbal, nutty — caffeine-free warmth and rest.",
-        "lede": "Wild ssuk, hand-gathered on the lower hills of Jirisan — the sacred herb of Korean myth, treasured for over a millennium for warmth, calm, and rest.",
+        "description": "Wild Korean artemisia (ssuk) tisane, hand-gathered on the lower hills of Jirisan. Smooth, herbal, nutty. Caffeine-free warmth and rest.",
+        "lede": "Wild ssuk, hand-gathered on the lower hills of Jirisan. The sacred herb of Korean myth, treasured for over a millennium for warmth, calm, and rest.",
         "data_rows": [
             ("ORIGIN", "Jirisan, South Korea"),
-            ("HARVEST", "Wild — gathered by hand"),
+            ("HARVEST", "Wild, gathered by hand"),
             ("NOTES", "Smooth · Herbal · Nutty"),
             ("SERVING", "1 g per 210 ml (7 oz)"),
-            ("WATER", "100°C — 212°F, mineral"),
-            ("STEEP", "2 minutes — steeps twice"),
+            ("WATER", "100°C / 212°F, mineral"),
+            ("STEEP", "2 minutes, steeps twice"),
         ],
         "story": [
-            "Koyo's Artemisia Tea is crafted from <em>artemisia princeps</em> — Korean mugwort, or <em>ssuk</em> (쑥) — gathered wild in the lower hills of Jirisan (지리산), a region renowned for the quality of its herbs and vegetation. Its name traces to Artemis, the Greek goddess of nature and fertility, symbolizing a connection to life itself.",
-            "That connection runs deep in Korea. In the founding myth, ssuk was one of the two ingredients given to create the first Korean human. In traditional medicine it has been treasured for over a millennium — for warming the body's core, easing cramps, treating colds and fevers, and nurturing restful sleep.",
-            "To this day artemisia is drunk across Korea. Ours is hand-gathered from the wilderness rather than farmed — each spring, from the same hills that have supplied Korean healers for centuries.",
+            "Koyo's Artemisia Tea is crafted from <em>artemisia princeps</em>, Korean mugwort, or <em>ssuk</em> (쑥), gathered wild in the lower hills of Jirisan (지리산), a region renowned for the quality of its herbs and vegetation. Its name traces to Artemis, the Greek goddess of nature and fertility, symbolizing a connection to life itself.",
+            "That connection runs deep in Korea. In the founding myth, ssuk was one of the two ingredients given to create the first Korean human. In traditional medicine it has been treasured for over a millennium: for warming the body's core, easing cramps, treating colds and fevers, and nurturing restful sleep.",
+            "To this day artemisia is drunk across Korea. Ours is hand-gathered from the wilderness rather than farmed. Each spring it comes from the same hills that have supplied Korean healers for centuries.",
         ],
         "brew_steps": [
-            ("一", "Boil", "Bring mineral water to a full boil — artemisia opens best at 100°C."),
+            ("一", "Boil", "Bring mineral water to a full boil. Artemisia opens best at 100°C."),
             ("二", "Steep", "One gram of leaves to 210 ml of water. Two unhurried minutes."),
-            ("三", "Return", "Steep a second time — the herb softens, and the nuttiness comes forward."),
+            ("三", "Return", "Steep a second time. The herb softens, and the nuttiness comes forward."),
         ],
         "benefits": [
             "Contains vitamins A and C",
             "Anti-inflammatory, antibacterial, and antifungal properties",
             "Traditionally used to improve blood circulation and metabolism",
             "Traditionally used to reduce anxiety, fatigue, and stress",
-            "Warms the body's core — long used against colds and fevers",
+            "Warms the body's core, long used against colds and fevers",
             "May promote deeper, more restful sleep",
         ],
         "price_loose": 34,
         "price_sachet": 14,
         "region": "Jirisan",
         "region_note": "WILD — GATHERED, NOT FARMED",
-        "keeping": "Artemisia keeps no clock — like Korean red teas, it <em>deepens</em> as it ages.",
-        "keeping_tip": "STORE COOL &amp; DARK — NO EXPIRATION",
+        "keeping": "Artemisia keeps its calm a long while. Enjoy within two years.",
+        "keeping_tip": "STORE COOL &amp; DARK — ENJOY WITHIN TWO YEARS",
         "related": ["sejak", "persimmon"],
     },
     "persimmon": {
@@ -99,20 +99,20 @@ TEAS = {
         "kr": "감잎차",
         "type_line": "TISANE · CAFFEINE-FREE",
         "title": "Persimmon Leaf 감잎차 — Rare Spring Tisane | Koyo",
-        "description": "Young persimmon leaf tisane, hand-picked in Hadong during a single week each spring. Earthy, bright, dry — rich in vitamin C.",
-        "lede": "Tender spring leaves picked at precisely the right moment — a harvest window of a single week, making true persimmon leaf tea a rare and treasured gift of the season.",
+        "description": "Young persimmon leaf tisane, hand-picked in Hadong during a single week each spring. Earthy, bright, dry, and rich in vitamin C.",
+        "lede": "Tender spring leaves picked at precisely the right moment. The harvest window lasts a single week, making true persimmon leaf tea a rare and treasured gift of the season.",
         "data_rows": [
             ("ORIGIN", "Hadong, South Korea"),
-            ("HARVEST", "Early spring — one week only"),
+            ("HARVEST", "Early spring, one week only"),
             ("NOTES", "Earthy · Bright · Dry"),
             ("SERVING", "1 g per 210 ml (7 oz)"),
             ("WATER", "74°C — boiled, then rested"),
-            ("STEEP", "2 minutes — steeps twice"),
+            ("STEEP", "2 minutes, steeps twice"),
         ],
         "story": [
-            "Persimmons have long been symbols of transformation and resilience. Their trees endure into early winter, bearing fruit through the cold, then sprout back to life with fresh leaves in early spring. We believe the finest persimmon leaf tea comes from these tender new leaves, while their flavor is vibrant — before they grow large, turn bitter, and lose their vitality.",
-            "There is a quiet chemistry to that timing: the young leaves hold their full store of nutrients only until the tree diverts them to bear fruit. Picked at the right moment, persimmon leaf is a quiet powerhouse — more vitamin C than a lemon, with magnesium and a broad spectrum of antioxidants.",
-            "To capture this fleeting essence, our leaves are hand-picked in Hadong (하동) at precisely the right moment each year. That window can last no more than a week — making true persimmon leaf tea a rare and treasured gift of the season.",
+            "Persimmons have long been symbols of transformation and resilience. Their trees endure into early winter, bearing fruit through the cold, then sprout back to life with fresh leaves in early spring. We believe the finest persimmon leaf tea comes from these tender new leaves, while their flavor is vibrant, before they grow large, turn bitter, and lose their vitality.",
+            "There is a quiet chemistry to that timing: the young leaves hold their full store of nutrients only until the tree diverts them to bear fruit. Picked at the right moment, persimmon leaf is a quiet powerhouse: more vitamin C than a lemon, with magnesium and a broad spectrum of antioxidants.",
+            "To capture this fleeting essence, our leaves are hand-picked in Hadong (하동) at precisely the right moment each year. That window can last no more than a week, making true persimmon leaf tea a rare and treasured gift of the season.",
         ],
         "brew_steps": [
             ("一", "Rest", "Boil mineral water fully, then let it rest until it cools to 74°C — gentleness preserves the vitamin C."),
@@ -122,7 +122,7 @@ TEAS = {
         "benefits": [
             "More vitamin C than a lemon, with a high magnesium content",
             "Rich in tannins and flavonoids traditionally credited with slowing the aging process",
-            "Broad antioxidant spectrum — carotenoids, triterpenoids, proanthocyanidins, quercetin, gallic acid",
+            "Broad antioxidant spectrum: carotenoids, triterpenoids, proanthocyanidins, quercetin, gallic acid",
             "Anti-inflammatory properties that support joint health",
             "Traditionally used to help with hypertension and blood circulation",
         ],
@@ -130,7 +130,7 @@ TEAS = {
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "ONE HARVEST WEEK A YEAR",
-        "keeping": "Like Sejak, persimmon leaf celebrates freshness — enjoy it within a year of harvest.",
+        "keeping": "Like Sejak, persimmon leaf celebrates freshness. Enjoy within two years of harvest.",
         "keeping_tip": "STORE COOL &amp; DARK — THE FREEZER KEEPS IT BRIGHTEST",
         "related": ["hwangto", "sejak"],
     },
@@ -140,39 +140,39 @@ TEAS = {
         "kr": "황토",
         "type_line": "BLEND · RED TEA & QUINCE",
         "title": "Hwangto 황토 — Korean Red Tea & Quince Blend | Koyo",
-        "description": "A Korean red tea (hongcha) and yellow quince blend from Hadong — gentle warmth, less caffeine, and a softer, sweeter cup.",
-        "lede": "Named for hwangto, the \u201cliving soil\u201d of traditional Korean homes — a blend of Korean-style red tea and yellow quince, made to warm you from within.",
+        "description": "A Korean red tea (hongcha) and yellow quince blend from Hadong. Gentle warmth, less caffeine, and a softer, sweeter cup.",
+        "lede": "Named for hwangto, the \u201cliving soil\u201d of traditional Korean homes. A blend of Korean-style red tea and yellow quince, made to warm you from within.",
         "data_rows": [
             ("ORIGIN", "Hadong, South Korea"),
             ("BLEND", "Hongcha 홍차 & quince 모과"),
             ("NOTES", "Earthy · Bright · Dry"),
             ("SERVING", "3 g per 210 ml (7 oz)"),
-            ("WATER", "100°C — 212°F, mineral"),
-            ("STEEP", "2 minutes — steeps twice"),
+            ("WATER", "100°C / 212°F, mineral"),
+            ("STEEP", "2 minutes, steeps twice"),
         ],
         "story": [
-            "Hwangto (황토) is a yellow-red clay that Koreans call <em>living soil</em>. Said to breathe with the earth, purifying the air while harmonizing the force that brings life, it formed the walls and floors of traditional homes — <em>hanok</em> (한옥) — standing as a quiet, enduring cornerstone of Korean culture. We honor that foundation with a blend that unites Korean-style red tea, <em>hongcha</em> (홍차), and yellow quince fruit, <em>mogwa</em> (모과).",
-            "Our red tea is made from the same Hadong plants as our Sejak, fully oxidized in the manner of black tea — but it brews to a softer crimson, with less caffeine and a sweeter profile, known for gently insulating the drinker from within. The craft behind it draws on both Korean and Taiwanese techniques, refined in small organic batches and hand-picked so those subtle differences stay in the cup.",
-            "The quince carries its own legacy: traditionally used to soothe sore throats and dry coughs, a fruit of respiratory healing. Though no longer central to daily life, quince trees still grace Korean courtyards as quiet symbols of strength and purity — much like hwangto itself: ever-present, often unnoticed, deeply rooted.",
+            "Hwangto (황토) is a yellow-red clay that Koreans call <em>living soil</em>. Said to breathe with the earth, purifying the air while harmonizing the force that brings life, it formed the walls and floors of traditional homes, <em>hanok</em> (한옥), standing as a quiet, enduring cornerstone of Korean culture. We honor that foundation with a blend that unites Korean-style red tea, <em>hongcha</em> (홍차), and yellow quince fruit, <em>mogwa</em> (모과).",
+            "Our red tea is made from the same Hadong plants as our Sejak, fully oxidized in the manner of black tea. It brews to a softer crimson, with less caffeine and a sweeter profile, known for gently insulating the drinker from within. The craft behind it draws on both Korean and Taiwanese techniques, refined in small organic batches and hand-picked so those subtle differences stay in the cup.",
+            "The quince carries its own legacy: traditionally used to soothe sore throats and dry coughs, a fruit of respiratory healing. Though no longer central to daily life, quince trees still grace Korean courtyards as quiet symbols of strength and purity, much like hwangto itself: ever-present, often unnoticed, deeply rooted.",
         ],
         "brew_steps": [
-            ("一", "Boil", "Bring mineral water to a full boil — the blend opens at 100°C."),
+            ("一", "Boil", "Bring mineral water to a full boil. The blend opens at 100°C."),
             ("二", "Steep", "Three grams to 210 ml of water. Two minutes, and the crimson arrives."),
             ("三", "Return", "Steep once more. The quince sweetens as the red tea softens."),
         ],
         "benefits": [
-            "Packed with vitamin C and antioxidants — polyphenols, theaflavins, and thearubigins",
+            "Packed with vitamin C and antioxidants: polyphenols, theaflavins, and thearubigins",
             "Antibacterial and anti-inflammatory properties",
             "Quince has long supported the immune system and digestion",
             "Traditionally used to soothe sore throats and dry coughs",
-            "Moderate caffeine with L-theanine — gentle, warm alertness",
+            "Moderate caffeine with L-theanine, and gentle, warm alertness",
         ],
         "price_loose": 37,
         "price_sachet": 14,
         "region": "Hadong",
         "region_note": "SAME GARDENS AS OUR SEJAK",
-        "keeping": "Fully oxidized teas keep no clock — hwangto <em>deepens</em> as it ages.",
-        "keeping_tip": "STORE COOL &amp; DARK — NO EXPIRATION",
+        "keeping": "Enjoy within two years. Fully oxidized, hwangto only <em>deepens</em> along the way.",
+        "keeping_tip": "STORE COOL &amp; DARK — ENJOY WITHIN TWO YEARS",
         "related": ["sejak", "artemisia"],
     },
 }
@@ -219,8 +219,10 @@ TEMPLATE = """<!DOCTYPE html>
       <span class="nav-word">KOYO</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="../index.html#ethos" data-cursor>Story</a>
+      <a href="../index.html" data-cursor>Home</a>
       <a href="../index.html#specimen" data-cursor>Collection</a>
+      <a href="../index.html#ethos" data-cursor>Story</a>
+      <a href="../index.html#ritual" data-cursor>Ritual</a>
       <div class="nav-shop">
         <a href="../shop.html" data-cursor aria-haspopup="true">Shop</a>
         <div class="nav-dropdown" aria-label="Teas">
@@ -230,7 +232,6 @@ TEMPLATE = """<!DOCTYPE html>
           <a href="hwangto.html" data-cursor>Hwangto <span>황토</span></a>
         </div>
       </div>
-      <a href="../index.html#ritual" data-cursor>Ritual</a>
     </nav>
     <div class="nav-right">
       <a class="nav-cart mono" href="#" data-cursor data-cart-open data-cart-count>CART — 0</a>
@@ -242,8 +243,9 @@ TEMPLATE = """<!DOCTYPE html>
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav aria-label="Mobile">
-      <a href="../index.html#ethos">Story</a>
+      <a href="../index.html">Home</a>
       <a href="../index.html#specimen">Collection</a>
+      <a href="../index.html#ethos">Story</a>
       <a href="../index.html#ritual">Ritual</a>
     </nav>
     <div class="mobile-menu-shop">
@@ -329,8 +331,6 @@ TEMPLATE = """<!DOCTYPE html>
 
     <!-- ═══════════ STORY ═══════════ -->
     <section class="tea-story">
-      <img class="story-leaf" id="story-leaf" src="../assets/img/leafcut-%%ID%%.webp"
-           alt="" loading="lazy" aria-hidden="true" />
       <p class="eyebrow mono" data-reveal>THE STORY — 이야기</p>
 %%STORY%%
     </section>
@@ -343,7 +343,7 @@ TEMPLATE = """<!DOCTYPE html>
 %%BREW_STEPS%%
       </ol>
       <p class="tea-brew-note" data-reveal>
-        These are recommendations, never law — <em>sohn-mat</em> trusts your hands.
+        These are recommendations, never law. <em>Sohn-mat</em> trusts your hands.
       </p>
     </section>
 
@@ -456,7 +456,7 @@ def render(tea_id, tea):
         f'        <li data-reveal>{b}</li>' for b in tea["benefits"])
     related = "\n".join(
         f'''        <a class="tea-related-card" href="{rid}.html" data-cursor data-reveal>
-          <img src="../assets/img/cup-{rid}.jpg" alt="{TEAS[rid]["name"]} tea, steeped" loading="lazy" />
+          <img src="../assets/img/pilecut-{rid}.webp" alt="{TEAS[rid]["name"]} loose leaf" loading="lazy" />
           <h3>{TEAS[rid]["name"]} <span>{TEAS[rid]["kr"]}</span></h3>
           <p class="mono">N° {TEAS[rid]["number"]} — {TEAS[rid]["type_line"]}</p>
         </a>''' for rid in tea["related"])
