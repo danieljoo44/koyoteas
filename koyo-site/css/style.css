@@ -383,16 +383,32 @@ main { position: relative; z-index: 1; }
 }
 .hero-def em { font-style: italic; letter-spacing: 0.1em; }
 
-.hero-horizon {
+.hero-film {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: min(34vh, 300px);
+  inset: 0;
   z-index: 0;
-  background: url("../assets/img/hero-field.jpg") center 62% / cover no-repeat;
-  opacity: 0.5;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 60%, #000 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 60%, #000 100%);
   pointer-events: none;
+  overflow: hidden;
+}
+.hero-film video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) brightness(1.05);
+}
+.hero-film-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 64% 50% at 50% 42%, rgba(243, 239, 231, 0.55) 0%, rgba(243, 239, 231, 0) 76%),
+    linear-gradient(
+      180deg,
+      rgba(243, 239, 231, 0.94) 0%,
+      rgba(243, 239, 231, 0.8) 30%,
+      rgba(243, 239, 231, 0.7) 55%,
+      rgba(243, 239, 231, 0.64) 80%,
+      rgba(243, 239, 231, 0.76) 100%
+    );
 }
 .hero-mark, .hero-eyebrow, .hero-kr, .hero-def, .hero-title, .hero-cta {
   position: relative;

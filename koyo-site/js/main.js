@@ -88,7 +88,7 @@ if (site) {
   /* ── Story · Hadong footage window ──────────────────────────── */
 
   // let the footage breathe slowly, and only play what is on screen
-  document.querySelectorAll(".story-media video").forEach((video) => {
+  document.querySelectorAll(".story-media video, .hero-film video").forEach((video) => {
     video.playbackRate = 0.85;
     if (reduced) { video.removeAttribute("autoplay"); video.pause(); return; }
     new IntersectionObserver(([e]) => {
