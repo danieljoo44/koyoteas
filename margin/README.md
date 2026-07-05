@@ -26,34 +26,50 @@ node scripts/set-passphrase.js "my new passphrase"
 ```
 
 Environment variables: `PORT` (default 8787), `DATA_DIR` (default `./data`),
-`PASSPHRASE` (optional — seeds the passphrase on first boot, e.g. from fly secrets).
+`PASSPHRASE` (optional — seeds the passphrase on first boot).
 
-## Deploy to Fly.io (recommended)
+## Deploy on your home server (Docker + Tailscale)
+
+Copy the `margin/` folder to the server (or clone it), then:
 
 ```bash
-brew install flyctl && fly auth signup      # once
 cd margin
-fly launch --no-deploy                      # accept the detected Dockerfile; pick an app name
-fly volumes create margin_data --size 1
-fly secrets set PASSPHRASE="choose-a-long-passphrase"
-fly deploy
+docker compose up -d --build
 ```
 
-Your app is then at `https://<app-name>.fly.dev` with HTTPS (required for PWA install).
-The SQLite file and its backups live on the volume, so deploys never touch your data.
+The app is now on `http://localhost:8787`, and the SQLite database plus its daily
+backups live in `./data/` **on the host**, so container rebuilds never touch your
+notes.
 
-**Grabbing a server backup:** `fly ssh sftp get /data/backups/<file>.db`
-(list them with `fly ssh console -C "ls /data/backups"`).
+**HTTPS via Tailscale** — required: browsers only allow service workers (offline
+mode) and full PWA install on secure origins, so don't skip this. With Tailscale
+on the server (MagicDNS + HTTPS certificates enabled under DNS settings in the
+admin console):
 
-Any other host works the same way (Railway, a home server behind Caddy/Tailscale…):
-run `node server/index.js` with `DATA_DIR` pointing at persistent storage, and put
-HTTPS in front of it.
+```bash
+tailscale serve --bg localhost:8787
+```
+
+That publishes the app inside your tailnet at `https://<machine>.<tailnet>.ts.net`
+with a valid certificate — nothing is exposed to the public internet; the
+passphrase is a second layer on top.
+
+**Updating the app:** pull/copy the new files, bump `VERSION` in `public/sw.js`,
+then `docker compose up -d --build`.
+
+**Resetting the passphrase:**
+`docker compose exec margin node scripts/set-passphrase.js "new passphrase"`
+
+**Backups:** grab `./data/backups/*.db` off the host any way you like (they're
+plain SQLite files — restoring is just replacing `data/notes.db` while the
+container is stopped), or use the in-app JSON export.
 
 ## Install on your devices
 
-- **iPhone:** open the site in Safari → Share → **Add to Home Screen**. It launches
+- **iPhone:** install the Tailscale app and connect, then open the
+  `https://….ts.net` URL in Safari → Share → **Add to Home Screen**. It launches
   full-screen with the app icon, and works offline in the pew.
-- **Desktop:** open the site in Chrome/Edge → install icon in the address bar
+- **Desktop:** open the same URL in Chrome/Edge → install icon in the address bar
   ("Install Margin").
 
 ## Releasing app updates
