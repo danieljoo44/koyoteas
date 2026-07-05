@@ -43,7 +43,7 @@ if (site) {
 
   /* ── The Specimens · vertical drift ─────────────────────────── */
 
-  if (!reduced) {
+  if (!reduced && window.matchMedia("(min-width: 981px)").matches) {
     gsap.utils.toArray(".spec-panel").forEach((panel) => {
       gsap.fromTo(panel.querySelector(".spec-leaf"),
         { y: 46, rotation: -2.5 },

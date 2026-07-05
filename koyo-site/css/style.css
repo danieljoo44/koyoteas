@@ -607,6 +607,7 @@ main { position: relative; z-index: 1; }
 }
 .spec-info { max-width: 30rem; }
 .spec-info .panel-lede { max-width: 26rem; }
+.spec-mobile-note { display: none; }
 .spec-note {
   position: absolute;
   font-family: var(--mono);
@@ -645,17 +646,20 @@ main { position: relative; z-index: 1; }
     padding: 0 var(--pad-x);
   }
   .spec-panel:nth-child(even) .spec-stage { order: 0; }
-  .spec-note {
-    position: static;
-    margin: 0.45rem 0 0 !important;
-    align-self: flex-start;
-    max-width: none;
-    white-space: normal;
-  }
+  .spec-note { display: none; }
   .spec-panel:nth-child(odd) .spec-info { margin-left: 0; }
-  .spec-note::before { display: none; }
+  .spec-mobile-note {
+    display: block;
+    align-self: center;
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    margin-top: 0.2rem;
+  }
   .spec-stage { flex-direction: column; height: auto; }
-  .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1.8rem; }
+  .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1.4rem; }
   .spec-info { max-width: none; }
 }
 
