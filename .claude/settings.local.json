@@ -33,7 +33,12 @@
       "Bash(git commit -m 'Unify all serif type to Noto Serif KR \\(match landing page\\) *)",
       "Bash(mdfind -name koyoteas)",
       "Bash(plutil -p '/Users/danieljoo/Library/Application Support/GitHub Desktop/Preferences')",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.github.com/repos/danieljoo44/koyoteas)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://danieljoo44.github.io/koyoteas/)",
+      "Bash(curl -s https://api.github.com/repos/danieljoo44/koyoteas/actions/runs)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r['name'], '—', r['status'], '/', r.get\\('conclusion'\\)\\) for r in d.get\\('workflow_runs', []\\)[:3]]\")",
+      "Bash(git commit -m 'Collection: vertical scrolling panels, alternating sides *)"
     ]
   }
 }

@@ -41,53 +41,16 @@ if (site) {
                        onStart: () => heroIntro.play() }, 2.0);
   }
 
-  /* ── The Specimens · pinned horizontal gallery ──────────────── */
+  /* ── The Specimens · vertical drift ─────────────────────────── */
 
-  const specimen = document.querySelector(".specimen");
-  const specTrack = document.getElementById("specimen-track");
-  const specPanels = gsap.utils.toArray(".spec-panel");
-  const specCurrent = document.getElementById("spec-current");
-  const specFill = document.getElementById("spec-fill");
-  let activeSpec = 0;
-
-  const setActiveSpec = (i) => {
-    if (i === activeSpec) return;
-    activeSpec = i;
-    specCurrent.textContent = `0${i + 1}`;
-    gsap.fromTo(specCurrent, { opacity: 0.2 }, { opacity: 1, duration: 0.4 });
-    gsap.to(specFill, { scaleX: (i + 1) / specPanels.length, duration: 0.5, ease: "power2.out" });
-  };
-
-  const mmSpec = gsap.matchMedia();
-  mmSpec.add("(min-width: 981px) and (prefers-reduced-motion: no-preference)", () => {
-    specimen.classList.add("pin-mode");
-    const shift = ((specPanels.length - 1) / specPanels.length) * 100;
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: specimen,
-        start: "top top",
-        end: "+=280%",
-        pin: true,
-        scrub: 0.7,
-        anticipatePin: 1,
-        onUpdate: (self) =>
-          setActiveSpec(Math.min(specPanels.length - 1,
-            Math.round(self.progress * (specPanels.length - 1)))),
-      },
-    }).to(specTrack, { xPercent: -shift, ease: "none" });
-
-    // each leaf drifts slightly against the pan
-    specPanels.forEach((panel) => {
+  if (!reduced) {
+    gsap.utils.toArray(".spec-panel").forEach((panel) => {
       gsap.fromTo(panel.querySelector(".spec-leaf"),
-        { rotation: -2 }, { rotation: 2, ease: "none",
-          scrollTrigger: { trigger: specimen, start: "top top", end: "+=280%", scrub: 1.2 } });
+        { y: 46, rotation: -2.5 },
+        { y: -46, rotation: 2.5, ease: "none",
+          scrollTrigger: { trigger: panel, start: "top bottom", end: "bottom top", scrub: 0.8 } });
     });
-
-    return () => {
-      specimen.classList.remove("pin-mode");
-      gsap.set(specTrack, { clearProps: "all" });
-    };
-  });
+  }
 
   /* ── Manifesto · word-by-word scrub ─────────────────────────── */
 

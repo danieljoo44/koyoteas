@@ -446,9 +446,8 @@ main { position: relative; z-index: 1; }
 .specimen-pin {
   display: flex;
   flex-direction: column;
-  padding: clamp(5rem, 9vh, 7rem) 0 clamp(2.2rem, 4.5vh, 3.2rem);
+  padding: clamp(5rem, 9vh, 7rem) 0 clamp(4rem, 9vh, 6.5rem);
 }
-.pin-mode .specimen-pin { min-height: 100vh; }
 .specimen-head { text-align: center; padding: 0 var(--pad-x); }
 .specimen-title {
   font-family: var(--serif);
@@ -458,21 +457,26 @@ main { position: relative; z-index: 1; }
 }
 
 .specimen-track {
-  flex: 1;
   display: flex;
-  align-items: stretch;
-  margin-top: clamp(1.6rem, 4vh, 3rem);
+  flex-direction: column;
+  gap: clamp(5rem, 11vh, 8.5rem);
+  margin-top: clamp(3rem, 7vh, 5rem);
 }
-.pin-mode .specimen-track { width: max-content; }
 .spec-panel {
-  flex: 0 0 100vw;
-  width: 100vw;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 5rem);
   align-items: center;
   padding: 0 max(var(--pad-x), calc((100vw - 78rem) / 2));
 }
+.spec-panel:nth-child(even) .spec-stage { order: 2; }
+/* mirrored annotations on flipped panels */
+.spec-panel:nth-child(even) .n1 { left: auto; right: 50%; margin: 0 10rem 0 0; }
+.spec-panel:nth-child(even) .n1::before { left: auto; right: -5.2rem; }
+.spec-panel:nth-child(even) .n2 { right: auto; left: 50%; margin: 0 0 0 9.5rem; }
+.spec-panel:nth-child(even) .n2::before { right: auto; left: -5.2rem; }
+.spec-panel:nth-child(even) .n3 { left: auto; right: 50%; margin: 0 9.5rem 0 0; }
+.spec-panel:nth-child(even) .n3::before { left: auto; right: -5.2rem; }
 .spec-stage {
   position: relative;
   height: clamp(22rem, 56vh, 32rem);
@@ -516,50 +520,19 @@ main { position: relative; z-index: 1; }
 .n3-left { left: auto; right: 50%; margin: 0 9.5rem 0 0; }
 .n3-left::before { left: auto; right: -5.2rem; }
 
-.specimen-progress {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  justify-content: center;
-  margin-top: clamp(1.6rem, 3.5vh, 2.6rem);
-}
-.specimen-progress-track {
-  width: clamp(120px, 18vw, 240px);
-  height: 1px;
-  background: var(--line);
-  position: relative;
-}
-.specimen-progress-fill {
-  position: absolute;
-  inset: 0;
-  background: var(--ink);
-  transform: scaleX(0.25);
-  transform-origin: left;
-}
 
 @media (max-width: 980px) {
-  .specimen-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .specimen-track::-webkit-scrollbar { display: none; }
   .spec-panel {
-    flex: 0 0 92vw;
-    width: 92vw;
-    scroll-snap-align: center;
     grid-template-columns: 1fr;
     gap: 1.6rem;
-    align-content: start;
     padding: 0 var(--pad-x);
   }
+  .spec-panel:nth-child(even) .spec-stage { order: 0; }
   .spec-note { position: static; margin: 0.45rem 0 0 !important; }
   .spec-note::before { display: none; }
   .spec-stage { flex-direction: column; height: auto; }
   .spec-leaf { max-height: min(36vh, 17rem); max-width: 74vw; margin-bottom: 1rem; }
   .spec-info { max-width: none; }
-  .specimen-progress { display: none; }
 }
 
 /* ── Story grid (ethos) ─────────────────────────────────────── */
