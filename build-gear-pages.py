@@ -21,10 +21,10 @@ GEAR = {
                 "as you pour. Nothing to assemble, nothing to lose. A rinse "
                 "and it is clean.",
         "specs": [
-            ("BODY", "Unibody, one piece of glass"),
+            ("BODY", "Unibody borosilicate 3.3 glass"),
             ("CAPACITY", "500 ml"),
             ("FILTER", "Built in, nothing removable"),
-            ("STEEP", "Loose leaf, straight in the body"),
+            ("HEAT", "Boiling water safe, lead-free"),
             ("CLEAN", "Dishwasher safe"),
         ],
         "variant_label": None,
