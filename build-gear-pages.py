@@ -12,6 +12,32 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, "koyo-site")
 
 GEAR = {
+    "simple-steeper": {
+        "name": "The Simple Steeper",
+        "brand": "KOYO",
+        "eyebrow": "DESIGNED BY KOYO — 고요의 도구",
+        "lede": "One piece of glass, start to finish. Leaves go in the body, "
+                "water follows, and the built-in filter holds every leaf back "
+                "as you pour. Nothing to assemble, nothing to lose. A rinse "
+                "and it is clean.",
+        "specs": [
+            ("BODY", "Unibody, one piece of glass"),
+            ("FILTER", "Built in, nothing removable"),
+            ("STEEP", "Loose leaf, straight in the body"),
+            ("CLEAN", "Rinse, done"),
+        ],
+        "variant_label": None,
+        "variants": [
+            ("glass", "Clear Glass", 0, "steeper-hero.webp"),
+        ],
+        "launch": True,
+        "gallery": [
+            ("steeper-hero.webp", "THE STEEPER"),
+            ("steeper-filter.webp", "THE FILTER"),
+            ("steeper-unibody.webp", "UNIBODY"),
+            ("steeper-steeping.webp", "MID-STEEP"),
+        ],
+    },
     "atmos": {
         "name": "Atmos Vacuum Canister",
         "brand": "FELLOW",
@@ -155,6 +181,14 @@ def build():
         specs = "\n".join(
             f"            <div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in g["specs"])
 
+        thumbs = ""
+        if g.get("gallery"):
+            btns = "\n".join(
+                f"""            <button class="tea-thumb{' is-active' if i == 0 else ''}" data-src="../assets/img/gear/{img}">
+              <img src="../assets/img/gear/{img}" alt="" loading="lazy" /><span class="mono">{label}</span>
+            </button>""" for i, (img, label) in enumerate(g["gallery"]))
+            thumbs = f'          <div class="tea-thumbs">\n{btns}\n          </div>'
+
         if g["variant_label"] and len(g["variants"]) > 1:
             opts = "\n".join(
                 f'''              <button class="format-opt{' is-active' if i == 0 else ''}"
@@ -169,31 +203,14 @@ def build():
         else:
             picker = ""
 
-        content = f'''
-    <!-- ═══════════ PRODUCT ═══════════ -->
-    <section class="tea-hero">
-      <p class="tea-breadcrumb mono" data-reveal>
-        <a href="../shop.html#teaware">TEAWARE</a> &nbsp;/&nbsp; {g["name"].upper()}
-      </p>
-      <div class="tea-grid">
-
-        <div class="tea-gallery" data-reveal>
-          <div class="tea-stage">
-            <img id="tea-stage-img" src="../assets/img/gear/{first[3]}" alt="{g['name']}" />
-          </div>
-        </div>
-
-        <div class="tea-info">
-          <p class="eyebrow mono" data-reveal>{g["eyebrow"]}</p>
-          <h1 class="tea-name" data-reveal>{g["name"]}</h1>
-          <p class="tea-lede" data-reveal>{g["lede"]}</p>
-
-          <dl class="panel-data mono" data-reveal>
-{specs}
-          </dl>
-
-          <div class="tea-buy" data-reveal>
-{picker}
+        if g.get("launch"):
+            buy = f'''            <p class="tea-price is-visible">First firing, arriving soon</p>
+            <div class="tea-buy-row">
+              <a class="btn btn-ghost" href="../index.html#letter">Be first to know</a>
+            </div>
+            <p class="tea-ship mono">DESIGNED IN-HOUSE BY KOYO · SHIPS FROM GRAND RAPIDS, MI</p>'''
+        else:
+            buy = f'''{picker}
             <p class="tea-price is-visible" id="gear-price">{money(first[2])}</p>
             <div class="tea-buy-row">
               <div class="qty" aria-label="Quantity">
@@ -208,7 +225,34 @@ def build():
                 Add to order
               </button>
             </div>
-            <p class="tea-ship mono">AUTHORIZED {g["brand"]} RETAILER · SHIPS FROM GRAND RAPIDS, MI</p>
+            <p class="tea-ship mono">AUTHORIZED {g["brand"]} RETAILER · SHIPS FROM GRAND RAPIDS, MI</p>'''
+
+        content = f'''
+    <!-- ═══════════ PRODUCT ═══════════ -->
+    <section class="tea-hero">
+      <p class="tea-breadcrumb mono" data-reveal>
+        <a href="../shop.html#teaware">TEAWARE</a> &nbsp;/&nbsp; {g["name"].upper()}
+      </p>
+      <div class="tea-grid">
+
+        <div class="tea-gallery" data-reveal>
+          <div class="tea-stage">
+            <img id="tea-stage-img" src="../assets/img/gear/{first[3]}" alt="{g['name']}" />
+          </div>
+{thumbs}
+        </div>
+
+        <div class="tea-info">
+          <p class="eyebrow mono" data-reveal>{g["eyebrow"]}</p>
+          <h1 class="tea-name" data-reveal>{g["name"]}</h1>
+          <p class="tea-lede" data-reveal>{g["lede"]}</p>
+
+          <dl class="panel-data mono" data-reveal>
+{specs}
+          </dl>
+
+          <div class="tea-buy" data-reveal>
+{buy}
           </div>
         </div>
       </div>
