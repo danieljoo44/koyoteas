@@ -15,7 +15,7 @@ GEAR = {
     "simple-steeper": {
         "name": "The Simple Steeper",
         "brand": "KOYO",
-        "eyebrow": "DESIGNED BY KOYO — 고요의 도구",
+        "eyebrow": "PROPRIETARY DESIGN — 고요의 도구",
         "lede": "One piece of glass, start to finish. Leaves go in the body, "
                 "water follows, and the built-in filter holds every leaf back "
                 "as you pour. Nothing to assemble, nothing to lose. A rinse "
