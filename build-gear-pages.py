@@ -34,9 +34,12 @@ GEAR = {
         "gallery": [
             ("steeper-hero.webp", "THE STEEPER"),
             ("steeper-filter.webp", "THE FILTER"),
-            ("steeper-unibody.webp", "UNIBODY"),
-            ("steeper-steeping.webp", "MID-STEEP"),
+            ("steeper-liquor.webp", "THE LIQUOR"),
+            ("steeper-pour.webp", "THE POUR"),
         ],
+        "band": ("steeper-scene.jpg",
+                 "BREWED FOR TWO — 다도",
+                 "500 ML · THE SIMPLE STEEPER"),
     },
     "atmos": {
         "name": "Atmos Vacuum Canister",
@@ -230,6 +233,24 @@ def build():
             </div>
             <p class="tea-ship mono">{ship}</p>'''
 
+        band = ""
+        if g.get("band"):
+            bimg, bl, br = g["band"]
+            band = f"""
+    <!-- ═══════════ IN USE ═══════════ -->
+    <section class="tea-prov" style="padding-top: 0;">
+      <figure class="story-film" data-reveal>
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="story-film-frame">
+          <img src="../assets/img/gear/{bimg}" alt="The Simple Steeper in use" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="mono">{bl}</span>
+          <span class="mono">{br}</span>
+        </figcaption>
+      </figure>
+    </section>
+"""
         content = f'''
     <!-- ═══════════ PRODUCT ═══════════ -->
     <section class="tea-hero">
@@ -261,6 +282,7 @@ def build():
       </div>
     </section>
 
+{band}
 '''
         out = head + content + suffix
         path = os.path.join(SITE, "gear", f"{gid}.html")
