@@ -11,7 +11,7 @@
     {
       "name": "margin",
       "runtimeExecutable": "/Users/danieljoo/.local/node/bin/node",
-      "runtimeArgs": ["/Users/danieljoo/Desktop/Claude Code Koyo Project/margin/server/index.js"],
+      "runtimeArgs": ["/Users/danieljoo/Desktop/margin/server/index.js"],
       "port": 8787
     },
     {

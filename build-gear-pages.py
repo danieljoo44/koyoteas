@@ -22,15 +22,15 @@ GEAR = {
                 "and it is clean.",
         "specs": [
             ("BODY", "Unibody, one piece of glass"),
+            ("CAPACITY", "500 ml"),
             ("FILTER", "Built in, nothing removable"),
             ("STEEP", "Loose leaf, straight in the body"),
-            ("CLEAN", "Rinse, done"),
+            ("CLEAN", "Dishwasher safe"),
         ],
         "variant_label": None,
         "variants": [
-            ("glass", "Clear Glass", 0, "steeper-hero.webp"),
+            ("glass", "Clear Glass · 500 ml", 19.00, "steeper-hero.webp"),
         ],
-        "launch": True,
         "gallery": [
             ("steeper-hero.webp", "THE STEEPER"),
             ("steeper-filter.webp", "THE FILTER"),
@@ -203,6 +203,9 @@ def build():
         else:
             picker = ""
 
+        ship = ("DESIGNED IN-HOUSE BY KOYO · SHIPS FROM GRAND RAPIDS, MI"
+                if g["brand"] == "KOYO"
+                else "AUTHORIZED " + g["brand"] + " RETAILER · SHIPS FROM GRAND RAPIDS, MI")
         if g.get("launch"):
             buy = f'''            <p class="tea-price is-visible">First firing, arriving soon</p>
             <div class="tea-buy-row">
@@ -225,7 +228,7 @@ def build():
                 Add to order
               </button>
             </div>
-            <p class="tea-ship mono">AUTHORIZED {g["brand"]} RETAILER · SHIPS FROM GRAND RAPIDS, MI</p>'''
+            <p class="tea-ship mono">{ship}</p>'''
 
         content = f'''
     <!-- ═══════════ PRODUCT ═══════════ -->

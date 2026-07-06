@@ -118,15 +118,27 @@
 
           <dl class="panel-data mono" data-reveal>
             <div><dt>BODY</dt><dd>Unibody, one piece of glass</dd></div>
+            <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
             <div><dt>FILTER</dt><dd>Built in, nothing removable</dd></div>
             <div><dt>STEEP</dt><dd>Loose leaf, straight in the body</dd></div>
-            <div><dt>CLEAN</dt><dd>Rinse, done</dd></div>
+            <div><dt>CLEAN</dt><dd>Dishwasher safe</dd></div>
           </dl>
 
           <div class="tea-buy" data-reveal>
-            <p class="tea-price is-visible">First firing, arriving soon</p>
+
+            <p class="tea-price is-visible" id="gear-price">$19</p>
             <div class="tea-buy-row">
-              <a class="btn btn-ghost" href="../index.html#letter">Be first to know</a>
+              <div class="qty" aria-label="Quantity">
+                <button id="qty-minus" aria-label="Decrease quantity">−</button>
+                <span id="qty-value">1</span>
+                <button id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn btn-solid" id="add-to-cart"
+                      data-gear-id="simple-steeper" data-gear-name="The Simple Steeper"
+                      data-variant="glass" data-variant-label="Clear Glass · 500 ml"
+                      data-price="19.0">
+                Add to order
+              </button>
             </div>
             <p class="tea-ship mono">DESIGNED IN-HOUSE BY KOYO · SHIPS FROM GRAND RAPIDS, MI</p>
           </div>
