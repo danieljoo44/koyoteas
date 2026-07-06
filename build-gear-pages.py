@@ -29,12 +29,11 @@ GEAR = {
         ],
         "variant_label": None,
         "variants": [
-            ("glass", "Clear Glass · 500 ml", 19.00, "steeper-hero.webp"),
+            ("glass", "Clear Glass · 500 ml", 19.00, "steeper-liquor.webp"),
         ],
         "gallery": [
-            ("steeper-hero.webp", "THE STEEPER"),
+            ("steeper-liquor.webp", "THE STEEPER"),
             ("steeper-filter.webp", "THE FILTER"),
-            ("steeper-liquor.webp", "THE LIQUOR"),
             ("steeper-pour.webp", "THE POUR"),
         ],
         "band": ("steeper-scene.jpg",
