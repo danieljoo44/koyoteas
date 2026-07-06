@@ -36,9 +36,6 @@ GEAR = {
             ("steeper-filter.webp", "THE FILTER"),
             ("steeper-pour.webp", "THE POUR"),
         ],
-        "band": ("steeper-scene.jpg",
-                 "BREWED FOR TWO — 다도",
-                 "500 ML · THE SIMPLE STEEPER"),
     },
     "atmos": {
         "name": "Atmos Vacuum Canister",
