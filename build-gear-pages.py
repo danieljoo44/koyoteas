@@ -202,7 +202,7 @@ def build():
         else:
             picker = ""
 
-        ship = ("DESIGNED BY OUR TEA FARM IN KOREA · SHIPS FROM GRAND RAPIDS, MI"
+        ship = ("DESIGNED BY OUR TEA FARM · SHIPS FROM GRAND RAPIDS, MI"
                 if g["brand"] == "KOYO"
                 else "AUTHORIZED " + g["brand"] + " RETAILER · SHIPS FROM GRAND RAPIDS, MI")
         if g.get("launch"):
@@ -210,7 +210,7 @@ def build():
             <div class="tea-buy-row">
               <a class="btn btn-ghost" href="../index.html#letter">Be first to know</a>
             </div>
-            <p class="tea-ship mono">DESIGNED BY OUR TEA FARM IN KOREA · SHIPS FROM GRAND RAPIDS, MI</p>'''
+            <p class="tea-ship mono">DESIGNED BY OUR TEA FARM · SHIPS FROM GRAND RAPIDS, MI</p>'''
         else:
             buy = f'''{picker}
             <p class="tea-price is-visible" id="gear-price">{money(first[2])}</p>
