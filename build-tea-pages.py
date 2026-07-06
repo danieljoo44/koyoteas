@@ -225,11 +225,15 @@ TEMPLATE = """<!DOCTYPE html>
       <a href="../index.html#ethos">Our Story</a>
       <div class="nav-shop">
         <a href="../shop.html" aria-haspopup="true">Shop</a>
-        <div class="nav-dropdown" aria-label="Teas">
+        <div class="nav-dropdown" aria-label="Shop">
+          <p class="nav-dd-head mono">TEA — 차</p>
           <a href="sejak.html">Sejak <span>세작</span></a>
           <a href="artemisia.html">Artemisia <span>쑥</span></a>
           <a href="persimmon.html">Persimmon Leaf <span>감잎</span></a>
           <a href="hwangto.html">Hwangto <span>황토</span></a>
+          <p class="nav-dd-head mono">TEAWARE — 다구</p>
+          <a href="../gear/simple-steeper.html">The Simple Steeper</a>
+          <a href="../shop.html#teaware">All Teaware →</a>
         </div>
       </div>
     </nav>

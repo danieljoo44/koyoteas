@@ -190,6 +190,14 @@ main { position: relative; z-index: 1; }
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+.nav-dd-head {
+  padding: 0.7rem 1.4rem 0.3rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+}
+.nav-dd-head + a { border-top: 0; }
+.nav-dd-head:not(:first-child) { margin-top: 0.5rem; border-top: 1px solid var(--line); padding-top: 0.9rem; }
 .nav-dropdown a {
   display: flex;
   align-items: baseline;
