@@ -1146,56 +1146,6 @@ main { position: relative; z-index: 1; }
 }
 @media (max-width: 900px) { .origin-vertical, .origin-credit { display: none; } }
 
-/* ── Story · mission threads ────────────────────────────────── */
-
-.story-threads {
-  max-width: 72rem;
-  margin: clamp(4.5rem, 10vh, 7rem) auto 0;
-}
-.story-threads-lead {
-  display: block;
-  max-width: 40rem;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.02rem;
-  letter-spacing: 0.04em;
-  line-height: 1.9;
-  color: var(--ink);
-}
-.threads {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 4.5rem);
-  margin-top: clamp(3rem, 7vh, 4.5rem);
-}
-.threads li {
-  border-top: 1px solid var(--line);
-  padding-top: 1.5rem;
-}
-.thread-title {
-  font-size: 0.8rem;
-  letter-spacing: 0.26em;
-  color: var(--ink);
-}
-.thread-kr {
-  font-family: var(--serif-kr);
-  font-weight: 300;
-  font-size: 0.78rem;
-  color: var(--ink-faint);
-  margin-left: 0.6em;
-  letter-spacing: 0.1em;
-}
-.threads li p {
-  margin-top: 0.9rem;
-  color: var(--ink-soft);
-  font-size: 0.97rem;
-  line-height: 1.75;
-}
-@media (max-width: 760px) {
-  .threads { grid-template-columns: 1fr; gap: 2.2rem; }
-}
-
 /* ── Ritual ─────────────────────────────────────────────────── */
 
 .ritual {
