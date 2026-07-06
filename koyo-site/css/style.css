@@ -913,7 +913,8 @@ main { position: relative; z-index: 1; }
 .shop-page .shelf {
   background: transparent;
   padding-top: clamp(9rem, 18vh, 12rem);
-  min-height: 78vh;
+  padding-bottom: clamp(2.5rem, 6vh, 4rem);
+  min-height: auto;
 }
 .shelf-sub {
   max-width: 42rem;
@@ -984,8 +985,7 @@ main { position: relative; z-index: 1; }
 
 .teaware {
   position: relative;
-  padding: var(--sec-y) var(--pad-x);
-  border-top: 1px solid var(--line);
+  padding: clamp(2rem, 5vh, 3.5rem) var(--pad-x) var(--sec-y);
 }
 .gear-grid {
   list-style: none;
