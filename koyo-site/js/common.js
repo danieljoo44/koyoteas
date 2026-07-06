@@ -199,6 +199,22 @@ export function initSite() {
       }));
   }
 
+  /* ── Back to top (long mobile pages) ────────────────────────── */
+
+  const toTop = document.createElement("button");
+  toTop.className = "to-top";
+  toTop.setAttribute("aria-label", "Back to top");
+  toTop.innerHTML =
+    '<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 10.4V1.8M6 1.8 1.9 5.9M6 1.8l4.1 4.1" stroke="currentColor" stroke-width="1.1" stroke-linecap="square"/></svg>';
+  document.body.appendChild(toTop);
+  const toTopAt = (y) => toTop.classList.toggle("is-visible", y > window.innerHeight * 1.5);
+  if (lenis) lenis.on("scroll", ({ scroll }) => toTopAt(scroll));
+  else window.addEventListener("scroll", () => toTopAt(window.scrollY), { passive: true });
+  toTop.addEventListener("click", () => {
+    if (lenis) lenis.scrollTo(0, { duration: 1.4 });
+    else window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+  });
+
   /* ── Scroll reveals ─────────────────────────────────────────── */
 
   if (reduced) {
