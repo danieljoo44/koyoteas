@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Koyo — Type Specimens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Serif:wght@300;400&family=Jost:wght@300;400;500&family=Noto+Serif+KR:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&family=Inter:wght@300;400;500&family=Spectral:ital,wght@0,200;0,300;0,400;1,300&family=Archivo:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f3efe7;
+      --paper-deep: #eae4d7;
+      --ink: #1e1a16;
+      --ink-soft: #5c554a;
+      --ink-faint: #948b7c;
+      --line: rgba(30, 26, 22, 0.14);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+    .intro {
+      max-width: 40rem; margin: 0 auto; padding: 4.5rem 1.4rem 1rem;
+      font-family: "IBM Plex Mono", monospace; text-align: center;
+    }
+    .intro h1 { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.3em; }
+    .intro p { margin-top: 0.9rem; font-size: 0.72rem; line-height: 1.8; color: var(--ink-soft); letter-spacing: 0.06em; }
+
+    .spec {
+      max-width: 46rem; margin: 3.5rem auto 0; padding: 0 1.4rem 4rem;
+      border-top: 1px solid var(--line);
+    }
+    .spec-tag {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.62rem;
+      letter-spacing: 0.22em; color: var(--ink-faint);
+      padding: 1.1rem 0 0.2rem; text-transform: uppercase;
+    }
+    .spec-note {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+      line-height: 1.75; color: var(--ink-soft); letter-spacing: 0.04em;
+      margin-top: 0.5rem; max-width: 34rem;
+    }
+    .board {
+      margin-top: 2.2rem; background: var(--paper);
+      text-align: center;
+    }
+    .eyebrow { font-size: 0.66rem; letter-spacing: 0.3em; color: var(--ink-soft); }
+    .kr {
+      font-family: "Noto Serif KR", serif; font-weight: 300;
+      font-size: 4.2rem; line-height: 1.15; letter-spacing: 0.18em;
+      margin: 1.6rem 0 0.4rem; color: var(--ink);
+    }
+    .display { font-size: 1.5rem; line-height: 1.4; margin-top: 1rem; }
+    .para {
+      max-width: 30rem; margin: 2.4rem auto 0; text-align: center;
+      font-size: 0.95rem; line-height: 1.9; color: var(--ink-soft);
+    }
+    .lockup { margin-top: 2.4rem; font-size: 0.7rem; letter-spacing: 0.26em; color: var(--ink); }
+    .lockup .krword { font-family: "Noto Serif KR", serif; font-weight: 400; letter-spacing: 0.1em; }
+    dl {
+      max-width: 26rem; margin: 2rem auto 0; text-align: left;
+      border-top: 1px solid var(--line);
+    }
+    dl div {
+      display: flex; justify-content: space-between; gap: 1rem;
+      padding: 0.7rem 0.2rem; border-bottom: 1px solid var(--line);
+    }
+    dt { font-size: 0.62rem; letter-spacing: 0.2em; color: var(--ink-faint); }
+    dd { font-size: 0.72rem; letter-spacing: 0.06em; text-align: right; }
+    .buy { margin-top: 2.2rem; display: flex; align-items: center; justify-content: center; gap: 1.4rem; }
+    .price { font-size: 1.15rem; }
+    .btn {
+      display: inline-block; background: var(--ink); color: var(--paper);
+      border-radius: 999px; padding: 0.85rem 1.9rem;
+      font-size: 0.64rem; letter-spacing: 0.24em; text-decoration: none;
+    }
+
+    /* ── 00 · CURRENT ─────────────────────────────────────────── */
+    .s0 .eyebrow, .s0 .display, .s0 .lockup, .s0 dt, .s0 dd, .s0 .btn, .s0 .price
+      { font-family: "IBM Plex Mono", monospace; }
+    .s0 .display { font-weight: 400; letter-spacing: 0.32em; }
+    .s0 .para { font-family: "IBM Plex Mono", monospace; font-size: 0.82rem; letter-spacing: 0.02em; }
+
+    /* ── 01 · HANOK — gallery grotesk ─────────────────────────── */
+    .s1 .eyebrow, .s1 .display, .s1 .lockup, .s1 dt, .s1 .btn
+      { font-family: "Instrument Sans", sans-serif; }
+    .s1 .display { font-weight: 500; letter-spacing: 0.3em; }
+    .s1 .para, .s1 dd, .s1 .price { font-family: "Inter", sans-serif; font-weight: 300; }
+    .s1 dd { font-weight: 400; }
+
+    /* ── 02 · SEONBI — literary serif ─────────────────────────── */
+    .s2 .eyebrow, .s2 .lockup, .s2 dt, .s2 .btn
+      { font-family: "Jost", sans-serif; font-weight: 400; }
+    .s2 .display {
+      font-family: "Spectral", serif; font-weight: 300;
+      letter-spacing: 0.22em; font-size: 1.65rem;
+    }
+    .s2 .para { font-family: "Spectral", serif; font-weight: 300; font-size: 1.02rem; }
+    .s2 dd, .s2 .price { font-family: "Spectral", serif; font-weight: 400; }
+
+    /* ── 03 · DANSAEKHWA — museum catalog ─────────────────────── */
+    .s3 .eyebrow, .s3 .display, .s3 .lockup, .s3 dt, .s3 .btn
+      { font-family: "Archivo", sans-serif; }
+    .s3 .display { font-weight: 500; letter-spacing: 0.34em; font-size: 1.35rem; }
+    .s3 .para { font-family: "Source Serif 4", serif; font-weight: 300; font-size: 1rem; }
+    .s3 dd, .s3 .price { font-family: "Source Serif 4", serif; }
+
+    /* ── 04 · PLEX FAMILY — same voice, more registers ────────── */
+    .s4 .eyebrow, .s4 .display, .s4 .lockup, .s4 dt
+      { font-family: "IBM Plex Mono", monospace; }
+    .s4 .display { font-weight: 400; letter-spacing: 0.32em; }
+    .s4 .para { font-family: "IBM Plex Serif", serif; font-weight: 300; font-size: 0.98rem; }
+    .s4 dd, .s4 .price, .s4 .btn { font-family: "IBM Plex Sans", sans-serif; }
+    .s4 dd { font-weight: 400; }
+
+    /* ── 05 · MARU — soft modern serif ────────────────────────── */
+    .s5 .eyebrow, .s5 .lockup, .s5 dt, .s5 .btn
+      { font-family: "Karla", sans-serif; font-weight: 400; }
+    .s5 .display {
+      font-family: "Fraunces", serif; font-weight: 300;
+      font-variation-settings: "opsz" 60;
+      letter-spacing: 0.2em; font-size: 1.6rem;
+    }
+    .s5 .para { font-family: "Karla", sans-serif; font-weight: 300; font-size: 0.98rem; }
+    .s5 dd, .s5 .price { font-family: "Fraunces", serif; font-weight: 400; }
+
+    @media (max-width: 640px) {
+      .kr { font-size: 3.2rem; }
+      .display { font-size: 1.15rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="intro">
+    <h1>KOYO — TYPE SPECIMENS</h1>
+    <p>Six systems, one page of real site copy. Korean glyphs stay
+    Noto Serif KR in every combination, per the brand rule. Unlinked
+    page, not indexed.</p>
+  </header>
+
+  <!-- ════════ 00 · CURRENT ════════ -->
+  <section class="spec s0">
+    <p class="spec-tag">Specimen 00 — Current System</p>
+    <p class="spec-note">IBM Plex Mono display + editorial · Jost UI · Noto Serif KR.
+    The baseline: typewriter restraint, everything in one tracked voice.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+  <!-- ════════ 01 · HANOK ════════ -->
+  <section class="spec s1">
+    <p class="spec-tag">Specimen 01 — Hanok · Instrument Sans + Inter</p>
+    <p class="spec-note">The gallery direction: a quiet Swiss grotesk carries the caps,
+    Inter disappears into the body text. Closest to Aesop's voice; the Korean
+    serif becomes the only warm thing on the page.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+  <!-- ════════ 02 · SEONBI ════════ -->
+  <section class="spec s2">
+    <p class="spec-tag">Specimen 02 — Seonbi · Spectral + Jost</p>
+    <p class="spec-note">The literary direction: a light scholarly serif leads,
+    echoing the Korean serif so Latin and Hangul finally share one bloodline.
+    Jost stays for labels and buttons. Bookish, warm, slow.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+  <!-- ════════ 03 · DANSAEKHWA ════════ -->
+  <section class="spec s3">
+    <p class="spec-tag">Specimen 03 — Dansaekhwa · Archivo + Source Serif</p>
+    <p class="spec-note">The museum-catalog direction: Archivo's engineered caps
+    for wayfinding, a transitional serif for reading. Feels like the wall text
+    beside a monochrome painting — institutional calm.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+  <!-- ════════ 04 · PLEX FAMILY ════════ -->
+  <section class="spec s4">
+    <p class="spec-tag">Specimen 04 — Plex Family · Plex Mono + Plex Serif + Plex Sans</p>
+    <p class="spec-note">The evolution, not revolution: the mono voice you already
+    own keeps the headlines, but its serif sibling takes over long reading and
+    its sans sibling takes the UI. One superfamily, three registers, zero friction.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+  <!-- ════════ 05 · MARU ════════ -->
+  <section class="spec s5">
+    <p class="spec-tag">Specimen 05 — Maru · Fraunces + Karla</p>
+    <p class="spec-note">The soft-modern direction: Fraunces brings a gentle,
+    almost hand-thrown warmth to display moments, Karla keeps everything else
+    plainspoken. The most wellness-forward of the five.</p>
+    <div class="board">
+      <p class="eyebrow">단일 원산지 — SINGLE-ORIGIN KOREAN TEA</p>
+      <p class="kr">고요</p>
+      <p class="display">STILLNESS GUIDES PURPOSE</p>
+      <p class="para">Founded in 2019 by a collective of Koreans and Korean-Americans,
+      Koyo bridges a two-thousand-year tea tradition and the pace of modern life.</p>
+      <p class="lockup">KEEPING — <span class="krword">보관</span></p>
+      <dl>
+        <div><dt>BODY</dt><dd>Unibody borosilicate 3.3 glass</dd></div>
+        <div><dt>CAPACITY</dt><dd>500 ml</dd></div>
+      </dl>
+      <div class="buy"><span class="price">$19</span><a class="btn" href="#">ADD TO ORDER</a></div>
+    </div>
+  </section>
+
+</body>
+</html>
