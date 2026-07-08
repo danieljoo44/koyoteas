@@ -83,11 +83,22 @@ async function resolveVariant(teaId, format = "loose") {
   );
   const variants = data.product?.variants?.nodes || [];
   if (!variants.length) throw new Error(`Product "${handle}" not found in Shopify`);
-  const rx = FORMAT_MATCHERS[format] || FORMAT_MATCHERS.loose;
-  const match =
-    variants.find((v) =>
-      v.selectedOptions?.some((o) => rx.test(o.value)) || rx.test(v.title)) ||
-    variants[0];
+  let match;
+  if (FORMAT_MATCHERS[format]) {
+    const rx = FORMAT_MATCHERS[format];
+    match = variants.find((v) =>
+      v.selectedOptions?.some((o) => rx.test(o.value)) || rx.test(v.title));
+  } else {
+    /* gear: match the site's variant label against Shopify variant
+       title / option values — exact first, then substring */
+    const want = String(format).trim().toLowerCase();
+    const texts = (v) => [v.title, ...(v.selectedOptions || []).map((o) => o.value)]
+      .filter(Boolean).map((t) => t.trim().toLowerCase());
+    match =
+      variants.find((v) => texts(v).some((t) => t === want)) ||
+      variants.find((v) => texts(v).some((t) => t.includes(want) || want.includes(t)));
+  }
+  match = match || variants[0];
   variantCache[key] = match;
   return match;
 }

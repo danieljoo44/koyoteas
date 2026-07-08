@@ -76,7 +76,7 @@ if (site) {
     addBtn.classList.add("is-busy");
     try {
       await addToCart({
-        id: "gear-" + addBtn.dataset.gearId + "-" + addBtn.dataset.variant,
+        id: addBtn.dataset.gearId,
         name: addBtn.dataset.gearName,
         kr: "",
         qty,

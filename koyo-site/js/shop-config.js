@@ -27,6 +27,15 @@ window.KOYO_SHOP = {
     artemisia: "",       // e.g. "artemisia-tea"
     persimmon: "",       // e.g. "persimmon-leaf-tea"
     hwangto:   "",       // e.g. "hwangto-red-tea-quince"
+    /* teaware — variant titles in Shopify should match the site's
+       option labels (e.g. "Matte Black + Walnut", "Space Gray") */
+    "simple-steeper": "",
+    "atmos":          "",
+    "stagg-ekg":      "",
+    "monty":          "",
+    "lunar":          "",
+    "pearl":          "",
+    "tea-scoop":      "",
   },
   // Fallback used while Shopify isn't connected:
   orderEmail: "info@koyoteas.com",
