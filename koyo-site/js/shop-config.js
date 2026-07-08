@@ -20,7 +20,7 @@
 
 window.KOYO_SHOP = {
   domain: "koyo-teas.myshopify.com",
-  storefrontToken: "",   // e.g. "shpat_xxx… (Storefront, not Admin)"
+  storefrontToken: "186dd7093a36874bb84b472527153980", // Headless channel public token (public-safe)
   apiVersion: "2024-07",
   /* Each entry is either a single product handle, or a map from the
      site's format/variant label to a handle — the store keeps one
@@ -28,17 +28,26 @@ window.KOYO_SHOP = {
      and "Sejak Green Tea - Sachets" are separate products). Handles
      are the slug in the product's URL in Shopify admin. */
   products: {
-    sejak:     { loose: "", sachet: "" },
-    artemisia: { loose: "", sachet: "" },
-    persimmon: { loose: "", sachet: "" },
-    hwangto:   { loose: "", sachet: "" },
-    "simple-steeper": "",
-    "atmos":     { electric: "", manual: "" },
-    "stagg-ekg": { "matte black": "", "matte black + walnut": "" },
-    "monty":     "",
-    "lunar":     "",   // one product — needs Color variants in Shopify
-    "pearl":     "",   // one product — needs Color variants in Shopify
-    "tea-scoop": "",
+    sejak:     { loose: "sejak-green-tea-loose-leaf", sachet: "sejak-green-tea-sachets" },
+    /* artemisia handles are crossed in the store: the Sachet product
+       was created first and owns "artemisia-loose" — do not "fix"
+       these by symmetry */
+    artemisia: { loose: "artemisia-loose-1", sachet: "artemisia-loose" },
+    persimmon: { loose: "young-persimmon-leaf-loose", sachet: "young-persimmon-leaf-sachet" },
+    hwangto:   { loose: "hwangto-loose", sachet: "hwangto-sachet" },
+    "simple-steeper": "the-simple-steeper",
+    "atmos": {
+      electric: "fellow-atmos-vacuum-canister-0-7l-electric",
+      manual:   "fellow-atmos-vacuum-canister-0-7l-manual",
+    },
+    "stagg-ekg": {
+      "matte black":          "stagg-ekg-pro-black",
+      "matte black + walnut": "stagg-ekg-pro-black-and-walnut",
+    },
+    "monty":     "fellow-monty-cup",
+    "lunar":     "acaia-lunar-scale",   // single variant — color rides as a line attribute
+    "pearl":     "acaia-pearl-scale",   // single variant — color rides as a line attribute
+    "tea-scoop": "acaia-tea-scoops",
   },
   // Fallback used while Shopify isn't connected:
   orderEmail: "info@koyoteas.com",

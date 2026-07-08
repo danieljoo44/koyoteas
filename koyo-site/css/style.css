@@ -1392,6 +1392,11 @@ main { position: relative; z-index: 1; }
   color: #877e6d;
 }
 
+.btn[disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 /* ── Back to top ────────────────────────────────────────────── */
 
 .to-top {

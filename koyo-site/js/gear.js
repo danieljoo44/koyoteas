@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 import { initSite } from "./common.js";
-import { initShop, addToCart } from "./shop.js";
+import { initShop, addToCart, fetchProductInfo } from "./shop.js";
 
 const site = initSite();
 
@@ -43,6 +43,7 @@ if (site) {
       addBtn.dataset.variant = opt.dataset.variant;
       addBtn.dataset.variantLabel = opt.dataset.label;
       addBtn.dataset.price = opt.dataset.price;
+      applyAvailability();
       priceEl.textContent = "$" + Number(opt.dataset.price).toLocaleString(undefined, {
         minimumFractionDigits: 0, maximumFractionDigits: 2,
       });
@@ -72,6 +73,20 @@ if (site) {
   /* ── Add to order ───────────────────────────────────────────── */
 
   const defaultLabel = addBtn ? addBtn.textContent.trim() : "";
+
+  /* Sold-out state from live Shopify availability (no-op offline) */
+  async function applyAvailability() {
+    if (!addBtn) return;
+    const info = await fetchProductInfo(addBtn.dataset.gearId, addBtn.dataset.variantLabel);
+    if (info && info.available === false) {
+      addBtn.disabled = true;
+      addBtn.textContent = "Sold out — back soon";
+    } else if (info && addBtn.disabled) {
+      addBtn.disabled = false;
+      addBtn.textContent = defaultLabel;
+    }
+  }
+  applyAvailability();
   if (addBtn) addBtn.addEventListener("click", async () => {
     addBtn.classList.add("is-busy");
     try {

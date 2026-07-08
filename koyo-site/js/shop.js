@@ -162,12 +162,17 @@ const FORMAT_LABELS = { loose: "Loose Leaf", sachet: "Sachets" };
 export async function addToCart({ id, name, kr, qty = 1, format = "loose", price = null }) {
   if (configured) {
     const variant = await resolveVariant(id, format);
+    if (variant.availableForSale === false) throw new Error(`"${id}" (${format}) is sold out`);
+    const line = { merchandiseId: variant.id, quantity: qty };
+    /* gear selections (finish/color) ride as a line attribute so the
+       choice reaches the order even on single-variant products */
+    if (!FORMAT_LABELS[format]) line.attributes = [{ key: "Selection", value: String(format) }];
     const cart = await shopifyCart();
     await gql(
       `mutation($cartId: ID!, $lines: [CartLineInput!]!) {
          cartLinesAdd(cartId: $cartId, lines: $lines) { cart { id } }
        }`,
-      { cartId: cart.id, lines: [{ merchandiseId: variant.id, quantity: qty }] }
+      { cartId: cart.id, lines: [line] }
     );
   } else {
     const items = localCart.read();
