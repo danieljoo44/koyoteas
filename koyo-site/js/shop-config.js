@@ -22,20 +22,23 @@ window.KOYO_SHOP = {
   domain: "",            // e.g. "koyo-teas.myshopify.com"
   storefrontToken: "",   // e.g. "shpat_xxx… (Storefront, not Admin)"
   apiVersion: "2024-07",
+  /* Each entry is either a single product handle, or a map from the
+     site's format/variant label to a handle — the store keeps one
+     Shopify product per format (e.g. "Sejak Green Tea - Loose Leaf"
+     and "Sejak Green Tea - Sachets" are separate products). Handles
+     are the slug in the product's URL in Shopify admin. */
   products: {
-    sejak:     "",       // e.g. "sejak-green-tea"
-    artemisia: "",       // e.g. "artemisia-tea"
-    persimmon: "",       // e.g. "persimmon-leaf-tea"
-    hwangto:   "",       // e.g. "hwangto-red-tea-quince"
-    /* teaware — variant titles in Shopify should match the site's
-       option labels (e.g. "Matte Black + Walnut", "Space Gray") */
+    sejak:     { loose: "", sachet: "" },
+    artemisia: { loose: "", sachet: "" },
+    persimmon: { loose: "", sachet: "" },
+    hwangto:   { loose: "", sachet: "" },
     "simple-steeper": "",
-    "atmos":          "",
-    "stagg-ekg":      "",
-    "monty":          "",
-    "lunar":          "",
-    "pearl":          "",
-    "tea-scoop":      "",
+    "atmos":     { electric: "", manual: "" },
+    "stagg-ekg": { "matte black": "", "matte black + walnut": "" },
+    "monty":     "",
+    "lunar":     "",   // one product — needs Color variants in Shopify
+    "pearl":     "",   // one product — needs Color variants in Shopify
+    "tea-scoop": "",
   },
   // Fallback used while Shopify isn't connected:
   orderEmail: "info@koyoteas.com",

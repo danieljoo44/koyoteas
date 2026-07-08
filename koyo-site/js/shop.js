@@ -62,7 +62,22 @@ const FORMAT_MATCHERS = {
 async function resolveVariant(teaId, format = "loose") {
   const key = `${teaId}:${format}`;
   if (variantCache[key]) return variantCache[key];
-  const handle = CFG.products?.[teaId];
+  let handle = CFG.products?.[teaId];
+  /* a product entry may be a single handle, or a per-format map
+     (Shopify store keeps one product per format/finish). Keys match
+     the site's format/variant label: exact first, then the longest
+     key contained in the label (so "matte black + walnut" cannot
+     fall into "matte black") */
+  if (handle && typeof handle === "object") {
+    const want = String(format).trim().toLowerCase();
+    const entries = Object.entries(handle)
+      .map(([k, v]) => [k.trim().toLowerCase(), v]);
+    const exact = entries.find(([k]) => k === want);
+    const partial = entries
+      .filter(([k]) => want.includes(k) || k.includes(want))
+      .sort((a, b) => b[0].length - a[0].length)[0];
+    handle = (exact || partial || [null, Object.values(handle)[0]])[1];
+  }
   if (!handle) throw new Error(`No Shopify product handle configured for "${teaId}"`);
   const data = await gql(
     `query($handle: String!) {
