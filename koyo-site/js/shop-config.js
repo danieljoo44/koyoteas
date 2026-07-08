@@ -19,7 +19,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 window.KOYO_SHOP = {
-  domain: "",            // e.g. "koyo-teas.myshopify.com"
+  domain: "koyo-teas.myshopify.com",
   storefrontToken: "",   // e.g. "shpat_xxx… (Storefront, not Admin)"
   apiVersion: "2024-07",
   /* Each entry is either a single product handle, or a map from the
