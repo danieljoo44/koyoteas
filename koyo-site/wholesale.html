@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wholesale — Koyo · Single-Origin Korean Tea for Your Shelf</title>
+  <meta name="description" content="Carry Koyo's single-origin Korean teas. Wholesale cases of ten, 40% off retail, bulk loose leaf by the kilogram. Hand-packed in Grand Rapids, invoiced simply." />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <script>document.documentElement.classList.add("js");</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400&family=Karla:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/shop-config.js"></script>
+</head>
+<body>
+
+
+  <!-- Atmosphere -->
+  <canvas id="mist-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav is-scrolled" id="nav">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/img/koyo-mark-ink.png" alt="Koyo mark" class="nav-mark" />
+      <span class="nav-word">KOYO</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#specimen">Collection</a>
+      <a href="index.html#ritual">Ritual</a>
+      <a href="index.html#ethos">Our Story</a>
+      <div class="nav-shop">
+        <a href="shop.html" aria-haspopup="true">Shop</a>
+        <div class="nav-dropdown" aria-label="Shop">
+          <p class="nav-dd-head mono">TEA — 차</p>
+          <a href="tea/sejak.html">Sejak <span>세작</span></a>
+          <a href="tea/artemisia.html">Artemisia <span>쑥</span></a>
+          <a href="tea/persimmon.html">Persimmon Leaf <span>감잎</span></a>
+          <a href="tea/hwangto.html">Hwangto <span>황토</span></a>
+          <p class="nav-dd-head mono">TEAWARE — 다구</p>
+          <a href="gear/simple-steeper.html">The Simple Steeper</a>
+          <a href="shop.html#teaware">All Teaware →</a>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cart mono" href="#" data-cart-open data-cart-count>CART — 0</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="index.html#specimen">Collection</a>
+      <a href="index.html#ritual">Ritual</a>
+      <a href="index.html#ethos">Our Story</a>
+    </nav>
+    <div class="mobile-menu-shop">
+      <p class="mono">SHOP — 상점</p>
+      <a href="tea/sejak.html">Sejak 세작</a>
+      <a href="tea/artemisia.html">Artemisia 쑥</a>
+      <a href="tea/persimmon.html">Persimmon Leaf 감잎</a>
+      <a href="tea/hwangto.html">Hwangto 황토</a>
+    </div>
+    <div class="mobile-menu-foot mono">
+      <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener">IG — @KOYO_TEAS</a>
+      <span>EST. 2019 — 고요</span>
+    </div>
+  </div>
+
+  <main class="shop-page">
+
+    <!-- ═══════════ WHOLESALE ═══════════ -->
+    <section class="wholesale" id="wholesale">
+      <div class="shelf-head">
+        <p class="eyebrow mono" data-reveal>WHOLESALE — 도매</p>
+        <h1 class="shelf-title" data-reveal>Koyo, on your shelf.</h1>
+        <p class="shelf-sub" data-reveal>
+          We partner with a small number of cafes, restaurants, and shops
+          that share our pace. Single-origin Korean teas from one farm in
+          Hadong, hand-packed in Grand Rapids, and supported with brewing
+          guidance for your staff. Orders are invoiced simply. Terms grow
+          with the relationship.
+        </p>
+      </div>
+
+      <ul class="story-ledger ws-ledger" data-reveal>
+        <li><strong>10 UNITS</strong><span class="mono">MINIMUM ORDER</span></li>
+        <li><strong>40% OFF</strong><span class="mono">RETAIL PRICE</span></li>
+        <li><strong>CASES OF 10</strong><span class="mono">LOOSE OR SACHET</span></li>
+        <li><strong>1 KG BULK</strong><span class="mono">LOOSE, ON REQUEST</span></li>
+      </ul>
+
+      <!-- ── Line sheet ── -->
+      <div class="ws-sheet" data-reveal>
+        <p class="ws-group mono">LOOSE LEAF — CASE OF 10</p>
+        <ul class="ws-list">
+          <li class="ws-row" data-name="Sejak, loose leaf case of 10" data-price="198">
+            <div class="ws-row-info">
+              <p class="ws-name">Sejak <span>세작</span></p>
+              <p class="ws-meta mono">$19.80 UNIT · RETAIL $33</p>
+            </div>
+            <p class="ws-case">$198</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Artemisia, loose leaf case of 10" data-price="204">
+            <div class="ws-row-info">
+              <p class="ws-name">Artemisia <span>쑥</span></p>
+              <p class="ws-meta mono">$20.40 UNIT · RETAIL $34</p>
+            </div>
+            <p class="ws-case">$204</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Persimmon Leaf, loose leaf case of 10" data-price="234">
+            <div class="ws-row-info">
+              <p class="ws-name">Persimmon Leaf <span>감잎</span></p>
+              <p class="ws-meta mono">$23.40 UNIT · RETAIL $39</p>
+            </div>
+            <p class="ws-case">$234</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Hwangto, loose leaf case of 10" data-price="222">
+            <div class="ws-row-info">
+              <p class="ws-name">Hwangto <span>황토</span></p>
+              <p class="ws-meta mono">$22.20 UNIT · RETAIL $37</p>
+            </div>
+            <p class="ws-case">$222</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+        </ul>
+
+        <p class="ws-group mono">SACHETS — CASE OF 10</p>
+        <ul class="ws-list">
+          <li class="ws-row" data-name="Sejak, sachet case of 10" data-price="84">
+            <div class="ws-row-info">
+              <p class="ws-name">Sejak <span>세작</span></p>
+              <p class="ws-meta mono">$8.40 UNIT · RETAIL $14</p>
+            </div>
+            <p class="ws-case">$84</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Artemisia, sachet case of 10" data-price="84">
+            <div class="ws-row-info">
+              <p class="ws-name">Artemisia <span>쑥</span></p>
+              <p class="ws-meta mono">$8.40 UNIT · RETAIL $14</p>
+            </div>
+            <p class="ws-case">$84</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Persimmon Leaf, sachet case of 10" data-price="84">
+            <div class="ws-row-info">
+              <p class="ws-name">Persimmon Leaf <span>감잎</span></p>
+              <p class="ws-meta mono">$8.40 UNIT · RETAIL $14</p>
+            </div>
+            <p class="ws-case">$84</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Hwangto, sachet case of 10" data-price="84">
+            <div class="ws-row-info">
+              <p class="ws-name">Hwangto <span>황토</span></p>
+              <p class="ws-meta mono">$8.40 UNIT · RETAIL $14</p>
+            </div>
+            <p class="ws-case">$84</p>
+            <div class="qty ws-qty" aria-label="Cases">
+              <button data-d="-1" aria-label="Fewer cases">−</button><span>0</span><button data-d="1" aria-label="More cases">+</button>
+            </div>
+          </li>
+        </ul>
+
+        <p class="ws-group mono">BULK LOOSE LEAF — PER KILOGRAM</p>
+        <ul class="ws-list">
+          <li class="ws-row" data-name="Sejak, bulk loose leaf per kg" data-price="0" data-bulk="1">
+            <div class="ws-row-info">
+              <p class="ws-name">Sejak <span>세작</span></p>
+              <p class="ws-meta mono">PRICED ON REQUEST</p>
+            </div>
+            <p class="ws-case ws-por mono">P.O.R.</p>
+            <div class="qty ws-qty" aria-label="Kilograms">
+              <button data-d="-1" aria-label="Fewer kilograms">−</button><span>0</span><button data-d="1" aria-label="More kilograms">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Artemisia, bulk loose leaf per kg" data-price="0" data-bulk="1">
+            <div class="ws-row-info">
+              <p class="ws-name">Artemisia <span>쑥</span></p>
+              <p class="ws-meta mono">PRICED ON REQUEST</p>
+            </div>
+            <p class="ws-case ws-por mono">P.O.R.</p>
+            <div class="qty ws-qty" aria-label="Kilograms">
+              <button data-d="-1" aria-label="Fewer kilograms">−</button><span>0</span><button data-d="1" aria-label="More kilograms">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Persimmon Leaf, bulk loose leaf per kg" data-price="0" data-bulk="1">
+            <div class="ws-row-info">
+              <p class="ws-name">Persimmon Leaf <span>감잎</span></p>
+              <p class="ws-meta mono">PRICED ON REQUEST</p>
+            </div>
+            <p class="ws-case ws-por mono">P.O.R.</p>
+            <div class="qty ws-qty" aria-label="Kilograms">
+              <button data-d="-1" aria-label="Fewer kilograms">−</button><span>0</span><button data-d="1" aria-label="More kilograms">+</button>
+            </div>
+          </li>
+          <li class="ws-row" data-name="Hwangto, bulk loose leaf per kg" data-price="0" data-bulk="1">
+            <div class="ws-row-info">
+              <p class="ws-name">Hwangto <span>황토</span></p>
+              <p class="ws-meta mono">PRICED ON REQUEST</p>
+            </div>
+            <p class="ws-case ws-por mono">P.O.R.</p>
+            <div class="qty ws-qty" aria-label="Kilograms">
+              <button data-d="-1" aria-label="Fewer kilograms">−</button><span>0</span><button data-d="1" aria-label="More kilograms">+</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ── Order form ── -->
+      <form class="ws-form" id="ws-form" data-reveal novalidate>
+        <p class="ws-group mono">YOUR SHOP — 소개</p>
+        <div class="ws-fields">
+          <label>SHOP OR BUSINESS NAME *<input type="text" id="ws-shop" autocomplete="organization" /></label>
+          <label>CONTACT NAME *<input type="text" id="ws-contact" autocomplete="name" /></label>
+          <label>EMAIL *<input type="email" id="ws-email" autocomplete="email" /></label>
+          <label>PHONE<input type="tel" id="ws-phone" autocomplete="tel" /></label>
+          <label class="ws-wide">SHIPPING ADDRESS<textarea id="ws-address" rows="2" autocomplete="street-address"></textarea></label>
+          <label class="ws-wide">NOTES, TIMING, QUESTIONS<textarea id="ws-notes" rows="3"></textarea></label>
+        </div>
+
+        <div class="ws-summary">
+          <p class="ws-subtotal mono">CASES SUBTOTAL — <span id="ws-subtotal">$0</span></p>
+          <p class="ws-hint mono" id="ws-hint">MINIMUM ORDER 10 UNITS · ONE CASE</p>
+        </div>
+
+        <button type="submit" class="btn btn-solid ws-submit">Send order request</button>
+        <p class="ws-fine mono">WE REPLY WITHIN TWO BUSINESS DAYS WITH AN INVOICE AND SHIP DATE · BULK PRICING QUOTED IN THE SAME REPLY</p>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/koyo-mark-paper.png" alt="Koyo mark" class="footer-mark" />
+        <p class="footer-tag">Stillness guides purpose.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <p class="footer-head mono">SHOP</p>
+          <a href="shop.html">The Shelf — all teas</a>
+          <a href="tea/sejak.html">Sejak</a>
+          <a href="tea/artemisia.html">Artemisia</a>
+          <a href="tea/persimmon.html">Persimmon Leaf</a>
+          <a href="tea/hwangto.html">Hwangto</a>
+          <a href="shop.html#teaware">Teaware</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">COMPANY</p>
+          <a href="index.html#ethos">Our story</a>
+          <a href="journal.html">Journal</a>
+          <a href="wholesale.html">Wholesale</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-head mono">CONNECT</p>
+          <a href="https://www.instagram.com/koyo_teas" target="_blank" rel="noopener">Instagram — @koyo_teas</a>
+          <a href="mailto:info@koyoteas.com">info@koyoteas.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom mono">
+      <span>© 2026 KOYO TEAS</span>
+      <span>FREE SHIPPING OVER $100</span>
+      <span>LOS ANGELES · GRAND RAPIDS · HADONG</span>
+    </div>
+  </footer>
+
+  <!-- Cart -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Cart">
+    <header class="cart-head">
+      <p class="mono">YOUR ORDER — 주문</p>
+      <button class="cart-close" aria-label="Close cart">×</button>
+    </header>
+    <div class="cart-lines"></div>
+    <footer class="cart-foot">
+      <div class="cart-subtotal"><span class="mono">SUBTOTAL</span><span class="cart-subtotal-amount"></span></div>
+      <button class="btn btn-solid cart-checkout">Checkout</button>
+      <p class="cart-ship mono">FREE SHIPPING ON ORDERS OVER $100</p>
+      <p class="cart-note"></p>
+    </footer>
+  </aside>
+
+  <script type="module" src="js/wholesale.js"></script>
+  <noscript><style>[data-reveal]{opacity:1 !important}</style></noscript>
+</body>
+</html>
