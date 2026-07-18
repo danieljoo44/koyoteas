@@ -22,14 +22,14 @@ GEAR = {
                 "and it is clean.",
         "specs": [
             ("BODY", "Unibody borosilicate 3.3 glass"),
-            ("CAPACITY", "500 ml"),
+            ("CAPACITY", "400 ml"),
             ("FILTER", "Built in, nothing removable"),
             ("HEAT", "Boiling water safe, lead-free"),
             ("CLEAN", "Dishwasher safe"),
         ],
         "variant_label": None,
         "variants": [
-            ("glass", "Clear Glass · 500 ml", 19.00, "steeper-liquor.webp"),
+            ("glass", "Clear Glass · 400 ml", 19.00, "steeper-liquor.webp"),
         ],
         "gallery": [
             ("steeper-liquor.webp", "THE STEEPER"),
