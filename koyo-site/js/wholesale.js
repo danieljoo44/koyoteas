@@ -21,13 +21,17 @@ const form = document.getElementById("ws-form");
 const qtyOf = (row) => parseInt(row.querySelector(".ws-qty span").textContent, 10) || 0;
 
 function recalc() {
-  let cases = 0, kg = 0, subtotal = 0;
+  let cases = 0, kg = 0, subtotal = 0, unquoted = 0;
   rows.forEach((row) => {
     const q = qtyOf(row);
-    if (row.dataset.bulk) kg += q;
-    else { cases += q; subtotal += q * parseFloat(row.dataset.price); }
+    const p = parseFloat(row.dataset.price);
+    if (row.dataset.bulk) {
+      kg += q;
+      if (p > 0) subtotal += q * p;
+      else unquoted += q;
+    } else { cases += q; subtotal += q * p; }
   });
-  subtotalEl.textContent = fmtUsd(subtotal) + (kg ? " + BULK" : "");
+  subtotalEl.textContent = fmtUsd(subtotal) + (unquoted ? " + BULK" : "");
   const met = cases >= 1 || kg >= 1;
   hintEl.textContent = met
     ? `${cases * 10} UNITS${kg ? ` + ${kg} KG BULK` : ""} — 감사합니다`
@@ -65,7 +69,10 @@ form.addEventListener("submit", (e) => {
     .map((row) => {
       const q = qtyOf(row);
       const p = parseFloat(row.dataset.price);
-      return `- ${row.dataset.name} × ${q}${row.dataset.bulk ? " kg (quote)" : ` — ${fmtUsd(p * q)}`}`;
+      if (row.dataset.bulk) {
+        return `- ${row.dataset.name} × ${q} kg${p > 0 ? ` — ${fmtUsd(p * q)}` : " (quote)"}`;
+      }
+      return `- ${row.dataset.name} × ${q} — ${fmtUsd(p * q)}`;
     })
     .join("\n");
 
