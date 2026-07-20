@@ -1668,7 +1668,14 @@ main { position: relative; z-index: 1; }
   font-size: 1.4rem;
 }
 .cart-checkout { width: 100%; text-align: center; display: none; }
-.cart-ship { font-size: 0.6rem; letter-spacing: 0.24em; color: var(--ink-faint); margin-bottom: 0.8rem; }
+.cart-ship {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  color: var(--ink-faint);
+  margin-top: 1.1rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
 .cart-note {
   margin-top: 1rem;
   font-size: 0.82rem;
