@@ -187,7 +187,7 @@ TEMPLATE = """<!DOCTYPE html>
   <meta property="og:title" content="%%TITLE%%" />
   <meta property="og:description" content="%%DESCRIPTION%%" />
   <meta property="og:type" content="product" />
-  <meta property="og:image" content="../assets/img/cup-%%ID%%.jpg" />
+  <meta property="og:image" content="https://www.koyoteas.com/assets/img/cup-%%ID%%.jpg" />
   <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
   <script>document.documentElement.classList.add("js");</script>
 

@@ -166,6 +166,9 @@ def build():
     prefix = base[:head_end] + '<main class="tea-main">\n'
     suffix = base[base.index("  </main>"):]
     suffix = suffix.replace("../js/tea.js", "../js/gear.js")
+    for _t in ("sejak", "artemisia", "persimmon", "hwangto"):
+        prefix = prefix.replace(f'href="{_t}.html"', f'href="../tea/{_t}.html"')
+        suffix = suffix.replace(f'href="{_t}.html"', f'href="../tea/{_t}.html"')
 
     os.makedirs(os.path.join(SITE, "gear"), exist_ok=True)
     for gid, g in GEAR.items():
@@ -175,7 +178,7 @@ def build():
         head = re.sub(r'(<meta name="description" content=")[^"]*',
                       r"\g<1>" + f"{g['name']} at Koyo — {g['lede'][:110]}", head, count=1)
         head = re.sub(r'(<meta property="og:image" content=")[^"]*',
-                      r"\g<1>" + f"../assets/img/gear/{g['variants'][0][3]}", head, count=1)
+                      r"\g<1>" + f"https://www.koyoteas.com/assets/img/gear/{g['variants'][0][3]}", head, count=1)
 
         first = g["variants"][0]
         specs = "\n".join(
