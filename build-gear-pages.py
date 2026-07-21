@@ -33,8 +33,8 @@ GEAR = {
         ],
         "gallery": [
             ("steeper-liquor.webp", "THE STEEPER"),
-            ("steeper-vessel-s.webp", "THE GLASS"),
-            ("steeper-filter-s.webp", "THE FILTER"),
+            ("steeper-profile.webp", "THE GLASS"),
+            ("steeper-filter-soft.webp", "THE FILTER"),
             ("steeper-pour.webp", "THE POUR"),
         ],
     },
