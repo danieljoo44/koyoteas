@@ -39,7 +39,8 @@
       "Bash(curl -s https://api.github.com/repos/danieljoo44/koyoteas/actions/runs)",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(r['name'], '—', r['status'], '/', r.get\\('conclusion'\\)\\) for r in d.get\\('workflow_runs', []\\)[:3]]\")",
       "Bash(git commit -m 'Collection: vertical scrolling panels, alternating sides *)",
-      "Bash(curl -s -o /dev/null -w \"server: %{http_code}\\\\n\" http://127.0.0.1:4173/)"
+      "Bash(curl -s -o /dev/null -w \"server: %{http_code}\\\\n\" http://127.0.0.1:4173/)",
+      "Bash(cd \"/Users/danieljoo/Desktop/Claude Code Koyo Project\" && mkdir -p media-archive/certifications && cp \"/Users/danieljoo/Downloads/유기농산물인증서\\(2026.04.15.~2027.04.14.\\)_강순례.pdf\" \"media-archive/certifications/organic-cert-17100703-tea-leaves-hadong-2026-2027.pdf\" && cp \"/Users/danieljoo/Downloads/유자차유기농인증정보.pdf\" \"media-archive/certifications/organic-cert-18100224-yuja-jeju-2025-2026.pdf\" && ls media-archive/certifications/ && rsync -a --delete koyo-site/ \"/private/tmp/claude-501/-Users-danieljoo-Desktop-Claude-Code-Koyo-Project/bcc857b1-2abb-4a67-832f-bdc3611e2b38/scratchpad/preview/koyo-site/\" && echo synced)"
     ]
   }
 }
